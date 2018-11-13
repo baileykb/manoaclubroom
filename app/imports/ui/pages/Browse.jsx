@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Search, Header, Loader, Pagination, Card } from 'semantic-ui-react';
+import { Container, Search, Header, Loader, Pagination } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
@@ -19,11 +19,6 @@ class Browse extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
           <Search/>
-          /*
-          <Card.Group>
-
-          </Card.Group>
-          */
           <Pagination/>
         </Container>
     );
