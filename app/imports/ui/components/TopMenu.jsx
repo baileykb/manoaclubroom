@@ -1,10 +1,14 @@
 import React from 'react';
-import { Header } from 'semantic-ui-react';
+import { Menu, Icon } from 'semantic-ui-react';
 
 export default class TopMenu extends React.Component {
   render() {
     return (
-        <Header>TopMenu</Header>
+        <Menu borderless className="topmenu">
+          <Menu.Item>Manoa Club Room</Menu.Item>
+          <Menu.Item position="right"><Icon name="user circle outline"/></Menu.Item>
+          <Menu.Item>Admin</Menu.Item>
+        </Menu>
     );
   }
 }

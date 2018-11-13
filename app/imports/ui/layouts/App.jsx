@@ -5,7 +5,7 @@ import 'semantic-ui-css/semantic.css';
 import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import TopMenu from '../components/TopMenu';
-import FooterMenu from '../components/FooterMenu';
+import Footer from '../components/Footer';
 import ManoaClubRoom from '../pages/ManoaClubRoom';
 import ListStuff from '../pages/ListStuff';
 import ListStuffAdmin from '../pages/ListStuffAdmin';
@@ -34,7 +34,7 @@ class App extends React.Component {
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
-            <FooterMenu/>
+            <Footer/>
           </div>
         </Router>
     );

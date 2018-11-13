@@ -1,0 +1,9 @@
+.ui.borderless.topmenu.menu {
+  background-color: #024731;
+  box-shadow: none;
+  border: none;
+}
+
+.ui.topmenu.menu .item {
+  color: white;
+}
