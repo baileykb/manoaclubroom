@@ -1,9 +1,10 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Search, Header, Loader, Pagination } from 'semantic-ui-react';
+import { Container, Input, Header, Loader, Card } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import StuffItem from '/imports/ui/components/StuffItem';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class Browse extends React.Component {
@@ -18,8 +19,9 @@ class Browse extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
-          <Search/>
-          <Pagination/>
+          <Input icon='search' placeholder='Search...'/>
+          <Card.group> {this.props.stuffs.map((contact, index) => <StuffItem key={index}
+                                                                             contact={contact}/>)} </Card.group>
         </Container>
     );
   }
