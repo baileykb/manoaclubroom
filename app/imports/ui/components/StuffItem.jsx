@@ -15,6 +15,9 @@ class StuffItem extends React.Component {
               {this.props.stuff.condition}
             </Card.Description>
           </Card.Content>
+          <Card.Content extra>
+            <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
+          </Card.Content>
         </Card>
     );
   }

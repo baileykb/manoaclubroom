@@ -20,8 +20,9 @@ class Browse extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
           <Input icon='search' placeholder='Search...'/>
-          <Card.group> {this.props.stuffs.map((contact, index) => <StuffItem key={index}
-                                                                             contact={contact}/>)} </Card.group>
+          <Card.group> {this.props.stuffs.map((stuff, index) => <StuffItem key={index}
+                                                                             stuff={stuff}/>)}
+                                                                             </Card.group>
         </Container>
     );
   }
