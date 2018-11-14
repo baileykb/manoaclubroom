@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Card, Header, Loader, Search } from 'semantic-ui-react';
+import { Container, Card, Header, Loader, Input, Grid } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
 import StuffItem from '/imports/ui/components/StuffItem';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -19,7 +19,14 @@ class ListStuff extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
-          <Search/>
+          <Grid>
+            <Grid.Column width={8}>
+              <Input fluid icon='search' placeholder='Search...' />
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Input fluid icon='search' placeholder='Interests...' />
+            </Grid.Column>
+          </Grid>
           <Card.Group>{this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff}/>)}</Card.Group>
         </Container>
     );
