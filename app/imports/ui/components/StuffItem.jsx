@@ -9,7 +9,7 @@ class StuffItem extends React.Component {
     return (
         <Card centered>
           <Card.Content>
-            <Image floated='right' size='mini' src={this.props.stuff.image}/>
+            <Image floated='right' size='tiny' src={this.props.stuff.image}/>
             <Card.Header>{this.props.stuff.name}</Card.Header>
             <Card.Meta>{this.props.stuff.location}</Card.Meta>
             <Card.Meta>{this.props.stuff.time}</Card.Meta>
