@@ -1,13 +1,13 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Input, Header, Loader, Card } from 'semantic-ui-react';
+import { Container, Card, Header, Loader, Search } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
+import StuffItem from '/imports/ui/components/StuffItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import StuffItem from '/imports/ui/components/StuffItem';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class Browse extends React.Component {
+class ListStuff extends React.Component {
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -19,17 +19,15 @@ class Browse extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
-          <Input icon='search' placeholder='Search...'/>
-          <Card.group> {this.props.stuffs.map((stuff, index) => <StuffItem key={index}
-                                                                             stuff={stuff}/>)}
-                                                                             </Card.group>
+          <Search/>
+          <Card.Group>{this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff}/>)}</Card.Group>
         </Container>
     );
   }
 }
 
 /** Require an array of Stuff documents in the props. */
-Browse.propTypes = {
+ListStuff.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -42,4 +40,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(Browse);
+})(ListStuff);
