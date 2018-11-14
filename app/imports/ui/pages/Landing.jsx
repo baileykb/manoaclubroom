@@ -1,22 +1,35 @@
 import React from 'react';
-import { Grid, Image } from 'semantic-ui-react';
+import { Grid, Icon, Header } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-        <Grid verticalAlign='middle' textAlign='center' container>
+        <div className={'manoaclubroom-background-image'}>
+        <Grid Container stackable centered columns={3}>
 
-          <Grid.Column width={4}>
-            <Image size='small' circular src="/images/meteor-logo.png"/>
+          <Grid.Column textAlign={'center'}>
+          <Icon size={'huge'} name={'group'}/>
+            <Header as='h1'>Sports Club</Header>
+            <Header as='h3'>This club entails any, and everything sports related, whether you would like to talk about
+              sports or get together a group   for intramural sports, anything is welcome!</Header>
           </Grid.Column>
 
-          <Grid.Column width={8}>
-            <h1>Welcome to this template</h1>
-            <p>Now get to work and modify this app!</p>
+          <Grid.Column textAlign={'center'}>
+            <Icon size={'huge'} name={'location arrow'}/>
+            <Header as='h1'>Location</Header>
+            <Header as='h3'>We are currently Located in Kuyenkendall hall. Feel free to stop by even if
+              you are not a part of our club!</Header>
+          </Grid.Column>
+
+          <Grid.Column textAlign={'center'}>
+            <Icon size={'huge'} name={'calendar times'}/>
+            <Header as='h1'>Meeting Times</Header>
+            <Header as='h3'>We currently meet on Wednesdays at 4pm every week. </Header>
           </Grid.Column>
 
         </Grid>
+        </div>
     );
   }
 }
