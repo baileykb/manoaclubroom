@@ -24,10 +24,11 @@ class ListStuff extends React.Component {
               <Input fluid icon='search' placeholder='Search...' />
             </Grid.Column>
             <Grid.Column width={4}>
-              <Input fluid placeholder='Interests...'/>
+              <Input fluid placeholder='Interest'/>
             </Grid.Column>
           </Grid>
-          <Card.Group>{this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff}/>)}</Card.Group>
+          <Card.Group itemsPerRow={4}>{this.props.stuffs.map((stuff) => <StuffItem key={stuff._id}
+                                                                                   stuff={stuff}/>)}</Card.Group>
         </Container>
     );
   }
