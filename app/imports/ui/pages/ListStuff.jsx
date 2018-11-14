@@ -24,7 +24,7 @@ class ListStuff extends React.Component {
               <Input fluid icon='search' placeholder='Search...' />
             </Grid.Column>
             <Grid.Column width={4}>
-              <Input fluid icon='search' placeholder='Interests...' />
+              <Input fluid placeholder='Interests...'/>
             </Grid.Column>
           </Grid>
           <Card.Group>{this.props.stuffs.map((stuff) => <StuffItem key={stuff._id} stuff={stuff}/>)}</Card.Group>
