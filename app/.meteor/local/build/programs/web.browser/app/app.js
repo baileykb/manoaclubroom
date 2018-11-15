@@ -479,10 +479,10 @@ module.link("../pages/Landing", {
   }
 
 }, 7);
-let Admin;
-module.link("../pages/Browse3", {
+let ListStuffAdmin;
+module.link("../pages/ListStuffAdmin", {
   default(v) {
-    Admin = v;
+    ListStuffAdmin = v;
   }
 
 }, 8);
@@ -557,7 +557,7 @@ class App extends React.Component {
       component: AddStuff
     }), React.createElement(ProtectedRoute, {
       path: "/admin",
-      component: Admin
+      component: ListStuffAdmin
     }), React.createElement(ProtectedRoute, {
       path: "/edit/:_id",
       component: EditStuff
@@ -903,138 +903,6 @@ module.exportDefault(withTracker(() => {
 })(Browse));
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-},"Browse3.jsx":function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// imports/ui/pages/Browse3.jsx                                                                                        //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-let React;
-module.link("react", {
-  default(v) {
-    React = v;
-  }
-
-}, 0);
-let Meteor;
-module.link("meteor/meteor", {
-  Meteor(v) {
-    Meteor = v;
-  }
-
-}, 1);
-let Container, Card, Header, Loader, Input, Grid;
-module.link("semantic-ui-react", {
-  Container(v) {
-    Container = v;
-  },
-
-  Card(v) {
-    Card = v;
-  },
-
-  Header(v) {
-    Header = v;
-  },
-
-  Loader(v) {
-    Loader = v;
-  },
-
-  Input(v) {
-    Input = v;
-  },
-
-  Grid(v) {
-    Grid = v;
-  }
-
-}, 2);
-let Stuffs;
-module.link("/imports/api/stuff/stuff", {
-  Stuffs(v) {
-    Stuffs = v;
-  }
-
-}, 3);
-let StuffItem;
-module.link("/imports/ui/components/StuffItem", {
-  default(v) {
-    StuffItem = v;
-  }
-
-}, 4);
-let withTracker;
-module.link("meteor/react-meteor-data", {
-  withTracker(v) {
-    withTracker = v;
-  }
-
-}, 5);
-let PropTypes;
-module.link("prop-types", {
-  default(v) {
-    PropTypes = v;
-  }
-
-}, 6);
-
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class Browse extends React.Component {
-  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
-  render() {
-    return this.props.ready ? this.renderPage() : React.createElement(Loader, {
-      active: true
-    }, "Getting data");
-  }
-  /** Render the page once subscriptions have been received. */
-
-
-  renderPage() {
-    return React.createElement(Container, null, React.createElement(Header, {
-      as: "h2",
-      textAlign: "center"
-    }, "Admin Management Page"), React.createElement(Grid, null, React.createElement(Grid.Column, {
-      width: 8
-    }, React.createElement(Input, {
-      fluid: true,
-      icon: "search",
-      placeholder: "Search..."
-    })), React.createElement(Grid.Column, {
-      width: 4
-    }, React.createElement(Input, {
-      fluid: true,
-      placeholder: "Interest"
-    }))), React.createElement(Card.Group, {
-      itemsPerRow: 4
-    }, this.props.stuffs.map(stuff => React.createElement(StuffItem, {
-      key: stuff._id,
-      stuff: stuff
-    }))));
-  }
-
-}
-/** Require an array of Stuff documents in the props. */
-
-
-Browse.propTypes = {
-  stuffs: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired
-};
-/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-
-module.exportDefault(withTracker(() => {
-  // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
-  return {
-    stuffs: Stuffs.find({}).fetch(),
-    ready: subscription.ready()
-  };
-})(Browse));
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 },"EditStuff.jsx":function(require,exports,module){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1313,6 +1181,81 @@ class Landing extends React.Component {
 }
 
 module.exportDefault(Landing);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"ListStuffAdmin.jsx":function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// imports/ui/pages/ListStuffAdmin.jsx                                                                                 //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+module.export({
+  default: () => ListClubsAdmin
+});
+let React;
+module.link("react", {
+  default(v) {
+    React = v;
+  }
+
+}, 0);
+let Container, Card, Image, Button;
+module.link("semantic-ui-react", {
+  Container(v) {
+    Container = v;
+  },
+
+  Card(v) {
+    Card = v;
+  },
+
+  Image(v) {
+    Image = v;
+  },
+
+  Button(v) {
+    Button = v;
+  }
+
+}, 1);
+
+class ListClubsAdmin extends React.Component {
+  render() {
+    const divStyle = {
+      padding: '15px'
+    };
+    return React.createElement(Container, null, React.createElement(Button, null, "Add"), React.createElement(Card.Group, {
+      style: divStyle
+    }, React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+      size: "mini",
+      floated: "right",
+      src: "/images/ACM.png"
+    }), React.createElement(Card.Header, null, "ACM"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ POST 127"), React.createElement(Card.Description, null, "Association for Computing Machinery")), React.createElement(Card.Content, {
+      extra: true
+    }, "Computer Science"), React.createElement(Card.Content, {
+      extra: true
+    }, React.createElement(Button, null, "Edit"))), React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+      size: "mini",
+      floated: "right",
+      src: "/images/music.jpg"
+    }), React.createElement(Card.Header, null, "Music Club"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ Music Building"), React.createElement(Card.Description, null, "Club for people interested in music")), React.createElement(Card.Content, {
+      extra: true
+    }, "Music"), React.createElement(Card.Content, {
+      extra: true
+    }, React.createElement(Button, null, "Edit"))), React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+      size: "mini",
+      floated: "right",
+      src: "/images/pre-med.jpg"
+    }), React.createElement(Card.Header, null, "Pre-Med"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ BioMed Bldg"), React.createElement(Card.Description, null, "Club for pre-med students")), React.createElement(Card.Content, {
+      extra: true
+    }, "Pre-med"), React.createElement(Card.Content, {
+      extra: true
+    }, React.createElement(Button, null, "Edit")))));
+  }
+
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"NotFound.jsx":function(require,exports,module){

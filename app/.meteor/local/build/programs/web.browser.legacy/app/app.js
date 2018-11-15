@@ -508,10 +508,10 @@ module.link("../pages/Landing", {
     Landing = v;
   }
 }, 7);
-var Admin;
-module.link("../pages/Browse3", {
+var ListStuffAdmin;
+module.link("../pages/ListStuffAdmin", {
   "default": function (v) {
-    Admin = v;
+    ListStuffAdmin = v;
   }
 }, 8);
 var Browse;
@@ -589,7 +589,7 @@ function (_React$Component) {
         component: AddStuff
       }), React.createElement(ProtectedRoute, {
         path: "/admin",
-        component: Admin
+        component: ListStuffAdmin
       }), React.createElement(ProtectedRoute, {
         path: "/edit/:_id",
         component: EditStuff
@@ -961,151 +961,6 @@ module.exportDefault(withTracker(function () {
 })(Browse));
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-},"Browse3.jsx":function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// imports/ui/pages/Browse3.jsx                                                                                        //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
-
-var React;
-module.link("react", {
-  "default": function (v) {
-    React = v;
-  }
-}, 0);
-var Meteor;
-module.link("meteor/meteor", {
-  Meteor: function (v) {
-    Meteor = v;
-  }
-}, 1);
-var Container, Card, Header, Loader, Input, Grid;
-module.link("semantic-ui-react", {
-  Container: function (v) {
-    Container = v;
-  },
-  Card: function (v) {
-    Card = v;
-  },
-  Header: function (v) {
-    Header = v;
-  },
-  Loader: function (v) {
-    Loader = v;
-  },
-  Input: function (v) {
-    Input = v;
-  },
-  Grid: function (v) {
-    Grid = v;
-  }
-}, 2);
-var Stuffs;
-module.link("/imports/api/stuff/stuff", {
-  Stuffs: function (v) {
-    Stuffs = v;
-  }
-}, 3);
-var StuffItem;
-module.link("/imports/ui/components/StuffItem", {
-  "default": function (v) {
-    StuffItem = v;
-  }
-}, 4);
-var withTracker;
-module.link("meteor/react-meteor-data", {
-  withTracker: function (v) {
-    withTracker = v;
-  }
-}, 5);
-var PropTypes;
-module.link("prop-types", {
-  "default": function (v) {
-    PropTypes = v;
-  }
-}, 6);
-
-/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-var Browse =
-/*#__PURE__*/
-function (_React$Component) {
-  (0, _inheritsLoose2.default)(Browse, _React$Component);
-
-  function Browse() {
-    return _React$Component.apply(this, arguments) || this;
-  }
-
-  var _proto = Browse.prototype;
-
-  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
-  _proto.render = function () {
-    function render() {
-      return this.props.ready ? this.renderPage() : React.createElement(Loader, {
-        active: true
-      }, "Getting data");
-    }
-
-    return render;
-  }();
-  /** Render the page once subscriptions have been received. */
-
-
-  _proto.renderPage = function () {
-    function renderPage() {
-      return React.createElement(Container, null, React.createElement(Header, {
-        as: "h2",
-        textAlign: "center"
-      }, "Admin Management Page"), React.createElement(Grid, null, React.createElement(Grid.Column, {
-        width: 8
-      }, React.createElement(Input, {
-        fluid: true,
-        icon: "search",
-        placeholder: "Search..."
-      })), React.createElement(Grid.Column, {
-        width: 4
-      }, React.createElement(Input, {
-        fluid: true,
-        placeholder: "Interest"
-      }))), React.createElement(Card.Group, {
-        itemsPerRow: 4
-      }, this.props.stuffs.map(function (stuff) {
-        return React.createElement(StuffItem, {
-          key: stuff._id,
-          stuff: stuff
-        });
-      })));
-    }
-
-    return renderPage;
-  }();
-
-  return Browse;
-}(React.Component);
-/** Require an array of Stuff documents in the props. */
-
-
-Browse.propTypes = {
-  stuffs: PropTypes.array.isRequired,
-  ready: PropTypes.bool.isRequired
-};
-/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
-
-module.exportDefault(withTracker(function () {
-  // Get access to Stuff documents.
-  var subscription = Meteor.subscribe('Stuff');
-  return {
-    stuffs: Stuffs.find({}).fetch(),
-    ready: subscription.ready()
-  };
-})(Browse));
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
 },"EditStuff.jsx":function(require,exports,module){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1406,6 +1261,97 @@ function (_React$Component) {
 }(React.Component);
 
 module.exportDefault(Landing);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"ListStuffAdmin.jsx":function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// imports/ui/pages/ListStuffAdmin.jsx                                                                                 //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
+
+module.export({
+  "default": function () {
+    return ListClubsAdmin;
+  }
+});
+var React;
+module.link("react", {
+  "default": function (v) {
+    React = v;
+  }
+}, 0);
+var Container, Card, Image, Button;
+module.link("semantic-ui-react", {
+  Container: function (v) {
+    Container = v;
+  },
+  Card: function (v) {
+    Card = v;
+  },
+  Image: function (v) {
+    Image = v;
+  },
+  Button: function (v) {
+    Button = v;
+  }
+}, 1);
+
+var ListClubsAdmin =
+/*#__PURE__*/
+function (_React$Component) {
+  (0, _inheritsLoose2.default)(ListClubsAdmin, _React$Component);
+
+  function ListClubsAdmin() {
+    return _React$Component.apply(this, arguments) || this;
+  }
+
+  var _proto = ListClubsAdmin.prototype;
+
+  _proto.render = function () {
+    function render() {
+      var divStyle = {
+        padding: '15px'
+      };
+      return React.createElement(Container, null, React.createElement(Button, null, "Add"), React.createElement(Card.Group, {
+        style: divStyle
+      }, React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+        size: "mini",
+        floated: "right",
+        src: "/images/ACM.png"
+      }), React.createElement(Card.Header, null, "ACM"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ POST 127"), React.createElement(Card.Description, null, "Association for Computing Machinery")), React.createElement(Card.Content, {
+        extra: true
+      }, "Computer Science"), React.createElement(Card.Content, {
+        extra: true
+      }, React.createElement(Button, null, "Edit"))), React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+        size: "mini",
+        floated: "right",
+        src: "/images/music.jpg"
+      }), React.createElement(Card.Header, null, "Music Club"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ Music Building"), React.createElement(Card.Description, null, "Club for people interested in music")), React.createElement(Card.Content, {
+        extra: true
+      }, "Music"), React.createElement(Card.Content, {
+        extra: true
+      }, React.createElement(Button, null, "Edit"))), React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+        size: "mini",
+        floated: "right",
+        src: "/images/pre-med.jpg"
+      }), React.createElement(Card.Header, null, "Pre-Med"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ BioMed Bldg"), React.createElement(Card.Description, null, "Club for pre-med students")), React.createElement(Card.Content, {
+        extra: true
+      }, "Pre-med"), React.createElement(Card.Content, {
+        extra: true
+      }, React.createElement(Button, null, "Edit")))));
+    }
+
+    return render;
+  }();
+
+  return ListClubsAdmin;
+}(React.Component);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"NotFound.jsx":function(require,exports,module){
