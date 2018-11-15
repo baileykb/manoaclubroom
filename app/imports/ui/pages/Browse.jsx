@@ -1,7 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Search, Header, Loader } from 'semantic-ui-react';
+import { Container, Card, Header, Loader, Input, Grid } from 'semantic-ui-react';
 import { Stuffs } from '/imports/api/stuff/stuff';
+import StuffItem from '/imports/ui/components/StuffItem';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
@@ -18,7 +19,16 @@ class Browse extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
-          <Search/>
+          <Grid>
+            <Grid.Column width={8}>
+              <Input fluid icon='search' placeholder='Search...' />
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Input fluid placeholder='Interest'/>
+            </Grid.Column>
+          </Grid>
+          <Card.Group itemsPerRow={4}>{this.props.stuffs.map((stuff) => <StuffItem key={stuff._id}
+                                                                                   stuff={stuff}/>)}</Card.Group>
         </Container>
     );
   }
