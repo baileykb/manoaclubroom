@@ -4,3 +4,22 @@
 settings.production.json
 node_modules/
 npm-debug.log
+
+
+# Created by https://www.gitignore.io/api/meteorjs
+# Edit at https://www.gitignore.io/?templates=meteorjs
+
+### MeteorJS ###
+# default meteor build and local packages
+.meteor/local
+
+# meteor settings file
+settings.json
+
+# meteor build output files
+*.tar.gz
+
+# general swp files from vim
+*.swp
+
+# End of https://www.gitignore.io/api/meteorjs
