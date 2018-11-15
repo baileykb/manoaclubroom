@@ -812,12 +812,12 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=e6bef77205155bdc76bc739308f6e52def8ffe78",
+      "url": "/app/app.js?hash=11ee9c8acdea5e1c913c5e78d1ba848541100ef6",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/e6bef77205155bdc76bc739308f6e52def8ffe78.map",
-      "size": 61584,
-      "hash": "e6bef77205155bdc76bc739308f6e52def8ffe78",
-      "sri": "YbUspDQIYWXafFqI5FG4Oc5rB5rZHU5VysvIGPziu74tffK5F9L9a2aKeoWQ3DOs0cU9rp39I4Sw5HsToV6utQ=="
+      "sourceMapUrl": "/app/11ee9c8acdea5e1c913c5e78d1ba848541100ef6.map",
+      "size": 61592,
+      "hash": "11ee9c8acdea5e1c913c5e78d1ba848541100ef6",
+      "sri": "woNQbNre1ybF38PTZEnZokvmnoq5tpM293/dzZRCwt5pL4nVdI6lRpCC1o1+B6YZiRdikQ06ByFo38bIkxMDOg=="
     },
     {
       "path": "packages/service-configuration.js",
@@ -834,12 +834,12 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=a3abbadb7a679b159126f1e237968bc8d81de0b2",
+      "url": "/merged-stylesheets.css?hash=f1b7fe956427eeae01e75b281bcdf67e11518790",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/a3abbadb7a679b159126f1e237968bc8d81de0b2.map",
+      "sourceMapUrl": "/f1b7fe956427eeae01e75b281bcdf67e11518790.map",
       "size": 37665,
-      "hash": "a3abbadb7a679b159126f1e237968bc8d81de0b2",
-      "sri": "N6gtUsKfrhGxZj818NJikIrz23NoxtGnzVcpuCofi/7w3TdRLPaYrvtq/CHkHFeJAE5COcWNixCMbTSp6vjiuw=="
+      "hash": "f1b7fe956427eeae01e75b281bcdf67e11518790",
+      "sri": "Wu91R1Ml0rm6V9icmIgB1h38Rq1mVR2e+V5KgQS92FZNTshf8TGqF67uB6M3g7FMFX2Sl10SUUQD30zvEqfElg=="
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -910,6 +910,16 @@
       "size": 8008562,
       "hash": "a816bd90ce11906f55a221f69867971345926be4",
       "sri": "hozuZBVMKziEB6gg1X32UMXfygFCfDmpApXXecU9/R/eVWyEumhYtclvbW9jeNjGoGgAJ1573KAOHtgcNL/h5A=="
+    },
+    {
+      "path": "app/images/landing2.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/landing2.png",
+      "size": 1397754,
+      "hash": "d65969fd2a25e7869ae82573c21df83d2980f283",
+      "sri": "1c7z8h670mEF5gpWbQxDqW7NA6z5tlEpeIOrpgFsxYhPJCi/oBQ8Wdfwd/vOocelX5CBTAH+N95ynLy6h+DiPQ=="
     },
     {
       "path": "app/images/landing_original.jpg",

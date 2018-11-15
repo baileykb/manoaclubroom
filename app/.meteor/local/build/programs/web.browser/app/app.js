@@ -257,7 +257,7 @@ class NavBar extends React.Component {
       to: "/"
     }, React.createElement(Header, {
       as: "h1"
-    }, "Manoa Club")), this.props.currentUser ? [React.createElement(Menu.Item, {
+    }, "Manoa Club Room")), this.props.currentUser ? [React.createElement(Menu.Item, {
       as: NavLink,
       activeClassName: "active",
       exact: true,
@@ -269,7 +269,7 @@ class NavBar extends React.Component {
       exact: true,
       to: "/list",
       key: "list"
-    }, "List Club")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
+    }, "List of Club")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
       as: NavLink,
       activeClassName: "active",
       exact: true,
