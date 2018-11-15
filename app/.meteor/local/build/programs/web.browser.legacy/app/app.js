@@ -282,19 +282,19 @@ function (_React$Component) {
         exact: true,
         to: "/add",
         key: "add"
-      }, "Add Stuff"), React.createElement(Menu.Item, {
+      }, "Add Club"), React.createElement(Menu.Item, {
         as: NavLink,
         activeClassName: "active",
         exact: true,
         to: "/list",
         key: "list"
-      }, "List Stuff")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
+      }, "List Club")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
         as: NavLink,
         activeClassName: "active",
         exact: true,
         to: "/admin",
         key: "admin"
-      }, "Admin") : '', React.createElement(Menu.Item, {
+      }, "Admin Manage Page") : '', React.createElement(Menu.Item, {
         position: "right"
       }, this.props.currentUser === '' ? React.createElement(Dropdown, {
         text: "Login",
@@ -508,48 +508,54 @@ module.link("../pages/Landing", {
     Landing = v;
   }
 }, 7);
+var Admin;
+module.link("../pages/Browse3", {
+  "default": function (v) {
+    Admin = v;
+  }
+}, 8);
 var Browse;
 module.link("../pages/Browse", {
   "default": function (v) {
     Browse = v;
   }
-}, 8);
+}, 9);
 var AddStuff;
-module.link("../pages/AddStuff", {
+module.link("../pages/Browse2", {
   "default": function (v) {
     AddStuff = v;
   }
-}, 9);
+}, 10);
 var EditStuff;
 module.link("../pages/EditStuff", {
   "default": function (v) {
     EditStuff = v;
   }
-}, 10);
+}, 11);
 var NotFound;
 module.link("../pages/NotFound", {
   "default": function (v) {
     NotFound = v;
   }
-}, 11);
+}, 12);
 var Signin;
 module.link("../pages/Signin", {
   "default": function (v) {
     Signin = v;
   }
-}, 12);
+}, 13);
 var Signup;
 module.link("../pages/Signup", {
   "default": function (v) {
     Signup = v;
   }
-}, 13);
+}, 14);
 var Signout;
 module.link("../pages/Signout", {
   "default": function (v) {
     Signout = v;
   }
-}, 14);
+}, 15);
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 var App =
@@ -581,6 +587,9 @@ function (_React$Component) {
       }), React.createElement(ProtectedRoute, {
         path: "/add",
         component: AddStuff
+      }), React.createElement(ProtectedRoute, {
+        path: "/admin",
+        component: Admin
       }), React.createElement(ProtectedRoute, {
         path: "/edit/:_id",
         component: EditStuff
@@ -662,204 +671,7 @@ AdminProtectedRoute.propTypes = {
 module.exportDefault(App);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}},"pages":{"AddStuff.jsx":function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// imports/ui/pages/AddStuff.jsx                                                                                       //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
-
-var _assertThisInitialized2 = _interopRequireDefault(require("@babel/runtime/helpers/assertThisInitialized"));
-
-var React;
-module.link("react", {
-  "default": function (v) {
-    React = v;
-  }
-}, 0);
-var Stuffs, StuffSchema;
-module.link("/imports/api/stuff/stuff", {
-  Stuffs: function (v) {
-    Stuffs = v;
-  },
-  StuffSchema: function (v) {
-    StuffSchema = v;
-  }
-}, 1);
-var Grid, Segment, Header;
-module.link("semantic-ui-react", {
-  Grid: function (v) {
-    Grid = v;
-  },
-  Segment: function (v) {
-    Segment = v;
-  },
-  Header: function (v) {
-    Header = v;
-  }
-}, 2);
-var AutoForm;
-module.link("uniforms-semantic/AutoForm", {
-  "default": function (v) {
-    AutoForm = v;
-  }
-}, 3);
-var TextField;
-module.link("uniforms-semantic/TextField", {
-  "default": function (v) {
-    TextField = v;
-  }
-}, 4);
-var NumField;
-module.link("uniforms-semantic/NumField", {
-  "default": function (v) {
-    NumField = v;
-  }
-}, 5);
-var SelectField;
-module.link("uniforms-semantic/SelectField", {
-  "default": function (v) {
-    SelectField = v;
-  }
-}, 6);
-var SubmitField;
-module.link("uniforms-semantic/SubmitField", {
-  "default": function (v) {
-    SubmitField = v;
-  }
-}, 7);
-var HiddenField;
-module.link("uniforms-semantic/HiddenField", {
-  "default": function (v) {
-    HiddenField = v;
-  }
-}, 8);
-var ErrorsField;
-module.link("uniforms-semantic/ErrorsField", {
-  "default": function (v) {
-    ErrorsField = v;
-  }
-}, 9);
-var Bert;
-module.link("meteor/themeteorchef:bert", {
-  Bert: function (v) {
-    Bert = v;
-  }
-}, 10);
-var Meteor;
-module.link("meteor/meteor", {
-  Meteor: function (v) {
-    Meteor = v;
-  }
-}, 11);
-
-/** Renders the Page for adding a document. */
-var AddStuff =
-/*#__PURE__*/
-function (_React$Component) {
-  (0, _inheritsLoose2.default)(AddStuff, _React$Component);
-
-  /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
-  function AddStuff(props) {
-    var _this;
-
-    _this = _React$Component.call(this, props) || this;
-    _this.submit = _this.submit.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-    _this.insertCallback = _this.insertCallback.bind((0, _assertThisInitialized2.default)((0, _assertThisInitialized2.default)(_this)));
-    _this.formRef = null;
-    return _this;
-  }
-  /** Notify the user of the results of the submit. If successful, clear the form. */
-
-
-  var _proto = AddStuff.prototype;
-
-  _proto.insertCallback = function () {
-    function insertCallback(error) {
-      if (error) {
-        Bert.alert({
-          type: 'danger',
-          message: "Add failed: " + error.message
-        });
-      } else {
-        Bert.alert({
-          type: 'success',
-          message: 'Add succeeded'
-        });
-        this.formRef.reset();
-      }
-    }
-
-    return insertCallback;
-  }();
-  /** On submit, insert the data. */
-
-
-  _proto.submit = function () {
-    function submit(data) {
-      var name = data.name,
-          quantity = data.quantity,
-          condition = data.condition;
-      var owner = Meteor.user().username;
-      Stuffs.insert({
-        name: name,
-        quantity: quantity,
-        condition: condition,
-        owner: owner
-      }, this.insertCallback);
-    }
-
-    return submit;
-  }();
-  /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
-
-
-  _proto.render = function () {
-    function render() {
-      var _this2 = this;
-
-      return React.createElement(Grid, {
-        container: true,
-        centered: true
-      }, React.createElement(Grid.Column, null, React.createElement(Header, {
-        as: "h2",
-        textAlign: "center"
-      }, "Add Stuff"), React.createElement(AutoForm, {
-        ref: function (ref) {
-          _this2.formRef = ref;
-        },
-        schema: StuffSchema,
-        onSubmit: this.submit
-      }, React.createElement(Segment, null, React.createElement(TextField, {
-        name: "name"
-      }), React.createElement(NumField, {
-        name: "quantity",
-        decimal: false
-      }), React.createElement(SelectField, {
-        name: "condition"
-      }), React.createElement(SubmitField, {
-        value: "Submit"
-      }), React.createElement(ErrorsField, null), React.createElement(HiddenField, {
-        name: "owner",
-        value: "fakeuser@foo.com"
-      })))));
-    }
-
-    return render;
-  }();
-
-  return AddStuff;
-}(React.Component);
-
-module.exportDefault(AddStuff);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-},"Browse.jsx":function(require,exports,module){
+}},"pages":{"Browse.jsx":function(require,exports,module){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                     //
@@ -960,6 +772,296 @@ function (_React$Component) {
         as: "h2",
         textAlign: "center"
       }, "Browse"), React.createElement(Grid, null, React.createElement(Grid.Column, {
+        width: 8
+      }, React.createElement(Input, {
+        fluid: true,
+        icon: "search",
+        placeholder: "Search..."
+      })), React.createElement(Grid.Column, {
+        width: 4
+      }, React.createElement(Input, {
+        fluid: true,
+        placeholder: "Interest"
+      }))), React.createElement(Card.Group, {
+        itemsPerRow: 4
+      }, this.props.stuffs.map(function (stuff) {
+        return React.createElement(StuffItem, {
+          key: stuff._id,
+          stuff: stuff
+        });
+      })));
+    }
+
+    return renderPage;
+  }();
+
+  return Browse;
+}(React.Component);
+/** Require an array of Stuff documents in the props. */
+
+
+Browse.propTypes = {
+  stuffs: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired
+};
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+
+module.exportDefault(withTracker(function () {
+  // Get access to Stuff documents.
+  var subscription = Meteor.subscribe('Stuff');
+  return {
+    stuffs: Stuffs.find({}).fetch(),
+    ready: subscription.ready()
+  };
+})(Browse));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"Browse2.jsx":function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// imports/ui/pages/Browse2.jsx                                                                                        //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
+
+var React;
+module.link("react", {
+  "default": function (v) {
+    React = v;
+  }
+}, 0);
+var Meteor;
+module.link("meteor/meteor", {
+  Meteor: function (v) {
+    Meteor = v;
+  }
+}, 1);
+var Container, Card, Header, Loader, Input, Grid;
+module.link("semantic-ui-react", {
+  Container: function (v) {
+    Container = v;
+  },
+  Card: function (v) {
+    Card = v;
+  },
+  Header: function (v) {
+    Header = v;
+  },
+  Loader: function (v) {
+    Loader = v;
+  },
+  Input: function (v) {
+    Input = v;
+  },
+  Grid: function (v) {
+    Grid = v;
+  }
+}, 2);
+var Stuffs;
+module.link("/imports/api/stuff/stuff", {
+  Stuffs: function (v) {
+    Stuffs = v;
+  }
+}, 3);
+var StuffItem;
+module.link("/imports/ui/components/StuffItem", {
+  "default": function (v) {
+    StuffItem = v;
+  }
+}, 4);
+var withTracker;
+module.link("meteor/react-meteor-data", {
+  withTracker: function (v) {
+    withTracker = v;
+  }
+}, 5);
+var PropTypes;
+module.link("prop-types", {
+  "default": function (v) {
+    PropTypes = v;
+  }
+}, 6);
+
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+var Browse =
+/*#__PURE__*/
+function (_React$Component) {
+  (0, _inheritsLoose2.default)(Browse, _React$Component);
+
+  function Browse() {
+    return _React$Component.apply(this, arguments) || this;
+  }
+
+  var _proto = Browse.prototype;
+
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
+  _proto.render = function () {
+    function render() {
+      return this.props.ready ? this.renderPage() : React.createElement(Loader, {
+        active: true
+      }, "Getting data");
+    }
+
+    return render;
+  }();
+  /** Render the page once subscriptions have been received. */
+
+
+  _proto.renderPage = function () {
+    function renderPage() {
+      return React.createElement(Container, null, React.createElement(Header, {
+        as: "h2",
+        textAlign: "center"
+      }, "Add Club"), React.createElement(Grid, null, React.createElement(Grid.Column, {
+        width: 8
+      }, React.createElement(Input, {
+        fluid: true,
+        icon: "search",
+        placeholder: "Search..."
+      })), React.createElement(Grid.Column, {
+        width: 4
+      }, React.createElement(Input, {
+        fluid: true,
+        placeholder: "Interest"
+      }))), React.createElement(Card.Group, {
+        itemsPerRow: 4
+      }, this.props.stuffs.map(function (stuff) {
+        return React.createElement(StuffItem, {
+          key: stuff._id,
+          stuff: stuff
+        });
+      })));
+    }
+
+    return renderPage;
+  }();
+
+  return Browse;
+}(React.Component);
+/** Require an array of Stuff documents in the props. */
+
+
+Browse.propTypes = {
+  stuffs: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired
+};
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+
+module.exportDefault(withTracker(function () {
+  // Get access to Stuff documents.
+  var subscription = Meteor.subscribe('Stuff');
+  return {
+    stuffs: Stuffs.find({}).fetch(),
+    ready: subscription.ready()
+  };
+})(Browse));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"Browse3.jsx":function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// imports/ui/pages/Browse3.jsx                                                                                        //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
+var _inheritsLoose2 = _interopRequireDefault(require("@babel/runtime/helpers/inheritsLoose"));
+
+var React;
+module.link("react", {
+  "default": function (v) {
+    React = v;
+  }
+}, 0);
+var Meteor;
+module.link("meteor/meteor", {
+  Meteor: function (v) {
+    Meteor = v;
+  }
+}, 1);
+var Container, Card, Header, Loader, Input, Grid;
+module.link("semantic-ui-react", {
+  Container: function (v) {
+    Container = v;
+  },
+  Card: function (v) {
+    Card = v;
+  },
+  Header: function (v) {
+    Header = v;
+  },
+  Loader: function (v) {
+    Loader = v;
+  },
+  Input: function (v) {
+    Input = v;
+  },
+  Grid: function (v) {
+    Grid = v;
+  }
+}, 2);
+var Stuffs;
+module.link("/imports/api/stuff/stuff", {
+  Stuffs: function (v) {
+    Stuffs = v;
+  }
+}, 3);
+var StuffItem;
+module.link("/imports/ui/components/StuffItem", {
+  "default": function (v) {
+    StuffItem = v;
+  }
+}, 4);
+var withTracker;
+module.link("meteor/react-meteor-data", {
+  withTracker: function (v) {
+    withTracker = v;
+  }
+}, 5);
+var PropTypes;
+module.link("prop-types", {
+  "default": function (v) {
+    PropTypes = v;
+  }
+}, 6);
+
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+var Browse =
+/*#__PURE__*/
+function (_React$Component) {
+  (0, _inheritsLoose2.default)(Browse, _React$Component);
+
+  function Browse() {
+    return _React$Component.apply(this, arguments) || this;
+  }
+
+  var _proto = Browse.prototype;
+
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
+  _proto.render = function () {
+    function render() {
+      return this.props.ready ? this.renderPage() : React.createElement(Loader, {
+        active: true
+      }, "Getting data");
+    }
+
+    return render;
+  }();
+  /** Render the page once subscriptions have been received. */
+
+
+  _proto.renderPage = function () {
+    function renderPage() {
+      return React.createElement(Container, null, React.createElement(Header, {
+        as: "h2",
+        textAlign: "center"
+      }, "Admin Management Page"), React.createElement(Grid, null, React.createElement(Grid.Column, {
         width: 8
       }, React.createElement(Input, {
         fluid: true,

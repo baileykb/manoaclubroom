@@ -263,19 +263,19 @@ class NavBar extends React.Component {
       exact: true,
       to: "/add",
       key: "add"
-    }, "Add Stuff"), React.createElement(Menu.Item, {
+    }, "Add Club"), React.createElement(Menu.Item, {
       as: NavLink,
       activeClassName: "active",
       exact: true,
       to: "/list",
       key: "list"
-    }, "List Stuff")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
+    }, "List Club")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
       as: NavLink,
       activeClassName: "active",
       exact: true,
       to: "/admin",
       key: "admin"
-    }, "Admin") : '', React.createElement(Menu.Item, {
+    }, "Admin Manage Page") : '', React.createElement(Menu.Item, {
       position: "right"
     }, this.props.currentUser === '' ? React.createElement(Dropdown, {
       text: "Login",
@@ -479,55 +479,62 @@ module.link("../pages/Landing", {
   }
 
 }, 7);
+let Admin;
+module.link("../pages/Browse3", {
+  default(v) {
+    Admin = v;
+  }
+
+}, 8);
 let Browse;
 module.link("../pages/Browse", {
   default(v) {
     Browse = v;
   }
 
-}, 8);
+}, 9);
 let AddStuff;
-module.link("../pages/AddStuff", {
+module.link("../pages/Browse2", {
   default(v) {
     AddStuff = v;
   }
 
-}, 9);
+}, 10);
 let EditStuff;
 module.link("../pages/EditStuff", {
   default(v) {
     EditStuff = v;
   }
 
-}, 10);
+}, 11);
 let NotFound;
 module.link("../pages/NotFound", {
   default(v) {
     NotFound = v;
   }
 
-}, 11);
+}, 12);
 let Signin;
 module.link("../pages/Signin", {
   default(v) {
     Signin = v;
   }
 
-}, 12);
+}, 13);
 let Signup;
 module.link("../pages/Signup", {
   default(v) {
     Signup = v;
   }
 
-}, 13);
+}, 14);
 let Signout;
 module.link("../pages/Signout", {
   default(v) {
     Signout = v;
   }
 
-}, 14);
+}, 15);
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -548,6 +555,9 @@ class App extends React.Component {
     }), React.createElement(ProtectedRoute, {
       path: "/add",
       component: AddStuff
+    }), React.createElement(ProtectedRoute, {
+      path: "/admin",
+      component: Admin
     }), React.createElement(ProtectedRoute, {
       path: "/edit/:_id",
       component: EditStuff
@@ -629,191 +639,7 @@ AdminProtectedRoute.propTypes = {
 module.exportDefault(App);
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-}},"pages":{"AddStuff.jsx":function(require,exports,module){
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//                                                                                                                     //
-// imports/ui/pages/AddStuff.jsx                                                                                       //
-//                                                                                                                     //
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-                                                                                                                       //
-let React;
-module.link("react", {
-  default(v) {
-    React = v;
-  }
-
-}, 0);
-let Stuffs, StuffSchema;
-module.link("/imports/api/stuff/stuff", {
-  Stuffs(v) {
-    Stuffs = v;
-  },
-
-  StuffSchema(v) {
-    StuffSchema = v;
-  }
-
-}, 1);
-let Grid, Segment, Header;
-module.link("semantic-ui-react", {
-  Grid(v) {
-    Grid = v;
-  },
-
-  Segment(v) {
-    Segment = v;
-  },
-
-  Header(v) {
-    Header = v;
-  }
-
-}, 2);
-let AutoForm;
-module.link("uniforms-semantic/AutoForm", {
-  default(v) {
-    AutoForm = v;
-  }
-
-}, 3);
-let TextField;
-module.link("uniforms-semantic/TextField", {
-  default(v) {
-    TextField = v;
-  }
-
-}, 4);
-let NumField;
-module.link("uniforms-semantic/NumField", {
-  default(v) {
-    NumField = v;
-  }
-
-}, 5);
-let SelectField;
-module.link("uniforms-semantic/SelectField", {
-  default(v) {
-    SelectField = v;
-  }
-
-}, 6);
-let SubmitField;
-module.link("uniforms-semantic/SubmitField", {
-  default(v) {
-    SubmitField = v;
-  }
-
-}, 7);
-let HiddenField;
-module.link("uniforms-semantic/HiddenField", {
-  default(v) {
-    HiddenField = v;
-  }
-
-}, 8);
-let ErrorsField;
-module.link("uniforms-semantic/ErrorsField", {
-  default(v) {
-    ErrorsField = v;
-  }
-
-}, 9);
-let Bert;
-module.link("meteor/themeteorchef:bert", {
-  Bert(v) {
-    Bert = v;
-  }
-
-}, 10);
-let Meteor;
-module.link("meteor/meteor", {
-  Meteor(v) {
-    Meteor = v;
-  }
-
-}, 11);
-
-/** Renders the Page for adding a document. */
-class AddStuff extends React.Component {
-  /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
-  constructor(props) {
-    super(props);
-    this.submit = this.submit.bind(this);
-    this.insertCallback = this.insertCallback.bind(this);
-    this.formRef = null;
-  }
-  /** Notify the user of the results of the submit. If successful, clear the form. */
-
-
-  insertCallback(error) {
-    if (error) {
-      Bert.alert({
-        type: 'danger',
-        message: "Add failed: ".concat(error.message)
-      });
-    } else {
-      Bert.alert({
-        type: 'success',
-        message: 'Add succeeded'
-      });
-      this.formRef.reset();
-    }
-  }
-  /** On submit, insert the data. */
-
-
-  submit(data) {
-    const {
-      name,
-      quantity,
-      condition
-    } = data;
-    const owner = Meteor.user().username;
-    Stuffs.insert({
-      name,
-      quantity,
-      condition,
-      owner
-    }, this.insertCallback);
-  }
-  /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
-
-
-  render() {
-    return React.createElement(Grid, {
-      container: true,
-      centered: true
-    }, React.createElement(Grid.Column, null, React.createElement(Header, {
-      as: "h2",
-      textAlign: "center"
-    }, "Add Stuff"), React.createElement(AutoForm, {
-      ref: ref => {
-        this.formRef = ref;
-      },
-      schema: StuffSchema,
-      onSubmit: this.submit
-    }, React.createElement(Segment, null, React.createElement(TextField, {
-      name: "name"
-    }), React.createElement(NumField, {
-      name: "quantity",
-      decimal: false
-    }), React.createElement(SelectField, {
-      name: "condition"
-    }), React.createElement(SubmitField, {
-      value: "Submit"
-    }), React.createElement(ErrorsField, null), React.createElement(HiddenField, {
-      name: "owner",
-      value: "fakeuser@foo.com"
-    })))));
-  }
-
-}
-
-module.exportDefault(AddStuff);
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-},"Browse.jsx":function(require,exports,module){
+}},"pages":{"Browse.jsx":function(require,exports,module){
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //                                                                                                                     //
@@ -907,6 +733,270 @@ class Browse extends React.Component {
       as: "h2",
       textAlign: "center"
     }, "Browse"), React.createElement(Grid, null, React.createElement(Grid.Column, {
+      width: 8
+    }, React.createElement(Input, {
+      fluid: true,
+      icon: "search",
+      placeholder: "Search..."
+    })), React.createElement(Grid.Column, {
+      width: 4
+    }, React.createElement(Input, {
+      fluid: true,
+      placeholder: "Interest"
+    }))), React.createElement(Card.Group, {
+      itemsPerRow: 4
+    }, this.props.stuffs.map(stuff => React.createElement(StuffItem, {
+      key: stuff._id,
+      stuff: stuff
+    }))));
+  }
+
+}
+/** Require an array of Stuff documents in the props. */
+
+
+Browse.propTypes = {
+  stuffs: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired
+};
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+
+module.exportDefault(withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Stuff');
+  return {
+    stuffs: Stuffs.find({}).fetch(),
+    ready: subscription.ready()
+  };
+})(Browse));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"Browse2.jsx":function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// imports/ui/pages/Browse2.jsx                                                                                        //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+let React;
+module.link("react", {
+  default(v) {
+    React = v;
+  }
+
+}, 0);
+let Meteor;
+module.link("meteor/meteor", {
+  Meteor(v) {
+    Meteor = v;
+  }
+
+}, 1);
+let Container, Card, Header, Loader, Input, Grid;
+module.link("semantic-ui-react", {
+  Container(v) {
+    Container = v;
+  },
+
+  Card(v) {
+    Card = v;
+  },
+
+  Header(v) {
+    Header = v;
+  },
+
+  Loader(v) {
+    Loader = v;
+  },
+
+  Input(v) {
+    Input = v;
+  },
+
+  Grid(v) {
+    Grid = v;
+  }
+
+}, 2);
+let Stuffs;
+module.link("/imports/api/stuff/stuff", {
+  Stuffs(v) {
+    Stuffs = v;
+  }
+
+}, 3);
+let StuffItem;
+module.link("/imports/ui/components/StuffItem", {
+  default(v) {
+    StuffItem = v;
+  }
+
+}, 4);
+let withTracker;
+module.link("meteor/react-meteor-data", {
+  withTracker(v) {
+    withTracker = v;
+  }
+
+}, 5);
+let PropTypes;
+module.link("prop-types", {
+  default(v) {
+    PropTypes = v;
+  }
+
+}, 6);
+
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+class Browse extends React.Component {
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
+  render() {
+    return this.props.ready ? this.renderPage() : React.createElement(Loader, {
+      active: true
+    }, "Getting data");
+  }
+  /** Render the page once subscriptions have been received. */
+
+
+  renderPage() {
+    return React.createElement(Container, null, React.createElement(Header, {
+      as: "h2",
+      textAlign: "center"
+    }, "Add Club"), React.createElement(Grid, null, React.createElement(Grid.Column, {
+      width: 8
+    }, React.createElement(Input, {
+      fluid: true,
+      icon: "search",
+      placeholder: "Search..."
+    })), React.createElement(Grid.Column, {
+      width: 4
+    }, React.createElement(Input, {
+      fluid: true,
+      placeholder: "Interest"
+    }))), React.createElement(Card.Group, {
+      itemsPerRow: 4
+    }, this.props.stuffs.map(stuff => React.createElement(StuffItem, {
+      key: stuff._id,
+      stuff: stuff
+    }))));
+  }
+
+}
+/** Require an array of Stuff documents in the props. */
+
+
+Browse.propTypes = {
+  stuffs: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired
+};
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+
+module.exportDefault(withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Stuff');
+  return {
+    stuffs: Stuffs.find({}).fetch(),
+    ready: subscription.ready()
+  };
+})(Browse));
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"Browse3.jsx":function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// imports/ui/pages/Browse3.jsx                                                                                        //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+let React;
+module.link("react", {
+  default(v) {
+    React = v;
+  }
+
+}, 0);
+let Meteor;
+module.link("meteor/meteor", {
+  Meteor(v) {
+    Meteor = v;
+  }
+
+}, 1);
+let Container, Card, Header, Loader, Input, Grid;
+module.link("semantic-ui-react", {
+  Container(v) {
+    Container = v;
+  },
+
+  Card(v) {
+    Card = v;
+  },
+
+  Header(v) {
+    Header = v;
+  },
+
+  Loader(v) {
+    Loader = v;
+  },
+
+  Input(v) {
+    Input = v;
+  },
+
+  Grid(v) {
+    Grid = v;
+  }
+
+}, 2);
+let Stuffs;
+module.link("/imports/api/stuff/stuff", {
+  Stuffs(v) {
+    Stuffs = v;
+  }
+
+}, 3);
+let StuffItem;
+module.link("/imports/ui/components/StuffItem", {
+  default(v) {
+    StuffItem = v;
+  }
+
+}, 4);
+let withTracker;
+module.link("meteor/react-meteor-data", {
+  withTracker(v) {
+    withTracker = v;
+  }
+
+}, 5);
+let PropTypes;
+module.link("prop-types", {
+  default(v) {
+    PropTypes = v;
+  }
+
+}, 6);
+
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
+class Browse extends React.Component {
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
+  render() {
+    return this.props.ready ? this.renderPage() : React.createElement(Loader, {
+      active: true
+    }, "Getting data");
+  }
+  /** Render the page once subscriptions have been received. */
+
+
+  renderPage() {
+    return React.createElement(Container, null, React.createElement(Header, {
+      as: "h2",
+      textAlign: "center"
+    }, "Admin Management Page"), React.createElement(Grid, null, React.createElement(Grid.Column, {
       width: 8
     }, React.createElement(Input, {
       fluid: true,
