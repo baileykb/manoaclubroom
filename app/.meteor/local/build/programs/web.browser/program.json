@@ -46,10 +46,10 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=8ca9dda8981599bf53588c293d0e3b55aabfdcb5",
-      "size": 5399480,
-      "hash": "8ca9dda8981599bf53588c293d0e3b55aabfdcb5",
-      "sri": "qBVBsTKsqTkBW2KMdAQ0C7rPGbPElo1KvxSk8YMUQnCTvM7V3FwdziX2LuOLhvbKO+PDmuNY7PgwoKqgJ/dfQQ=="
+      "url": "/packages/modules.js?hash=9ef2c26238e7f714d18fa23307989abd2f58e062",
+      "size": 1144927,
+      "hash": "9ef2c26238e7f714d18fa23307989abd2f58e062",
+      "sri": "bXKYL6F5I1OKr86OAZUoL+lNnhURd2Ms1+rjyDwpLtg/A1F4q7efSrHYtlhwzivPzA0u41067sEsONCJ5W9ERQ=="
     },
     {
       "path": "packages/modern-browsers.js",
@@ -808,18 +808,6 @@
       "sri": "SU+5WUScAgRkHXQE4dKdBIwSLGicfCpA9+lOCGIuh1w2ehPmc7AufUMuiq3JhzdNy/L+owJuBVm0RdOPDj5BGw=="
     },
     {
-      "path": "app/app.js",
-      "where": "client",
-      "type": "js",
-      "cacheable": true,
-      "url": "/app/app.js?hash=350bcc9a9acc8c2b361d278ccfdd762900986d47",
-      "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/350bcc9a9acc8c2b361d278ccfdd762900986d47.map",
-      "size": 48432,
-      "hash": "350bcc9a9acc8c2b361d278ccfdd762900986d47",
-      "sri": "ckmOhINFQTeeOyvzDcyhVaczK9QUkD5aVkz4p3sGPYsUivVNFXy6wPw8qOHKhx8UFlG3OzDATWdYz8Nuq9FTng=="
-    },
-    {
       "path": "packages/service-configuration.js",
       "where": "client",
       "type": "js",
@@ -834,12 +822,12 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=a3abbadb7a679b159126f1e237968bc8d81de0b2",
+      "url": "/merged-stylesheets.css?hash=975e402e81d9a421739ecab310cadcd43dd3739e",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/a3abbadb7a679b159126f1e237968bc8d81de0b2.map",
-      "size": 37665,
-      "hash": "a3abbadb7a679b159126f1e237968bc8d81de0b2",
-      "sri": "N6gtUsKfrhGxZj818NJikIrz23NoxtGnzVcpuCofi/7w3TdRLPaYrvtq/CHkHFeJAE5COcWNixCMbTSp6vjiuw=="
+      "sourceMapUrl": "/975e402e81d9a421739ecab310cadcd43dd3739e.map",
+      "size": 37348,
+      "hash": "975e402e81d9a421739ecab310cadcd43dd3739e",
+      "sri": "ZSPlVNit10K9mejPQRUHhZjJYD9Qa9qwKyaf39majD34jg2Owf0WFtwXm7Sl093qOYj/aItshNroHO5XCplVXg=="
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -902,6 +890,16 @@
       "sri": "U6h1ANC33dZCHLl9U2CNgj7xW7vcUFBm8Zvf694N888pebbbNi//hDpX6Fp3W+RArlHLWH4M6EgkfuM4ivnYBw=="
     },
     {
+      "path": "app/images/ACM.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/ACM.png",
+      "size": 66401,
+      "hash": "44b1cad748f542c3e49f1b98389b3dae0b112898",
+      "sri": "0ygYdWfcaT95UB02+nQ2u5csqD5am3Y0TVCIgsy186AqFXvKtpZsFnbfrWUcsLYi+GDG1sTEkpBtk1tvM2WARw=="
+    },
+    {
       "path": "app/images/landing1.jpg",
       "where": "client",
       "type": "asset",
@@ -920,6 +918,36 @@
       "size": 4495467,
       "hash": "1b13de30daf58757ddea6071d9ce1509a4994193",
       "sri": "ef6muMwEvhfz8h1VMSLkH72cXOAoIO7RAXAr/vgk09bYw7cYt32zK4jjmcE/JZ3R9aGVcbadkEO3ya1cIxaZ3w=="
+    },
+    {
+      "path": "app/images/meteor-logo.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/meteor-logo.png",
+      "size": 21451,
+      "hash": "8353fa469cbd43ee884c844b077efb82ab7c4503",
+      "sri": "kWLVDOY6iR+AJ6TLP8mKo3l/tGbPv5Ohzm/GgYMrS1Y67HbPGlGXRgbjxIvJST4dbPtjdkCFYE4vRyiEn232Rg=="
+    },
+    {
+      "path": "app/images/music.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/music.jpg",
+      "size": 2833538,
+      "hash": "e9392627fda93734ddf9e4b37dd8b659e15e4292",
+      "sri": "iK2TWUHnno1I8Nu4nasEl3XHCPmGSZdQh2ExfJsOz1OqMy2uxW+dgb/nO7JLFHvM5jrKf5dGExOUigNTAvgqKg=="
+    },
+    {
+      "path": "app/images/pre-med.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/pre-med.jpg",
+      "size": 158581,
+      "hash": "decd73f4c4ca85f1cbb718529cbc9a4350089cfa",
+      "sri": "dA/NZxEOrUvDZiyLXqwLYgb1lVeS6FAT7eY72Ay+myJfojs7W3gEXc46D+ARx0KIpfslS0/QTYyYPVYGmIgbYw=="
     },
     {
       "path": "app/themes/default/assets/fonts/brand-icons.eot",
@@ -1095,7 +1123,7 @@
       "path": "head.html",
       "where": "internal",
       "type": "head",
-      "hash": "cb0f2787c7a3a5926f20338130f099d268235305"
+      "hash": "8eeca2c11f4812c337d1d2787ea9247dcee91cc1"
     },
     {
       "path": "body.html",

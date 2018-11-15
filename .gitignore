@@ -4,3 +4,5 @@
 settings.production.json
 node_modules/
 npm-debug.log
+*.css
+app/client/style.css

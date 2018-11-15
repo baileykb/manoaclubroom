@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .landing-background{
   background: url('/images/landing1.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -13,3 +14,14 @@
   margin: 0 auto -142px !important;
 
 }
+=======
+.ui.borderless.topmenu.menu {
+  background-color: #024731;
+  box-shadow: none;
+  border: none;
+}
+
+.ui.topmenu.menu .item {
+  color: white;
+}
+>>>>>>> issue-2-v2
