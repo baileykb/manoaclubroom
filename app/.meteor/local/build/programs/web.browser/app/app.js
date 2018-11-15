@@ -269,7 +269,13 @@ class NavBar extends React.Component {
       exact: true,
       to: "/list",
       key: "list"
-    }, "List of Club")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
+    }, "List of Clubs"), React.createElement(Menu.Item, {
+      as: NavLink,
+      activeClassName: "active",
+      exact: true,
+      to: "/browse",
+      key: "list"
+    }, "Browse Clubs")] : '', Roles.userIsInRole(Meteor.userId(), 'admin') ? React.createElement(Menu.Item, {
       as: NavLink,
       activeClassName: "active",
       exact: true,
@@ -479,62 +485,69 @@ module.link("../pages/Landing", {
   }
 
 }, 7);
+let ListClubs;
+module.link("../pages/ListClubs", {
+  default(v) {
+    ListClubs = v;
+  }
+
+}, 8);
 let ListStuffAdmin;
 module.link("../pages/ListStuffAdmin", {
   default(v) {
     ListStuffAdmin = v;
   }
 
-}, 8);
+}, 9);
 let Browse;
 module.link("../pages/Browse", {
   default(v) {
     Browse = v;
   }
 
-}, 9);
+}, 10);
 let AddStuff;
 module.link("../pages/Browse2", {
   default(v) {
     AddStuff = v;
   }
 
-}, 10);
+}, 11);
 let EditStuff;
 module.link("../pages/EditStuff", {
   default(v) {
     EditStuff = v;
   }
 
-}, 11);
+}, 12);
 let NotFound;
 module.link("../pages/NotFound", {
   default(v) {
     NotFound = v;
   }
 
-}, 12);
+}, 13);
 let Signin;
 module.link("../pages/Signin", {
   default(v) {
     Signin = v;
   }
 
-}, 13);
+}, 14);
 let Signup;
 module.link("../pages/Signup", {
   default(v) {
     Signup = v;
   }
 
-}, 14);
+}, 15);
 let Signout;
 module.link("../pages/Signout", {
   default(v) {
     Signout = v;
   }
 
-}, 15);
+}, 16);
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -551,6 +564,9 @@ class App extends React.Component {
       component: Signup
     }), React.createElement(ProtectedRoute, {
       path: "/list",
+      component: ListClubs
+    }), React.createElement(ProtectedRoute, {
+      path: "/browse",
       component: Browse
     }), React.createElement(ProtectedRoute, {
       path: "/add",
@@ -1181,6 +1197,66 @@ class Landing extends React.Component {
 }
 
 module.exportDefault(Landing);
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+},"ListClubs.jsx":function(require,exports,module){
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//                                                                                                                     //
+// imports/ui/pages/ListClubs.jsx                                                                                      //
+//                                                                                                                     //
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+                                                                                                                       //
+module.export({
+  default: () => Middle
+});
+let React;
+module.link("react", {
+  default(v) {
+    React = v;
+  }
+
+}, 0);
+let Container, Card, Image;
+module.link("semantic-ui-react", {
+  Container(v) {
+    Container = v;
+  },
+
+  Card(v) {
+    Card = v;
+  },
+
+  Image(v) {
+    Image = v;
+  }
+
+}, 1);
+
+class Middle extends React.Component {
+  render() {
+    return React.createElement(Container, null, React.createElement(Card.Group, null, React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+      size: "mini",
+      floated: "right",
+      src: "/images/ACM.png"
+    }), React.createElement(Card.Header, null, "ACM"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ POST 127"), React.createElement(Card.Description, null, "Association for Computing Machinery")), React.createElement(Card.Content, {
+      extra: true
+    }, "Computer Science")), React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+      size: "mini",
+      floated: "right",
+      src: "/images/music.jpg"
+    }), React.createElement(Card.Header, null, "Music Club"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ Music Building"), React.createElement(Card.Description, null, "Club for people interested in music")), React.createElement(Card.Content, {
+      extra: true
+    }, "Music")), React.createElement(Card, null, React.createElement(Card.Content, null, React.createElement(Image, {
+      size: "mini",
+      floated: "right",
+      src: "/images/pre-med.jpg"
+    }), React.createElement(Card.Header, null, "Pre-Med"), React.createElement(Card.Meta, null, "Wed 5 - 6 pm @ BioMed Bldg"), React.createElement(Card.Description, null, "Club for pre-med students")), React.createElement(Card.Content, {
+      extra: true
+    }, "Pre-med"))));
+  }
+
+}
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 },"ListStuffAdmin.jsx":function(require,exports,module){
