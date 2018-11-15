@@ -17,6 +17,9 @@ class StuffItem extends React.Component {
               {this.props.stuff.description}
             </Card.Description>
           </Card.Content>
+          <Card.Content href={this.props.stuff.website}>
+            Website
+          </Card.Content>
           <Card.Content extra>
             <Label color='green'>{this.props.stuff.interest}</Label>
           </Card.Content>

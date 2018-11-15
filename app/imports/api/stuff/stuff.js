@@ -12,6 +12,7 @@ const StuffSchema = new SimpleSchema({
   time: String,
   interest: String,
   image: String,
+  website: String,
   description: String,
 }, { tracker: Tracker });
 
