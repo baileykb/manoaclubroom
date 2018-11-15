@@ -1,4 +1,15 @@
 .landing-background{
-  background: url('/images/landing.jpg') no-repeat center center fixed;
-  background-size: cover
+  background: url('/images/landing1.jpg') no-repeat center center fixed;
+  background-size: cover;
+  paddingTop: 500px !important;
+  //background-color: #8a8a8a;
+}
+
+
+.ui.center.aligned.container{
+  min-height: 100%;
+  height: auto !important;
+  height: 100%;
+  margin: 0 auto -142px !important;
+
 }
