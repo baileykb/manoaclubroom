@@ -1,12 +1,12 @@
 import React from 'react';
-import Middle from '../components/Middle';
+import ListClubsAdmin from '../components/ListClubsAdmin';
 
 export default class ManoaClubRoom extends React.Component {
 
   render() {
     return (
         <div>
-          <Middle/>
+          <ListClubsAdmin/>
         </div>
     );
   }
