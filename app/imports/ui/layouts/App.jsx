@@ -11,8 +11,12 @@ import Landing from '../pages/Landing';
 import Browse from '../pages/Browse';
 =======
 import ListClubs from '../pages/ListClubs';
+<<<<<<< HEAD
 import ListStuffAdmin from '../pages/ListStuffAdmin';
 >>>>>>> issue-2-v2
+=======
+import ListClubsAdmin from '../pages/ListClubsAdmin';
+>>>>>>> f9102a42538458d3a7ef265108c890380f33610b
 import AddStuff from '../pages/AddStuff';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
@@ -39,8 +43,12 @@ class App extends React.Component {
               <ProtectedRoute path="/list" component={ListClubs}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+<<<<<<< HEAD
               <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
 >>>>>>> issue-2-v2
+=======
+              <AdminProtectedRoute path="/admin" component={ListClubsAdmin}/>
+>>>>>>> f9102a42538458d3a7ef265108c890380f33610b
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

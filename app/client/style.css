@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 .landing-background{
   background: url('/images/landing1.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -25,3 +26,9 @@
   color: white;
 }
 >>>>>>> issue-2-v2
+=======
+.ClubAdmin-Background{
+  background: url('/images/uhlogo.png')no-repeat center center fixed;
+  background-size: cover;
+}
+>>>>>>> f9102a42538458d3a7ef265108c890380f33610b
