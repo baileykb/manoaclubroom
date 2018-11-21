@@ -2,3 +2,8 @@
   background: url('/images/landing.jpg') no-repeat center center fixed;
   background-size: cover
 }
+
+.ClubAdmin-Background{
+  background: url('/images/uhlogo.png')no-repeat center center fixed;
+  background-size: cover;
+}
