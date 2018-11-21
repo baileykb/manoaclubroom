@@ -21,7 +21,7 @@ class Browse extends React.Component {
           <Header as="h2" textAlign="center">Browse</Header>
           <Grid>
             <Grid.Column width={8}>
-              <Input fluid icon='search' placeholder='Search...' />
+              <Input fluid action={{ icon: 'search' }} placeholder='Search...' />
             </Grid.Column>
             <Grid.Column width={4}>
               <Input fluid placeholder='Interest'/>
