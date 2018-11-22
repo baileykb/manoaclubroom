@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import StuffItem from '/imports/ui/components/StuffItem';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class AdminClubPage extends React.Component {
+class ClubAdmin extends React.Component {
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -26,7 +26,7 @@ class AdminClubPage extends React.Component {
   }
 }
 /** Require an array of Stuff documents in the props. */
-AdminClubPage.propTypes = {
+ClubAdmin.propTypes = {
   stuffs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -38,4 +38,4 @@ export default withTracker(() => {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(AdminClubPage);
+})(ClubAdmin);
