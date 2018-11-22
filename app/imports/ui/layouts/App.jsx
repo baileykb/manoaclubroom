@@ -31,7 +31,7 @@ class App extends React.Component {
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <ProtectedRoute path="/list" component={ListClubs}/>
-              <ProtectedRoute path="/clubadminlist" component={ClubAdmin}/>
+              <ClubAdminProtectedRoute path="/clubadminlist" component={ClubAdmin}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdmin}/>
               <ProtectedRoute path="/add" component={ListClubsAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
@@ -81,6 +81,20 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
     />
 );
 
+const ClubAdminProtectedRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() !== null;
+          const isClubAdmin = Roles.userIsInRole(Meteor.userId(), 'clubAdmin');
+          return (isLogged && isClubAdmin) ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              );
+        }}
+    />
+);
+
 /** Require a component and location to be passed to each ProtectedRoute. */
 ProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
@@ -91,6 +105,10 @@ ProtectedRoute.propTypes = {
 AdminProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
   location: PropTypes.object,
+};
+
+ClubAdminProtectedRoute.propTypes = {
+  component: PropTypes.func.isRequired,
 };
 
 export default App;
