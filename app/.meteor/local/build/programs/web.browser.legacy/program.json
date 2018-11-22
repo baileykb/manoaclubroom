@@ -890,16 +890,6 @@
       "sri": "U6h1ANC33dZCHLl9U2CNgj7xW7vcUFBm8Zvf694N888pebbbNi//hDpX6Fp3W+RArlHLWH4M6EgkfuM4ivnYBw=="
     },
     {
-      "path": "app/images/ACM.png",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/ACM.png",
-      "size": 66401,
-      "hash": "44b1cad748f542c3e49f1b98389b3dae0b112898",
-      "sri": "0ygYdWfcaT95UB02+nQ2u5csqD5am3Y0TVCIgsy186AqFXvKtpZsFnbfrWUcsLYi+GDG1sTEkpBtk1tvM2WARw=="
-    },
-    {
       "path": "app/images/landing1.jpg",
       "where": "client",
       "type": "asset",
@@ -918,36 +908,6 @@
       "size": 4495467,
       "hash": "1b13de30daf58757ddea6071d9ce1509a4994193",
       "sri": "ef6muMwEvhfz8h1VMSLkH72cXOAoIO7RAXAr/vgk09bYw7cYt32zK4jjmcE/JZ3R9aGVcbadkEO3ya1cIxaZ3w=="
-    },
-    {
-      "path": "app/images/meteor-logo.png",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/meteor-logo.png",
-      "size": 21451,
-      "hash": "8353fa469cbd43ee884c844b077efb82ab7c4503",
-      "sri": "kWLVDOY6iR+AJ6TLP8mKo3l/tGbPv5Ohzm/GgYMrS1Y67HbPGlGXRgbjxIvJST4dbPtjdkCFYE4vRyiEn232Rg=="
-    },
-    {
-      "path": "app/images/music.jpg",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/music.jpg",
-      "size": 2833538,
-      "hash": "e9392627fda93734ddf9e4b37dd8b659e15e4292",
-      "sri": "iK2TWUHnno1I8Nu4nasEl3XHCPmGSZdQh2ExfJsOz1OqMy2uxW+dgb/nO7JLFHvM5jrKf5dGExOUigNTAvgqKg=="
-    },
-    {
-      "path": "app/images/pre-med.jpg",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/pre-med.jpg",
-      "size": 158581,
-      "hash": "decd73f4c4ca85f1cbb718529cbc9a4350089cfa",
-      "sri": "dA/NZxEOrUvDZiyLXqwLYgb1lVeS6FAT7eY72Ay+myJfojs7W3gEXc46D+ARx0KIpfslS0/QTYyYPVYGmIgbYw=="
     },
     {
       "path": "app/themes/default/assets/fonts/brand-icons.eot",
