@@ -7,11 +7,10 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListClubs from '../pages/ListClubs';
 import AddStuff from '../pages/AddStuff';
-import Browse from '../pages/Browse';
 import AdminClubPage from '../pages/AdminClubPage';
 import ListClubsAdmin from '../pages/ListClubsAdmin';
+import ListClubs from '../pages/ListClubs';
 import EditStuff from '../pages/EditStuff';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -29,14 +28,12 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/list" component={ListClubs}/>
               <ProtectedRoute path="/add" component={AddStuff}/>
               <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+              <ProtectedRoute path="/list" component={ListClubs}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdmin}/>
-              <ProtectedRoute path="/list" component={Browse}/>
-              <ProtectedRoute path="/add" component={AdminClubPage}/>
+              <AdminProtectedRoute path="/clubadminlist" component={AdminClubPage}/>
               <ProtectedRoute path="/add" component={ListClubsAdmin}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

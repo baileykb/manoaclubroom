@@ -1,37 +1,41 @@
 import React from 'react';
-import { Grid, Icon, Header } from 'semantic-ui-react';
+import { Meteor } from 'meteor/meteor';
+import { Container, Card, Header, Loader } from 'semantic-ui-react';
+import { Stuffs } from '/imports/api/stuff/stuff';
+import { withTracker } from 'meteor/react-meteor-data';
+import PropTypes from 'prop-types';
+import StuffItem from '/imports/ui/components/StuffItem';
 
-/** A simple static component to render some text for the AdminClubPage page. */
+/** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class AdminClubPage extends React.Component {
+  /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
+    return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
+  }
+  /** Render the page once subscriptions have been received. */
+
+  renderPage() {
     return (
-        <div className={'ClubAdmin-Background'}>
-          <Grid Container stackable centered columns={3}>
-
-            <Grid.Column textAlign={'center'}>
-              <Icon size={'huge'} name={'group'}/>
-              <Header as='h1'>Sports Club</Header>
-              <Header as='h3'>This club entails any, and everything sports related, whether you would like to talk about
-                sports or get together a group   for intramural sports, anything is welcome!</Header>
-            </Grid.Column>
-
-            <Grid.Column textAlign={'center'}>
-              <Icon size={'huge'} name={'location arrow'}/>
-              <Header as='h1'>Location</Header>
-              <Header as='h3'>We are currently Located in Kuyenkendall hall. Feel free to stop by even if
-                you are not a part of our club!</Header>
-            </Grid.Column>
-
-            <Grid.Column textAlign={'center'}>
-              <Icon size={'huge'} name={'calendar times'}/>
-              <Header as='h1'>Meeting Times</Header>
-              <Header as='h3'>We currently meet on Wednesdays at 4pm every week. </Header>
-            </Grid.Column>
-
-          </Grid>
-        </div>
+        <Container>
+          <Header as="h2" textAlign="center">My Clubs</Header>
+          <Card.Group>
+            {this.props.stuffs.map((stuff, index) => <StuffItem key = {index} stuff={stuff}/>)}
+          </Card.Group>
+        </Container>
     );
   }
 }
-
-export default AdminClubPage;
+/** Require an array of Stuff documents in the props. */
+AdminClubPage.propTypes = {
+  stuffs: PropTypes.array.isRequired,
+  ready: PropTypes.bool.isRequired,
+};
+/** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
+export default withTracker(() => {
+  // Get access to Stuff documents.
+  const subscription = Meteor.subscribe('Stuffs');
+  return {
+    stuffs: Stuffs.find({}).fetch(),
+    ready: subscription.ready(),
+  };
+})(AdminClubPage);

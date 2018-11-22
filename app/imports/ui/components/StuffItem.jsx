@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Label } from 'semantic-ui-react';
+import { Card, Button, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -9,16 +9,17 @@ class StuffItem extends React.Component {
     return (
         <Card centered>
           <Card.Content>
-            <Image floated='right' size='tiny' src={this.props.stuff.image}/>
             <Card.Header>{this.props.stuff.name}</Card.Header>
-            <Card.Meta>{this.props.stuff.location}</Card.Meta>
-            <Card.Meta>{this.props.stuff.time}</Card.Meta>
+            <Card.Meta>{this.props.stuff.location}, {this.props.stuff.time}</Card.Meta>
             <Card.Description>
               {this.props.stuff.description}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
             <Label color='green'>{this.props.stuff.interest}</Label>
+          </Card.Content>
+          <Card.Content>
+            <Button>Edit</Button>
           </Card.Content>
         </Card>
     );
