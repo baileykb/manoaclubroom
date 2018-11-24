@@ -8,6 +8,15 @@ import PropTypes from 'prop-types';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class Browse extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { name: '' };
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({ name: e.target.value.substr(0, 20) });
+  }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
@@ -16,19 +25,27 @@ class Browse extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
+    const searchFilter = this.props.stuffs.filter(
+        (stuff) => {
+          return stuff.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
+        },
+    );
     return (
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
           <Grid>
             <Grid.Column width={8}>
-              <Input fluid action={{ icon: 'search' }} placeholder='Search...' />
+              <Input fluid value={this.state.name} onChange={this.handleChange}
+                     icon='search'
+                     iconPosition='left'
+                     placeholder='Search...' type="text"/>
             </Grid.Column>
             <Grid.Column width={4}>
               <Input fluid placeholder='Interest'/>
             </Grid.Column>
           </Grid>
-          <Card.Group itemsPerRow={4}>{this.props.stuffs.map((stuff) => <StuffItem key={stuff._id}
-                                                                                   stuff={stuff}/>)}</Card.Group>
+          <Card.Group>{searchFilter.map((stuff, index) => <StuffItem key={index}
+                                                                              stuff={stuff}/>)}</Card.Group>
         </Container>
     );
   }
@@ -43,7 +60,7 @@ Browse.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Stuffs');
   return {
     stuffs: Stuffs.find({}).fetch(),
     ready: subscription.ready(),
