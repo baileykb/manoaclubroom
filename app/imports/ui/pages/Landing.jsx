@@ -23,7 +23,11 @@ class Landing extends React.Component {
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-
+              <Icon color=' ' size='huge' name='calender'/>
+              <Header as='h1' color='#006400'>Time</Header>
+              <Header as='h3' color='#006400'>
+                Find out when and where the club will meet.
+              </Header>
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
@@ -36,6 +40,11 @@ class Landing extends React.Component {
 
             <Grid.Column textAlign='center'>
 
+              <Icon color=' ' size='huge' name='sitemap'/>
+              <Header as='h1' color='#006400'>Website</Header>
+              <Header as='h3' color='#006400'>
+                If a website is provided, visit club's site to get more information.
+              </Header>
             </Grid.Column>
 
           </Grid>
