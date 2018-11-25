@@ -10,7 +10,7 @@ import PropTypes from 'prop-types';
 class Browse extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: '' };
+    this.state = { name: '', interest: '' };
     this.handleChange = this.handleChange.bind(this);
   }
 
@@ -41,10 +41,15 @@ class Browse extends React.Component {
                      placeholder='Search...' type="text"/>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Input fluid
-                     icon='search'
-                     iconPosition='left'
+              <Input fluid value={this.state.interest} onChange={this.handleChange}
+                     list='interest'
                      placeholder='Interest' type="text"/>
+              <datalist id='interest'>
+                <option value='Medical'/>
+                <option value='Sport'/>
+                <option value='Law'/>
+                <option value='Religion'/>
+              </datalist>
             </Grid.Column>
           </Grid>
           <Card.Group>{searchFilter.map((stuff, index) => <StuffItem key={index}
