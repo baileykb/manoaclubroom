@@ -41,7 +41,10 @@ class Browse extends React.Component {
                      placeholder='Search...' type="text"/>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Input fluid placeholder='Interest'/>
+              <Input fluid
+                     icon='search'
+                     iconPosition='left'
+                     placeholder='Interest' type="text"/>
             </Grid.Column>
           </Grid>
           <Card.Group>{searchFilter.map((stuff, index) => <StuffItem key={index}
