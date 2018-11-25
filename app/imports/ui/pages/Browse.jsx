@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Card, Header, Loader, Input, Grid } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/stuff';
-import StuffItem from '/imports/ui/components/StuffItem';
+import { Club } from '/imports/api/club/club';
+import Clubs from '/imports/ui/components/Clubs';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
@@ -10,12 +10,17 @@ import PropTypes from 'prop-types';
 class Browse extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { name: '' };
+    this.state = { name: '', interest: '' };
     this.handleChange = this.handleChange.bind(this);
+    this.interestChange = this.interestChange.bind(this);
   }
 
   handleChange(e) {
     this.setState({ name: e.target.value.substr(0, 20) });
+  }
+
+  interestChange(e) {
+    this.setState({ interest: e.target.value });
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -25,9 +30,15 @@ class Browse extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const searchFilter = this.props.stuffs.filter(
-        (stuff) => {
-          return stuff.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
+    const list = this.props.clubs.sort((a, b) => a - b).reverse();
+    const searchFilter = list.filter(
+        (club) => {
+          return club.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
+        },
+    );
+    const interestFilter = searchFilter.filter(
+        (club) => {
+          return club.interest.toLowerCase().indexOf(this.state.interest.toLowerCase()) !== -1;
         },
     );
     return (
@@ -41,14 +52,18 @@ class Browse extends React.Component {
                      placeholder='Search...' type="text"/>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Input fluid
-                     icon='search'
-                     iconPosition='left'
+              <Input fluid value={this.state.interest} onChange={this.interestChange}
+                     list='interest'
                      placeholder='Interest' type="text"/>
+              <datalist id='interest'>
+                <option value='Medical'/>
+                <option value='Sport'/>
+                <option value='Animal'/>
+              </datalist>
             </Grid.Column>
           </Grid>
-          <Card.Group>{searchFilter.map((stuff, index) => <StuffItem key={index}
-                                                                              stuff={stuff}/>)}</Card.Group>
+          <Card.Group>{interestFilter.map((club, index) => <Clubs key={index}
+                                                                              club={club}/>)}</Card.Group>
         </Container>
     );
   }
@@ -56,16 +71,16 @@ class Browse extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 Browse.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuffs');
+  const subscription = Meteor.subscribe('Club');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    clubs: Club.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(Browse);
