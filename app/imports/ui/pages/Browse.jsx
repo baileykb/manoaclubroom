@@ -1,8 +1,8 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
 import { Container, Card, Header, Loader, Input, Grid } from 'semantic-ui-react';
-import { Stuffs } from '/imports/api/stuff/stuff';
-import StuffItem from '/imports/ui/components/StuffItem';
+import { Club } from '/imports/api/club/club';
+import Clubs from '/imports/ui/components/Clubs';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
@@ -30,14 +30,14 @@ class Browse extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const searchFilter = this.props.stuffs.filter(
-        (stuff) => {
-          return stuff.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
+    const searchFilter = this.props.clubs.filter(
+        (club) => {
+          return club.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
         },
     );
     const interestFilter = searchFilter.filter(
-        (stuff) => {
-          return stuff.interest.toLowerCase().indexOf(this.state.interest.toLowerCase()) !== -1;
+        (club) => {
+          return club.interest.toLowerCase().indexOf(this.state.interest.toLowerCase()) !== -1;
         },
     );
     return (
@@ -61,8 +61,8 @@ class Browse extends React.Component {
               </datalist>
             </Grid.Column>
           </Grid>
-          <Card.Group>{interestFilter.map((stuff, index) => <StuffItem key={index}
-                                                                              stuff={stuff}/>)}</Card.Group>
+          <Card.Group>{interestFilter.map((club, index) => <Clubs key={index}
+                                                                              club={club}/>)}</Card.Group>
         </Container>
     );
   }
@@ -70,16 +70,16 @@ class Browse extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 Browse.propTypes = {
-  stuffs: PropTypes.array.isRequired,
+  clubs: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuffs');
+  const subscription = Meteor.subscribe('Club');
   return {
-    stuffs: Stuffs.find({}).fetch(),
+    clubs: Club.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(Browse);

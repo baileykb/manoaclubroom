@@ -6,24 +6,24 @@ import { Roles } from 'meteor/alanning:roles';
 import { Meteor } from 'meteor/meteor';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
-class StuffItem extends React.Component {
+class Clubs extends React.Component {
   render() {
     return (
         <Card centered>
           <Card.Content>
-            <Image size="mini" floated="right" src={this.props.stuff.image}></Image>
-            <Card.Header>{this.props.stuff.name}</Card.Header>
-            <Card.Meta>{this.props.stuff.location}, {this.props.stuff.time}</Card.Meta>
+            <Image size="mini" floated="right" src={this.props.club.image}></Image>
+            <Card.Header>{this.props.club.name}</Card.Header>
+            <Card.Meta>{this.props.club.location}, {this.props.club.time}</Card.Meta>
             <Card.Description>
-              {this.props.stuff.description}
+              {this.props.club.description}
             </Card.Description>
           </Card.Content>
           <Card.Content extra>
-            <Label color='green'>{this.props.stuff.interest}</Label>
+            <Label color='green'>{this.props.club.interest}</Label>
           </Card.Content>
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
           <Card.Content extra>
-            <Link to={`/edit/${this.props.stuff._id}`}>Edit</Link>
+            <Link to={`/edit/${this.props.club._id}`}>Edit</Link>
           </Card.Content>
               ) : ''}
         </Card>
@@ -32,9 +32,9 @@ class StuffItem extends React.Component {
 }
 
 /** Require a document to be passed to this component. */
-StuffItem.propTypes = {
-  stuff: PropTypes.object.isRequired,
+Clubs.propTypes = {
+  club: PropTypes.object.isRequired,
 };
 
 /** Wrap this component in withRouter since we use the <Link> React Router element. */
-export default withRouter(StuffItem);
+export default withRouter(Clubs);
