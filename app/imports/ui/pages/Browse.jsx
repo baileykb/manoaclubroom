@@ -56,6 +56,7 @@ class Browse extends React.Component {
                      list='interest'
                      placeholder='Interest' type="text"/>
               <datalist id='interest'>
+                <option value=''/>
                 <option value='Medical'/>
                 <option value='Sport'/>
                 <option value='Animal'/>

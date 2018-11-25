@@ -14,6 +14,7 @@ const ClubSchema = new SimpleSchema({
   image: String,
   description: String,
   owner: String,
+  website: String,
 }, { tracker: Tracker });
 
 /** Attach this schema to the collection. */

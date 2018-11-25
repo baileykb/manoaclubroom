@@ -19,7 +19,7 @@ class ClubAdmin extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">My Clubs</Header>
           <Card.Group>
-            {this.props.clubs.map((stuff, index) => <ClubAdminItem key = {index} stuff={stuff}/>)}
+            {this.props.clubs.map((club, index) => <ClubAdminItem key = {index} stuff={club}/>)}
           </Card.Group>
         </Container>
     );
