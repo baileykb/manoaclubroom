@@ -26,7 +26,7 @@ Meteor.publish('Club', function publish() {
 
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
 Meteor.publish('ClubAdmin', function publish() {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
+  if (this.userId && Roles.userIsInRole(this.userId, 'clubAdmin')) {
     return Club.find();
   }
   return this.ready();
