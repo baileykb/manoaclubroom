@@ -5,6 +5,7 @@ import { Stuffs } from '/imports/api/stuff/stuff';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 import StuffItem from '/imports/ui/components/StuffItem';
+import StuffItemClubAdmin from '../components/StuffItemClubAdmin';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ClubAdmin extends React.Component {
@@ -19,7 +20,7 @@ class ClubAdmin extends React.Component {
         <Container>
           <Header as="h2" textAlign="center">My Clubs</Header>
           <Card.Group>
-            {this.props.stuffs.map((stuff, index) => <StuffItem key = {index} stuff={stuff}/>)}
+            {this.props.stuffs.map((stuff, index) => <StuffItemClubAdmin key = {index} stuff={stuff}/>)}
           </Card.Group>
         </Container>
     );
