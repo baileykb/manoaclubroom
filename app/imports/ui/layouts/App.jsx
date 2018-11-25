@@ -7,12 +7,10 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-import ListClubs from '../pages/ListClubs';
-import AddStuff from '../pages/AddStuff';
 import Browse from '../pages/Browse';
-import AdminClubPage from '../pages/AdminClubPage';
 import ListClubsAdmin from '../pages/ListClubsAdmin';
-import EditStuff from '../pages/EditStuff';
+import ClubAdmin from '../pages/ClubAdmin';
+import EditClub from '../pages/EditClub';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -29,14 +27,11 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/list" component={ListClubs}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
+              <ProtectedRoute path="/browse" component={Browse}/>
+              <AdminProtectedRoute path="/edit/:_id" component={EditClub}/>
+              <ClubAdminProtectedRoute path="/clubadminlist" component={ClubAdmin}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdmin}/>
-              <ProtectedRoute path="/list" component={Browse}/>
-              <ProtectedRoute path="/add" component={AdminClubPage}/>
               <ProtectedRoute path="/add" component={ListClubsAdmin}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
@@ -84,6 +79,20 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
     />
 );
 
+const ClubAdminProtectedRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() !== null;
+          const isClubAdmin = Roles.userIsInRole(Meteor.userId(), 'clubAdmin');
+          return (isLogged && isClubAdmin) ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              );
+        }}
+    />
+);
+
 /** Require a component and location to be passed to each ProtectedRoute. */
 ProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
@@ -94,6 +103,10 @@ ProtectedRoute.propTypes = {
 AdminProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
   location: PropTypes.object,
+};
+
+ClubAdminProtectedRoute.propTypes = {
+  component: PropTypes.func.isRequired,
 };
 
 export default App;
