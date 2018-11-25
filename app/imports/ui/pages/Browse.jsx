@@ -59,6 +59,9 @@ class Browse extends React.Component {
                 <option value='Medical'/>
                 <option value='Sport'/>
                 <option value='Animal'/>
+                <option value='Music'/>
+                <option value='Art'/>
+                <option value='SCI-Fi'/>
               </datalist>
             </Grid.Column>
           </Grid>
