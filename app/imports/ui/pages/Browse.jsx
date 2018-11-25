@@ -16,7 +16,7 @@ class Browse extends React.Component {
   }
 
   handleChange(e) {
-    this.setState({ name: e.target.value.substr(0, 20)});
+    this.setState({ name: e.target.value.substr(0, 20) });
   }
 
   interestChange(e) {
@@ -30,7 +30,8 @@ class Browse extends React.Component {
 
   /** Render the page once subscriptions have been received. */
   renderPage() {
-    const searchFilter = this.props.clubs.filter(
+    const list = this.props.clubs.sort((a, b) => a - b).reverse();
+    const searchFilter = list.filter(
         (club) => {
           return club.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
         },

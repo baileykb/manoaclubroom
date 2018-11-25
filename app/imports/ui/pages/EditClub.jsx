@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
-import { Club, ClubSchema } from '/imports/api/stuff/stuff';
+import { Club, ClubSchema } from '/imports/api/club/club';
 import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -64,7 +64,7 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuffs');
+  const subscription = Meteor.subscribe('Club');
   return {
     doc: Club.findOne(documentId),
     ready: subscription.ready(),
