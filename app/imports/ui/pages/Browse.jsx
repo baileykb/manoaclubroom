@@ -12,10 +12,15 @@ class Browse extends React.Component {
     super(props);
     this.state = { name: '', interest: '' };
     this.handleChange = this.handleChange.bind(this);
+    this.interestChange = this.interestChange.bind(this);
   }
 
   handleChange(e) {
-    this.setState({ name: e.target.value.substr(0, 20) });
+    this.setState({ name: e.target.value.substr(0, 20)});
+  }
+
+  interestChange(e) {
+    this.setState({ interest: e.target.value });
   }
 
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
@@ -30,6 +35,11 @@ class Browse extends React.Component {
           return stuff.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
         },
     );
+    const interestFilter = searchFilter.filter(
+        (stuff) => {
+          return stuff.interest.toLowerCase().indexOf(this.state.interest.toLowerCase()) !== -1;
+        },
+    );
     return (
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
@@ -41,7 +51,7 @@ class Browse extends React.Component {
                      placeholder='Search...' type="text"/>
             </Grid.Column>
             <Grid.Column width={4}>
-              <Input fluid value={this.state.interest} onChange={this.handleChange}
+              <Input fluid value={this.state.interest} onChange={this.interestChange}
                      list='interest'
                      placeholder='Interest' type="text"/>
               <datalist id='interest'>
@@ -49,10 +59,11 @@ class Browse extends React.Component {
                 <option value='Sport'/>
                 <option value='Law'/>
                 <option value='Religion'/>
+                <option value='Animal'/>
               </datalist>
             </Grid.Column>
           </Grid>
-          <Card.Group>{searchFilter.map((stuff, index) => <StuffItem key={index}
+          <Card.Group>{interestFilter.map((stuff, index) => <StuffItem key={index}
                                                                               stuff={stuff}/>)}</Card.Group>
         </Container>
     );

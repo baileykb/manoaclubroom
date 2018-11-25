@@ -23,7 +23,7 @@ class Landing extends React.Component {
             </Grid.Column>
 
             <Grid.Column textAlign='center'>
-              <Icon color=' ' size='huge' name='calender'/>
+              <Icon color=' ' size='huge' name='calendar'/>
               <Header as='h1' color='#006400'>Time</Header>
               <Header as='h3' color='#006400'>
                 Find out when and where the club will meet.
