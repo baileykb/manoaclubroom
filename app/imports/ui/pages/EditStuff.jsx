@@ -14,7 +14,6 @@ import PropTypes from 'prop-types';
 
 /** Renders the Page for editing a single document. */
 class EditStuff extends React.Component {
-
   /** On successful submit, insert the data. */
   submit(data) {
     const { name, location, time, interest, image, description, _id } = data;
