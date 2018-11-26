@@ -6,16 +6,11 @@ import { Roles } from 'meteor/alanning:roles';
 import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
-<<<<<<< HEAD
 import Landing from '../pages/Landing';
-import Browse from '../pages/Browse';
-=======
-import ManoaClubRoom from '../pages/ManoaClubRoom';
-import ListStuff from '../pages/ListStuff';
-import ListStuffAdmin from '../pages/ListStuffAdmin';
->>>>>>> issue-3
-import AddStuff from '../pages/AddStuff';
-import EditStuff from '../pages/EditStuff';
+import ListClubs from '../pages/ListClubs';
+import ListClubsAdminSuper from '../pages/ListClubsAdminSuper';
+import AddClub from '../pages/AddClub';
+import EditClub from '../pages/EditClub';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -29,22 +24,13 @@ class App extends React.Component {
           <div>
             <NavBar/>
             <Switch>
-<<<<<<< HEAD
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/list" component={Browse}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-=======
-              <Route exact path="/" component={ManoaClubRoom}/>
-              <Route path="/signin" component={Signin}/>
-              <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/list" component={ListStuff}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
->>>>>>> issue-3
+              <ProtectedRoute path="/list" component={ListClubs}/>
+              <ProtectedRoute path="/add" component={AddClub}/>
+              <ProtectedRoute path="/edit/:_id" component={EditClub}/>
+              <AdminProtectedRoute path="/admin" component={ListClubsAdminSuper}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>

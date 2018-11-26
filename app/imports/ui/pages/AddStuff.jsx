@@ -13,7 +13,6 @@ import { Meteor } from 'meteor/meteor';
 
 /** Renders the Page for adding a document. */
 class AddStuff extends React.Component {
-
   /** Bind 'this' so that a ref to the Form can be saved in formRef and communicated between render() and submit(). */
   constructor(props) {
     super(props);
