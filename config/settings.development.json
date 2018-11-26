@@ -6,8 +6,9 @@
   ],
 
   "defaultData": [
-    { "name": "Pre-Vet", "location": "POST 111", "time": "6PM-7PM", "interest": "Animal", "image": "http://manoa.hawaii.edu/rio/prevet/wp-content/uploads/2015/05/fshyfrgstjyh.png", "description": "Club for people wanting to be a veterinarian.", "owner":"clubadmin@foo.com"},
-    { "name": "Pre-Med", "location": "Moore 312", "time": "5PM-6PM", "interest": "Medical", "image": "http://static1.squarespace.com/static/57cb3928d482e9784e3f3431/t/57cb3bf9cd0f686bb5d7d0c6/1536129181594/?format=1500w", "description": "For people who are interested in the medical field.","owner": "clubadmin@foo.com"},
-    { "name": "Judo", "location": "Gym 1", "time": "5PM-6PM", "interest": "Sport", "image": "http://www2.hawaii.edu/~judo/JudoTeamAtTheUniversityOfHawaii.png", "description": "A club for people interested in or want to learn Judo.", "owner":"clubadmin@foo.com"}
+    { "name": "Pre-Vet", "location": "POST 111", "time": "6PM-7PM", "interest": "Animal", "image": "http://manoa.hawaii.edu/rio/prevet/wp-content/uploads/2015/05/fshyfrgstjyh.png", "description": "Club for people wanting to be a veterinarian.","website": "http://manoa.hawaii.edu/rio/prevet/", "owner":"clubadmin@foo.com"},
+    { "name": "Pre-Med", "location": "Moore 312", "time": "5PM-6PM", "interest": "Medical", "image": "http://static1.squarespace.com/static/57cb3928d482e9784e3f3431/t/57cb3bf9cd0f686bb5d7d0c6/1536129181594/?format=1500w",
+      "description": "For people who are interested in the medical field.","website": "http://premed-at-uhm.squarespace.com/","owner": "clubadmin@foo.com"},
+    { "name": "Judo", "location": "Gym 1", "time": "5PM-6PM", "interest": "Sport", "image": "http://www2.hawaii.edu/~judo/JudoTeamAtTheUniversityOfHawaii.png", "description": "A club for people interested in or want to learn Judo.", "website": "http://www2.hawaii.edu/~judo/", "owner":"clubadmin@foo.com"}
   ]
 }

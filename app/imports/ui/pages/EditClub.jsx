@@ -40,6 +40,7 @@ class EditClub extends React.Component {
                 <TextField name='time'/>
                 <TextField name='interest'/>
                 <TextField name='image'/>
+                <TextField name='website'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

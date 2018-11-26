@@ -15,6 +15,9 @@ class ClubAdminItem extends React.Component {
             <Card.Description>
               {this.props.club.description}
             </Card.Description>
+            <Card.Content extra>
+              <a href={`${this.props.club.website}`}><Icon name='globe'/></a>
+            </Card.Content>
           </Card.Content>
           <Card.Content extra>
             <Label color='green'>{this.props.club.interest}</Label>

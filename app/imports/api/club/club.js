@@ -3,7 +3,7 @@ import SimpleSchema from 'simpl-schema';
 import { Tracker } from 'meteor/tracker';
 
 /** Create a Meteor collection. */
-const Club = new Mongo.Collection('Stuffs');
+const Club = new Mongo.Collection('Clubs');
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const ClubSchema = new SimpleSchema({
@@ -13,6 +13,7 @@ const ClubSchema = new SimpleSchema({
   interest: String,
   image: String,
   description: String,
+  website: String,
   owner: String,
 }, { tracker: Tracker });
 

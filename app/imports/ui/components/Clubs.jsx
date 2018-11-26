@@ -21,7 +21,7 @@ class Clubs extends React.Component {
           <Card.Content extra>
             <Label color='green'>{this.props.club.interest}</Label>
           </Card.Content>
-          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+          {Roles.userIsInRole(Meteor.userId(), 'admin' ) ? (
           <Card.Content extra>
             <Link to={`/edit/${this.props.club._id}`}>Edit</Link>
           </Card.Content>
