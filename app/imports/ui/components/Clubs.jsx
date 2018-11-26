@@ -18,9 +18,10 @@ class Clubs extends React.Component {
               {this.props.club.description}
             </Card.Description>
           </Card.Content>
-          <Card.Content extra>
-            <a href={`${this.props.club.website}`}><Icon name='globe'/></a>
-          </Card.Content>
+          {this.props.club.website != '' ?
+            <Card.Content extra>
+              <a href={`${this.props.club.website}`}><Icon name='globe'/></a>
+            </Card.Content> : ''}
           <Card.Content extra>
             <Label color='green'>{this.props.club.interest}</Label>
           </Card.Content>
