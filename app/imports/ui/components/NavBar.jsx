@@ -16,7 +16,7 @@ class NavBar extends React.Component {
         <Menu.Item as={NavLink} activeClassName="" exact to="/">
 
 
-          <Header inverted as='h1'>Manoa Club Room</Header>
+          <Header as='h1'>Manoa Club Room</Header>
         </Menu.Item>
         {this.props.currentUser ? (
             [<Menu.Item as={NavLink} activeClassName="active" exact to="/browse" key='browse'>Browse</Menu.Item>,

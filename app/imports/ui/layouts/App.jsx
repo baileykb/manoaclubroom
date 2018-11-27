@@ -8,7 +8,6 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import Browse from '../pages/Browse';
-import ListClubs from '../pages/ListClubs';
 import ListClubsAdmin from '../pages/ListClubsAdmin';
 import ClubAdmin from '../pages/ClubAdmin';
 import EditClub from '../pages/EditClub';
@@ -28,7 +27,6 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <ProtectedRoute path="/list" component={ListClubs}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdmin}/>
               <ProtectedRoute path="/browse" component={Browse}/>
               <ClubAdminProtectedRoute path="/edit/:_id" component={EditClub}/>

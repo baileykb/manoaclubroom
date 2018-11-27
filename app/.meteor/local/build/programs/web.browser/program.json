@@ -46,10 +46,10 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=9ef2c26238e7f714d18fa23307989abd2f58e062",
-      "size": 1144927,
-      "hash": "9ef2c26238e7f714d18fa23307989abd2f58e062",
-      "sri": "bXKYL6F5I1OKr86OAZUoL+lNnhURd2Ms1+rjyDwpLtg/A1F4q7efSrHYtlhwzivPzA0u41067sEsONCJ5W9ERQ=="
+      "url": "/packages/modules.js?hash=b7c71c7b1566c34dcd01512eff2204e5994930e5",
+      "size": 5402641,
+      "hash": "b7c71c7b1566c34dcd01512eff2204e5994930e5",
+      "sri": "lqWT+0AOY4GtZzhCHG8TMMgyVO9xwpJeyJVcEspFkg82mDl5GikBRZHEnwidqFObuJwfjIOlfFIsWgFIHVv7wQ=="
     },
     {
       "path": "packages/modern-browsers.js",
@@ -808,6 +808,18 @@
       "sri": "SU+5WUScAgRkHXQE4dKdBIwSLGicfCpA9+lOCGIuh1w2ehPmc7AufUMuiq3JhzdNy/L+owJuBVm0RdOPDj5BGw=="
     },
     {
+      "path": "app/app.js",
+      "where": "client",
+      "type": "js",
+      "cacheable": true,
+      "url": "/app/app.js?hash=e5315f313b22ac1557c0a159ec3ce0b61da4dbf4",
+      "sourceMap": "app/app.js.map",
+      "sourceMapUrl": "/app/e5315f313b22ac1557c0a159ec3ce0b61da4dbf4.map",
+      "size": 56007,
+      "hash": "e5315f313b22ac1557c0a159ec3ce0b61da4dbf4",
+      "sri": "2lN6j8NKMoTc2NAjylTZhVar5zOMUycQAWFFF0lxeyizr5rPrKq5jFQJcXhvxCFzvHysykFzjFF+e+sQuUPa4w=="
+    },
+    {
       "path": "packages/service-configuration.js",
       "where": "client",
       "type": "js",
@@ -822,12 +834,12 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=975e402e81d9a421739ecab310cadcd43dd3739e",
+      "url": "/merged-stylesheets.css?hash=70edc1af431c24632467bdef63e4e2ce45ba6f1b",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/975e402e81d9a421739ecab310cadcd43dd3739e.map",
-      "size": 37348,
-      "hash": "975e402e81d9a421739ecab310cadcd43dd3739e",
-      "sri": "ZSPlVNit10K9mejPQRUHhZjJYD9Qa9qwKyaf39majD34jg2Owf0WFtwXm7Sl093qOYj/aItshNroHO5XCplVXg=="
+      "sourceMapUrl": "/70edc1af431c24632467bdef63e4e2ce45ba6f1b.map",
+      "size": 37930,
+      "hash": "70edc1af431c24632467bdef63e4e2ce45ba6f1b",
+      "sri": "pKJEumJu1D/jb08DHP9m2y6mQrnw/JpQbyYk5YqXh1pbfI1+ljCL1Nx3f4O0XmeKRWBn3Q2+pQjWsaebsMMeNA=="
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -890,6 +902,26 @@
       "sri": "U6h1ANC33dZCHLl9U2CNgj7xW7vcUFBm8Zvf694N888pebbbNi//hDpX6Fp3W+RArlHLWH4M6EgkfuM4ivnYBw=="
     },
     {
+      "path": "app/images/ACM.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/ACM.png",
+      "size": 66401,
+      "hash": "44b1cad748f542c3e49f1b98389b3dae0b112898",
+      "sri": "0ygYdWfcaT95UB02+nQ2u5csqD5am3Y0TVCIgsy186AqFXvKtpZsFnbfrWUcsLYi+GDG1sTEkpBtk1tvM2WARw=="
+    },
+    {
+      "path": "app/images/judo.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/judo.png",
+      "size": 320050,
+      "hash": "ef122419fe36a79ed984bd2b6415035114d5c575",
+      "sri": "JPeE1e43/7uaVEIHdR6EMzpM81b9pujEIxeN4v1QA/abX4mbnZsiKMIsdjog+zRfBcJ3sy09+WAUtCWzBex56A=="
+    },
+    {
       "path": "app/images/landing1.jpg",
       "where": "client",
       "type": "asset",
@@ -908,6 +940,46 @@
       "size": 4495467,
       "hash": "1b13de30daf58757ddea6071d9ce1509a4994193",
       "sri": "ef6muMwEvhfz8h1VMSLkH72cXOAoIO7RAXAr/vgk09bYw7cYt32zK4jjmcE/JZ3R9aGVcbadkEO3ya1cIxaZ3w=="
+    },
+    {
+      "path": "app/images/music.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/music.jpg",
+      "size": 2833538,
+      "hash": "e9392627fda93734ddf9e4b37dd8b659e15e4292",
+      "sri": "iK2TWUHnno1I8Nu4nasEl3XHCPmGSZdQh2ExfJsOz1OqMy2uxW+dgb/nO7JLFHvM5jrKf5dGExOUigNTAvgqKg=="
+    },
+    {
+      "path": "app/images/pre-med.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/pre-med.jpg",
+      "size": 158581,
+      "hash": "decd73f4c4ca85f1cbb718529cbc9a4350089cfa",
+      "sri": "dA/NZxEOrUvDZiyLXqwLYgb1lVeS6FAT7eY72Ay+myJfojs7W3gEXc46D+ARx0KIpfslS0/QTYyYPVYGmIgbYw=="
+    },
+    {
+      "path": "app/images/uhlogo.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/uhlogo.png",
+      "size": 425519,
+      "hash": "c7352b6cb9c48ba35d04c8a9475b34d11484bcde",
+      "sri": "Je3Zlw++kJI9bVwgtFE7BUXH3egPLfMm4lrJKtQmmlIYanp78NzbZbSLOhgRU/xQmkXoHScK4JPigsJY+VrovA=="
+    },
+    {
+      "path": "app/themes/default/assets/Email",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/themes/default/assets/Email",
+      "size": 0,
+      "hash": "c967cc51bc0ed87ce5a3186dc30d1fd7a4427d2a",
+      "sri": "z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg=="
     },
     {
       "path": "app/themes/default/assets/fonts/brand-icons.eot",
@@ -1083,7 +1155,7 @@
       "path": "head.html",
       "where": "internal",
       "type": "head",
-      "hash": "8eeca2c11f4812c337d1d2787ea9247dcee91cc1"
+      "hash": "7a30550bbb29ef9b6bc8ebe5d415c7076bbf3b35"
     },
     {
       "path": "body.html",
