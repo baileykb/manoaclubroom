@@ -1,15 +1,12 @@
 import React from 'react';
-<<<<<<< HEAD
-import { Grid, Icon, Header } from 'semantic-ui-react';
-=======
-import { Grid, Image } from 'semantic-ui-react';
->>>>>>> issue-2-v2
+import { Grid, Icon, Header, Image } from 'semantic-ui-react';
+
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-<<<<<<< HEAD
+
         <div className='landing-background'>
           <Grid stackable centered container columns={6} >
 
@@ -45,20 +42,7 @@ class Landing extends React.Component {
 
           </Grid>
         </div>
-=======
-        <Grid verticalAlign='middle' textAlign='center' container>
 
-          <Grid.Column width={4}>
-            <Image size='small' circular src="/images/meteor-logo.png"/>
-          </Grid.Column>
-
-          <Grid.Column width={8}>
-            <h1>Welcome to this template</h1>
-            <p>Now get to work and modify this app!</p>
-          </Grid.Column>
-
-        </Grid>
->>>>>>> issue-2-v2
     );
   }
 }

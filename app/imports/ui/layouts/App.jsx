@@ -7,18 +7,11 @@ import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom'
 import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
-<<<<<<< HEAD
 import Browse from '../pages/Browse';
-=======
 import ListClubs from '../pages/ListClubs';
-<<<<<<< HEAD
-import ListStuffAdmin from '../pages/ListStuffAdmin';
->>>>>>> issue-2-v2
-=======
 import ListClubsAdmin from '../pages/ListClubsAdmin';
->>>>>>> f9102a42538458d3a7ef265108c890380f33610b
-import AddStuff from '../pages/AddStuff';
-import EditStuff from '../pages/EditStuff';
+import ClubAdmin from '../pages/ClubAdmin';
+import EditClub from '../pages/EditClub';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
@@ -35,20 +28,11 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-<<<<<<< HEAD
-              <ProtectedRoute path="/list" component={Browse}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-=======
               <ProtectedRoute path="/list" component={ListClubs}/>
-              <ProtectedRoute path="/add" component={AddStuff}/>
-              <ProtectedRoute path="/edit/:_id" component={EditStuff}/>
-<<<<<<< HEAD
-              <AdminProtectedRoute path="/admin" component={ListStuffAdmin}/>
->>>>>>> issue-2-v2
-=======
               <AdminProtectedRoute path="/admin" component={ListClubsAdmin}/>
->>>>>>> f9102a42538458d3a7ef265108c890380f33610b
+              <ProtectedRoute path="/browse" component={Browse}/>
+              <ClubAdminProtectedRoute path="/edit/:_id" component={EditClub}/>
+              <ClubAdminProtectedRoute path="/clubadminlist" component={ClubAdmin}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>
             </Switch>
@@ -96,6 +80,20 @@ const AdminProtectedRoute = ({ component: Component, ...rest }) => (
     />
 );
 
+const ClubAdminProtectedRoute = ({ component: Component, ...rest }) => (
+    <Route
+        {...rest}
+        render={(props) => {
+          const isLogged = Meteor.userId() !== null;
+          const isClubAdmin = Roles.userIsInRole(Meteor.userId(), 'clubAdmin');
+          return (isLogged && isClubAdmin) ?
+              (<Component {...props} />) :
+              (<Redirect to={{ pathname: '/signin', state: { from: props.location } }}/>
+              );
+        }}
+    />
+);
+
 /** Require a component and location to be passed to each ProtectedRoute. */
 ProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
@@ -106,6 +104,10 @@ ProtectedRoute.propTypes = {
 AdminProtectedRoute.propTypes = {
   component: PropTypes.func.isRequired,
   location: PropTypes.object,
+};
+
+ClubAdminProtectedRoute.propTypes = {
+  component: PropTypes.func.isRequired,
 };
 
 export default App;

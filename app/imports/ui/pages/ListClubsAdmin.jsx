@@ -1,7 +1,10 @@
 import React from 'react';
 import { Container, Card, Image, Button } from 'semantic-ui-react';
 
-export default class ListClubsAdmin extends React.Component {
+
+
+class ListClubsAdmin extends React.Component {
+
   render() {
     const divStyle = { padding: '15px' };
     return (
@@ -49,3 +52,7 @@ export default class ListClubsAdmin extends React.Component {
     );
   }
 }
+
+
+export default ListClubsAdmin;
+
