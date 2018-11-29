@@ -36,6 +36,8 @@ class EditProfile extends React.Component {
             <AutoForm schema={ProfileSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
+                <TextField name='interests'/>
+                <TextField name='major'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />

@@ -9,6 +9,8 @@ class Profile extends React.Component {
     return (
         <Table.Row>
           <Table.Cell>{this.props.profile.name}</Table.Cell>
+          <Table.Cell>{this.props.profile.interests}</Table.Cell>
+          <Table.Cell>{this.props.profile.major}</Table.Cell>
           <Table.Cell>
             <Link to={`/editProfile/${this.props.profile._id}`}>Edit</Link>
           </Table.Cell>

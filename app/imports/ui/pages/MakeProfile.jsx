@@ -3,8 +3,6 @@ import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
 import { Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
-import NumField from 'uniforms-semantic/NumField';
-import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
@@ -33,9 +31,9 @@ class MakeProfile extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { name } = data;
+    const { name, interests, major } = data;
     const owner = Meteor.user().username;
-    Profiles.insert({ name, owner }, this.insertCallback);
+    Profiles.insert({ name, interests, major, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -47,6 +45,8 @@ class MakeProfile extends React.Component {
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ProfileSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='name'/>
+                <TextField name='interests'/>
+                <TextField name='major'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' value='fakeuser@foo.com'/>
