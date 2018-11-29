@@ -1,5 +1,5 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Grid, Loader, Header, Segment, TextArea, Image } from 'semantic-ui-react';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
 import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
@@ -31,16 +31,34 @@ class EditClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Club</Header>
+        <Grid container centered columns={2}>
+          <Grid.Column >
+            <Header as="h2" textAlign="center"> Club Details and Recent Activity</Header>
+            <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
+              <Segment>
+                <TextField name='image'/>
+                <div className="ui image">
+                  <Image src={this.props.doc.image} size='small' as='a' href={this.props.doc.image}
+                         target='_blank'/>
+                </div>
+                <Header as="h4">Recent activities</Header>
+                <TextArea placeholder='Please Enter the recent activities' />
+                <Header as="h4">Note</Header>
+                <TextArea placeholder='Please Enter anything you want to note' />
+                <ErrorsField/>
+                <HiddenField name='owner' value='fakeuser@foo.com'/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+
+          <Grid.Column >
+            <Header as="h2" textAlign="center">Basic Information</Header>
             <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
                 <TextField name='location'/>
                 <TextField name='time'/>
                 <TextField name='interest'/>
-                <TextField name='image'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

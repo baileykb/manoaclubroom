@@ -4,7 +4,7 @@ import { Container, Header, Loader, Card } from 'semantic-ui-react';
 import { Clubs } from '/imports/api/club/club';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
-import ClubAdminNormal from '/imports/ui/components/ClubAdminSuper';
+import ClubAdminNormal from '/imports/ui/components/ClubAdminNormal';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListClubsAdminNormal extends React.Component {
