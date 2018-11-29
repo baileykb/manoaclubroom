@@ -3,6 +3,7 @@
   "appId": "<<<<<<< HEAD",
   "clientArchs": [
     "web.browser",
-    "web.browser.legacy"
+    "web.browser.legacy",
+    "web.cordova"
   ]
 }
