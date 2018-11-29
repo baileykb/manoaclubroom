@@ -23,12 +23,9 @@ class ClubAdminNormal extends React.Component {
           <Card.Content extra>
             <div className='ui two buttons'>
               <Button basic color='red'>
-                Submit!!!!!
+             <Link to={`/edit/${this.props.club._id}`}>Edit</Link>
               </Button>
             </div>
-            <Card.Content extra>
-              <Link to={`/edit/${this.props.club._id}`}>Edit</Link>
-            </Card.Content>
           </Card.Content>
         </Card>
 

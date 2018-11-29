@@ -1,6 +1,6 @@
 import React from 'react';
 import { Clubs, ClubSchema } from '/imports/api/club/club';
-import { Grid, Segment, Header } from 'semantic-ui-react';
+import { Grid, Segment, Header, Image, TextArea } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
 import LongTextField from 'uniforms-semantic/LongTextField';
@@ -40,24 +40,32 @@ class AddClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   render() {
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Add Club</Header>
             <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ClubSchema} onSubmit={this.submit}>
+              <Grid container centered columns={2}>
+                <Grid.Column>
+                  <Header as="h2" textAlign="center">Club Basic Info</Header>
               <Segment>
                 <TextField name='name'/>
                 <TextField name='location'/>
                 <TextField name='time'/>
                 <TextField name='interest'/>
                 <TextField name='image'/>
-                <LongTextField name='description'/>
-                <SubmitField value='Submit'/>
-                <ErrorsField/>
-                <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
+                </Grid.Column>
+
+                <Grid.Column>
+                  <Header as="h2" textAlign="center">Additional Info</Header>
+                  <Segment>
+                    <LongTextField name='description'/>
+                    <Header as="h4">Note</Header>
+                    <TextArea placeholder='Please Enter anything you want to note' />
+                    <SubmitField value='Submit'/>
+                    <ErrorsField/>
+                    <HiddenField name='owner' value='fakeuser@foo.com'/>
+                  </Segment>
+                </Grid.Column>
+              </Grid>
             </AutoForm>
-          </Grid.Column>
-        </Grid>
     );
   }
 }
