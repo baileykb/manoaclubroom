@@ -1,7 +1,8 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "john@foo.com", "password": "changeme" }
+    { "email": "john@foo.com", "password": "changeme" },
+    { "email": "jane@foo.com", "password": "changeme" },
   ],
 
   "defaultData": [
@@ -12,9 +13,9 @@
   ],
 
   "defaultProfiles": [
-    { "name": "John Smith", "owner":"john@foo.com" },
-    { "name": "Jane Doe", "owner": "john@good.com" },
-    { "name": "Alan Turing", "owner": "john@foo.com" }
+    { "name": "John Smith", "owner":"jane@foo.com" },
+    { "name": "Jane Doe", "owner": "jane@foo.com" },
+    { "name": "Alan Turing", "owner": "jane@foo.com" }
   ],
 
   "defaultClubs": [
