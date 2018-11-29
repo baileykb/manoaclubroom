@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Header, Loader } from 'semantic-ui-react';
 import { Profiles } from '/imports/api/profile/profile';
 import Profile from '/imports/ui/components/Profile';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -19,16 +19,7 @@ class ListStuff extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Profile</Header>
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.profiles.map((profile) => <Profile key={profile._id} profile={profile} />)}
-            </Table.Body>
-          </Table>
+          {this.props.profiles.map((profile) => <Profile key={profile._id} profile={profile} />)}
         </Container>
     );
   }
