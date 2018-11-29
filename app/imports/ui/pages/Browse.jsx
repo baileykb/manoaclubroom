@@ -32,14 +32,10 @@ class Browse extends React.Component {
   renderPage() {
     const list = this.props.clubs.sort((a, b) => a - b).reverse();
     const searchFilter = list.filter(
-        (club) => {
-          return club.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1;
-        },
+        (club) => club.name.toLowerCase().indexOf(this.state.name.toLowerCase()) !== -1,
     );
     const interestFilter = searchFilter.filter(
-        (club) => {
-          return club.interest.toLowerCase().indexOf(this.state.interest.toLowerCase()) !== -1;
-        },
+        (club) => club.interest.toLowerCase().indexOf(this.state.interest.toLowerCase()) !== -1,
     );
     return (
         <Container>
@@ -63,8 +59,7 @@ class Browse extends React.Component {
               </datalist>
             </Grid.Column>
           </Grid>
-          <Card.Group>{interestFilter.map((club, index) => <Clubs key={index}
-                                                                              club={club}/>)}</Card.Group>
+          <Card.Group>{interestFilter.map((club, index) => <Clubs key={index} club={club}/>)}</Card.Group>
         </Container>
     );
   }
