@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Header, Segment, Loader } from 'semantic-ui-react';
-import { Users, UserSchema } from '/imports/api/user/user';
+import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
+import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
 import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -12,12 +12,12 @@ import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
 /** Renders the Page for editing a single document. */
-class EditUser extends React.Component {
+class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, interests, _id } = data;
-    Users.update(_id, { $set: { name, interests } }, (error) => (error ?
+    const { name, _id } = data;
+    Profiles.update(_id, { $set: { name } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -33,10 +33,9 @@ class EditUser extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Edit Profile</Header>
-            <AutoForm schema={UserSchema} onSubmit={this.submit} model={this.props.doc}>
+            <AutoForm schema={ProfileSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
-                <TextField name='interests'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />
@@ -49,7 +48,7 @@ class EditUser extends React.Component {
 }
 
 /** Require the presence of a Stuff document in the props object. Uniforms adds 'model' to the props, which we use. */
-EditUser.propTypes = {
+EditProfile.propTypes = {
   doc: PropTypes.object,
   model: PropTypes.object,
   ready: PropTypes.bool.isRequired,
@@ -60,9 +59,9 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Users');
+  const subscription = Meteor.subscribe('Profiles');
   return {
-    doc: Users.findOne(documentId),
+    doc: Profiles.findOne(documentId),
     ready: subscription.ready(),
   };
-})(EditUser);
+})(EditProfile);

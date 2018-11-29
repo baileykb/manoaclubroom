@@ -11,13 +11,13 @@ import ListClubs from '../pages/ListClubs';
 import ListClubsAdminSuper from '../pages/ListClubsAdminSuper';
 import AddClub from '../pages/AddClub';
 import EditClub from '../pages/EditClub';
-import EditProfile from '../pages/EditProfile';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
 import Signup from '../pages/Signup';
 import Signout from '../pages/Signout';
-import DisplayProfile from '../pages/DisplayProfile';
 import MakeProfile from '../pages/MakeProfile';
+import DisplayProfile from '../pages/DisplayProfile';
+import EditProfile from '../pages/EditProfile';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -30,12 +30,12 @@ class App extends React.Component {
               <Route exact path="/" component={Landing}/>
               <Route path="/signin" component={Signin}/>
               <Route path="/signup" component={Signup}/>
-              <Route path="/profile" component={DisplayProfile}/>
+              <ProtectedRoute path="/makeProfile" component={MakeProfile}/>
+              <ProtectedRoute path="/displayProfile" component={DisplayProfile}/>
               <ProtectedRoute path="/list" component={ListClubs}/>
               <ProtectedRoute path="/add" component={AddClub}/>
               <ProtectedRoute path="/edit/:_id" component={EditClub}/>
-              <ProtectedRoute path="/editProfile" component={EditProfile}/>
-              <ProtectedRoute path="/make" component={MakeProfile}/>
+              <ProtectedRoute path="/editProfile/:_id" component={EditProfile}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdminSuper}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>

@@ -1,11 +1,15 @@
 import React from 'react';
-import { Users, UserSchema } from '/imports/api/user/user';
+import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
 import { Grid, Segment, Header } from 'semantic-ui-react';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
+import NumField from 'uniforms-semantic/NumField';
+import SelectField from 'uniforms-semantic/SelectField';
 import SubmitField from 'uniforms-semantic/SubmitField';
+import HiddenField from 'uniforms-semantic/HiddenField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import { Bert } from 'meteor/themeteorchef:bert';
+import { Meteor } from 'meteor/meteor';
 
 /** Renders the Page for adding a document. */
 class MakeProfile extends React.Component {
@@ -29,8 +33,9 @@ class MakeProfile extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { name, interests } = data;
-    Users.insert({ name, interests }, this.insertCallback);
+    const { name } = data;
+    const owner = Meteor.user().username;
+    Profiles.insert({ name, owner }, this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -39,12 +44,12 @@ class MakeProfile extends React.Component {
         <Grid container centered>
           <Grid.Column>
             <Header as="h2" textAlign="center">Make Profile</Header>
-            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={UserSchema} onSubmit={this.submit}>
+            <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ProfileSchema} onSubmit={this.submit}>
               <Segment>
                 <TextField name='name'/>
-                <TextField name='interests'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
+                <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
           </Grid.Column>
