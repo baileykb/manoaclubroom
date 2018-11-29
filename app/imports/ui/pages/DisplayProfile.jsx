@@ -6,6 +6,7 @@ import { User } from '/imports/ui/components/User';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
 
+
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class DisplayProfile extends React.Component {
 
@@ -22,7 +23,7 @@ class DisplayProfile extends React.Component {
           <Header as="h2" textAlign="center">Email: {this.props.currentUser}</Header> */
         <Container>
           <Header>Profile</Header>
-          {this.props.users.map((stuff) => <User key={stuff._id} stuff={stuff} />)}
+          {this.props.users.map((user, index) => <User key={index} user={user} />)}
         </Container>
     );
   }
@@ -37,7 +38,7 @@ DisplayProfile.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Stuff');
+  const subscription = Meteor.subscribe('Users');
   return {
     users: Users.find({}).fetch(),
     ready: subscription.ready(),
