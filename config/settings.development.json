@@ -1,13 +1,9 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-<<<<<<< HEAD
     { "email": "clubadmin@foo.com", "password": "changeme", "role": "clubAdmin" },
-    { "email": "john@foo.com", "password": "changeme" }
-=======
     { "email": "john@foo.com", "password": "changeme" },
     { "email": "jane@foo.com", "password": "changeme" }
->>>>>>> deploy-preparation-user-profile
   ],
 
   "defaultData": [
