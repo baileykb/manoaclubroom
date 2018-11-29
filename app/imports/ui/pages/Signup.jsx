@@ -59,8 +59,8 @@ export default class Signup extends React.Component {
                       icon="lock"
                       iconPosition="left"
                       name="password"
-                      placeholder="Password"
                       type="password"
+                      placeholder="Password"
                       onChange={this.handleChange}
                   />
                   <Form.Button content="Submit"/>
