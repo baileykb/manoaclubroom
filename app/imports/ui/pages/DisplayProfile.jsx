@@ -19,16 +19,7 @@ class ListStuff extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Profile</Header>
-          <Table celled>
-            <Table.Header>
-              <Table.Row>
-                <Table.HeaderCell>Name</Table.HeaderCell>
-              </Table.Row>
-            </Table.Header>
-            <Table.Body>
-              {this.props.profiles.map((profile) => <Profile key={profile._id} profile={profile} />)}
-            </Table.Body>
-          </Table>
+          {this.props.profiles.map((profile) => <Profile key={profile._id} profile={profile} />)}
         </Container>
     );
   }
