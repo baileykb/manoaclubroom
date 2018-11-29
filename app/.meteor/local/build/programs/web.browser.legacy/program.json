@@ -812,12 +812,12 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=1d1c14202a97923bada443574af65e5581afb28f",
+      "url": "/app/app.js?hash=d3e13a561d7546a41c044b3afa37d4944cf9cb64",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/1d1c14202a97923bada443574af65e5581afb28f.map",
-      "size": 67487,
-      "hash": "1d1c14202a97923bada443574af65e5581afb28f",
-      "sri": "rHVgPR4rv/adepFEWfsWC0Dx1H61eZJow9dnLACI17JO8gDsMZ5Sj8XY5nQF8WziSSRu+5ui8Bvb9na3QmR90Q=="
+      "sourceMapUrl": "/app/d3e13a561d7546a41c044b3afa37d4944cf9cb64.map",
+      "size": 67495,
+      "hash": "d3e13a561d7546a41c044b3afa37d4944cf9cb64",
+      "sri": "XYLizv/fVqGsKcILh65nsuk7fnrU1X/qQOfx395IOC3hdNmpgrmA9053Z4PgdG8qHwOtzv0jBwbLzYuv6IyQLQ=="
     },
     {
       "path": "packages/service-configuration.js",
@@ -834,12 +834,12 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=70edc1af431c24632467bdef63e4e2ce45ba6f1b",
+      "url": "/merged-stylesheets.css?hash=2064c6401f9893e36d54a184799f4fe2ddeea085",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/70edc1af431c24632467bdef63e4e2ce45ba6f1b.map",
-      "size": 37930,
-      "hash": "70edc1af431c24632467bdef63e4e2ce45ba6f1b",
-      "sri": "pKJEumJu1D/jb08DHP9m2y6mQrnw/JpQbyYk5YqXh1pbfI1+ljCL1Nx3f4O0XmeKRWBn3Q2+pQjWsaebsMMeNA=="
+      "sourceMapUrl": "/2064c6401f9893e36d54a184799f4fe2ddeea085.map",
+      "size": 37961,
+      "hash": "2064c6401f9893e36d54a184799f4fe2ddeea085",
+      "sri": "Shl8stVYO2xZOSVglaWEyZkPxfMov5rpywzUuFnZNtMzTZHglzWKYlsGmn1zc2L65FYbUO0chU/N6fozeyolXg=="
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -997,9 +997,9 @@
       "type": "asset",
       "cacheable": false,
       "url": "/themes/default/assets/fonts/brand-icons.svg",
-      "size": 507628,
-      "hash": "b558681642758374b0e7bdbda134a3fccaff273f",
-      "sri": "L0uMaBs2BGxzGc5pptn4cWktu0vGiloo/I3kjcX9Syxt8inLKFzPC6Hg3+5PpooarGCDdopoQg/rYeC7jyRwWA=="
+      "size": 508636,
+      "hash": "c42beebe60f4382770173ef78d0f122b81fd06f9",
+      "sri": "8OZjqxULAx1ei6n+Phkrr0d7kRl1Ul/5UskobcqVs3wdCMJwdfJtEHFXiYnwO3kzMLRAAUpR6ZCBQ8mk4b0L3g=="
     },
     {
       "path": "app/themes/default/assets/fonts/brand-icons.ttf",
@@ -1057,9 +1057,9 @@
       "type": "asset",
       "cacheable": false,
       "url": "/themes/default/assets/fonts/icons.svg",
-      "size": 390837,
-      "hash": "51cdde487fb204ab4071366d97eef53596d19156",
-      "sri": "792yZ3SGEbVBFODuAdD1B+uyjFQ5fANhGYBV407/pD60lj6VechJqdYy+FwhxgtFrVRzd3haa3+w6ZDcRrPNcw=="
+      "size": 392355,
+      "hash": "7c49b4b8c5a39f062a58fdfe989339901aa3241c",
+      "sri": "B0wP3XZ7mGOzZgWNKr1NWuT/gdsXikc63lc4JOp0zjfLvpDYLspLJSiZlgxabwU0/T8Oa/W3eqd7/MCl0sTpzg=="
     },
     {
       "path": "app/themes/default/assets/fonts/icons.ttf",
@@ -1107,9 +1107,9 @@
       "type": "asset",
       "cacheable": false,
       "url": "/themes/default/assets/fonts/outline-icons.svg",
-      "size": 107201,
-      "hash": "da6ed86e46db17723246953bc535b2deaa85f673",
-      "sri": "6g2z1O+GDRXkPC8jJ+2lUwY7LdXFcpO6yXMHqvDJWbL/g8ExksNWsH63szREzKHlbNO9CW8dcXIrMXM5lINfNA=="
+      "size": 107567,
+      "hash": "f677d9156333ae9a9c51fbdde1e2f351cb409439",
+      "sri": "H8G5HXypsCary3yV9vwMxYwwKW9lKKo0o+RClu3B7XMRdl0aTGd6aiYLQdwsFUEabovOpaWYcHi/2RADYS6vEw=="
     },
     {
       "path": "app/themes/default/assets/fonts/outline-icons.ttf",
