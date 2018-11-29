@@ -55,6 +55,9 @@ class ListClubs extends React.Component {
                 <option value='Medical'/>
                 <option value='Sport'/>
                 <option value='Animal'/>
+                <option value='Dance'/>
+                <option value='Service'/>
+                <option value='Academic'/>
               </datalist>
             </Grid.Column>
           </Grid>
