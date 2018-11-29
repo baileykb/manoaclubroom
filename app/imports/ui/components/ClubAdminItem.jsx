@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Label, Image } from 'semantic-ui-react';
+import { Card, Label, Image, Icon } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter, Link } from 'react-router-dom';
 
@@ -15,9 +15,9 @@ class ClubAdminItem extends React.Component {
             <Card.Description>
               {this.props.club.description}
             </Card.Description>
-            <Card.Content extra>
-              <a href={`${this.props.club.website}`}><Icon name='globe'/></a>
-            </Card.Content>
+          </Card.Content>
+          <Card.Content extra>
+            <a href={`${this.props.club.website}`}>Website <Icon name='globe'/></a>
           </Card.Content>
           <Card.Content extra>
             <Label color='green'>{this.props.club.interest}</Label>
