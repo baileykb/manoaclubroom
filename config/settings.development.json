@@ -13,9 +13,9 @@
   ],
 
   "defaultProfiles": [
-    { "name": "John Smith", "owner":"jane@foo.com" },
-    { "name": "Jane Doe", "owner": "jane@foo.com" },
-    { "name": "Alan Turing", "owner": "jane@foo.com" }
+    { "name": "Jack Jackson", "interests": "Animals, Math, Reading", "major": "Psychology", "owner":"admin@foo.com" },
+    { "name": "Jane Doe", "interests": "Computer Science, Music, Basketball", "major": "Computer Science", "owner":"jane@foo.com" },
+    { "name": "John Smith", "interests": "Writing, Running, Community Service", "major": "English", "owner":"john@foo.com" }
   ],
 
   "defaultClubs": [
