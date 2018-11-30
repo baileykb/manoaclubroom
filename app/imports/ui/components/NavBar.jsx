@@ -9,43 +9,48 @@ import { Roles } from 'meteor/alanning:roles';
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
-
-    const menuStyle = { marginBottom: '10px', padding: '50px', background: 'white'};
+    const menuStyle = { marginBottom: '10px', padding: '50px', background: 'white' };
     return (
-      <Menu style={menuStyle} attached="top" borderless color = 'black'>
-        <Menu.Item as={NavLink} activeClassName="" exact to="/">
+        <Menu style={menuStyle} attached="top" borderless color='black'>
+          <Menu.Item as={NavLink} activeClassName="" exact to="/">
+            <Header as='h1'>Manoa Club Room</Header>
+          </Menu.Item>
+          {this.props.currentUser ? (
+              [
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List of Clubs</Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Clubs</Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/makeProfile" key='makeProfile'>Make
+                  Profile</Menu.Item>,
+                <Menu.Item as={NavLink} activeClassName="active" exact to="/displayProfile"
+                           key='displayProfile'>Profile</Menu.Item>,
+              ]
+          ) : ''}
+          {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/admin"
+                         key='admin'>Admin</Menu.Item>
+          ) : ''}
+          {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
+              <Menu.Item as={NavLink} activeClassName="active" exact to="/clubAdmin"
+                         key='clubAdmin'>Club Admin</Menu.Item>
+          ) : ''}
 
-
-          <Header as='h1'>Manoa Club Room</Header>
-        </Menu.Item>
-        {this.props.currentUser ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/browse" key='browse'>Browse</Menu.Item>,
-              <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List Clubs</Menu.Item>]
-        ) : ''}
-
-        {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
-            [<Menu.Item as={NavLink} activeClassName="active" exact to="/clubadminlist" key='list'>My Clubs</Menu.Item>]
-        ) : ''}
-
-        <Menu.Item>Search Clubs</Menu.Item>
-
-        <Menu.Item position="right">
-          {this.props.currentUser === '' ? (
-            <Dropdown text="Login" pointing="top right" icon={'user'}>
-              <Dropdown.Menu>
-                <Dropdown.Item icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
-                <Dropdown.Item icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
-              </Dropdown.Menu>
-            </Dropdown>
-          ) : (
-            <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
-              <Dropdown.Menu>
-                <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
-              </Dropdown.Menu>
-            </Dropdown>
-          )}
-        </Menu.Item>
-      </Menu>
+          <Menu.Item position="right">
+            {this.props.currentUser === '' ? (
+                <Dropdown text="Login" pointing="top right" icon={'user'}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item icon="user" text="Sign In" as={NavLink} exact to="/signin"/>
+                    <Dropdown.Item icon="add user" text="Sign Up" as={NavLink} exact to="/signup"/>
+                  </Dropdown.Menu>
+                </Dropdown>
+            ) : (
+                <Dropdown text={this.props.currentUser} pointing="top right" icon={'user'}>
+                  <Dropdown.Menu>
+                    <Dropdown.Item icon="sign out" text="Sign Out" as={NavLink} exact to="/signout"/>
+                  </Dropdown.Menu>
+                </Dropdown>
+            )}
+          </Menu.Item>
+        </Menu>
     );
   }
 }

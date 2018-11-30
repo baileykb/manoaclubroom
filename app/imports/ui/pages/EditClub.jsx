@@ -1,6 +1,6 @@
 import React from 'react';
-import { Grid, Loader, Header, Segment } from 'semantic-ui-react';
-import { Club, ClubSchema } from '/imports/api/club/club';
+import { Grid, Loader, Header, Segment, TextArea, Image } from 'semantic-ui-react';
+import { Clubs, ClubSchema } from '/imports/api/club/club';
 import { Bert } from 'meteor/themeteorchef:bert';
 import AutoForm from 'uniforms-semantic/AutoForm';
 import TextField from 'uniforms-semantic/TextField';
@@ -14,10 +14,11 @@ import PropTypes from 'prop-types';
 
 /** Renders the Page for editing a single document. */
 class EditClub extends React.Component {
+
   /** On successful submit, insert the data. */
   submit(data) {
     const { name, location, time, interest, image, description, _id } = data;
-    Club.update(_id, { $set: { name, location, time, interest, image, description } }, (error) => (error ?
+    Clubs.update(_id, { $set: { name, location, time, interest, image, description } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -30,20 +31,38 @@ class EditClub extends React.Component {
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
   renderPage() {
     return (
-        <Grid container centered>
-          <Grid.Column>
-            <Header as="h2" textAlign="center">Edit Club</Header>
+        <Grid container centered columns={2}>
+          <Grid.Column >
+            <Header as="h2" textAlign="center"> Club Details and Recent Activity</Header>
+            <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
+              <Segment>
+                <TextField name='image'/>
+                <div className="ui image">
+                  <Image src={this.props.doc.image} size='small' as='a' href={this.props.doc.image}
+                         target='_blank'/>
+                </div>
+                <Header as="h4">Recent activities</Header>
+                <TextArea placeholder='Please Enter the recent activities' />
+                <Header as="h4">Note</Header>
+                <TextArea placeholder='Please Enter anything you want to note' />
+                <ErrorsField/>
+                <HiddenField name='owner' value='fakeuser@foo.com'/>
+              </Segment>
+            </AutoForm>
+          </Grid.Column>
+
+          <Grid.Column >
+            <Header as="h2" textAlign="center">Basic Information</Header>
             <AutoForm schema={ClubSchema} onSubmit={this.submit} model={this.props.doc}>
               <Segment>
                 <TextField name='name'/>
                 <TextField name='location'/>
                 <TextField name='time'/>
                 <TextField name='interest'/>
-                <TextField name='image'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner' />
+                <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
           </Grid.Column>
@@ -64,9 +83,9 @@ export default withTracker(({ match }) => {
   // Get the documentID from the URL field. See imports/ui/layouts/App.jsx for the route containing :_id.
   const documentId = match.params._id;
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Club');
+  const subscription = Meteor.subscribe('Clubs');
   return {
-    doc: Club.findOne(documentId),
+    doc: Clubs.findOne(documentId),
     ready: subscription.ready(),
   };
 })(EditClub);

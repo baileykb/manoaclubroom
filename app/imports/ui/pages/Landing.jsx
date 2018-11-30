@@ -1,14 +1,12 @@
 import React from 'react';
-import { Grid, Icon, Header, Image } from 'semantic-ui-react';
-
+import { Grid, Icon, Header } from 'semantic-ui-react';
 
 /** A simple static component to render some text for the landing page. */
 class Landing extends React.Component {
   render() {
     return (
-
         <div className='landing-background'>
-          <Grid stackable centered container columns={6} >
+          <Grid stackable centered container columns={7} >
 
             <Grid.Column textAlign='left'>
               <Icon color=' ' size='huge' name='search'/>
@@ -24,13 +22,13 @@ class Landing extends React.Component {
             <Grid.Column textAlign='center'>
             </Grid.Column>
 
-              <Grid.Column textAlign='center'>
+            <Grid.Column textAlign='center'>
 
-              </Grid.Column>
+            </Grid.Column>
 
-                <Grid.Column textAlign='center'>
+            <Grid.Column textAlign='center'>
 
-                </Grid.Column>
+            </Grid.Column>
 
             <Grid.Column textAlign='center'>
 
@@ -40,9 +38,11 @@ class Landing extends React.Component {
 
             </Grid.Column>
 
+            <Grid.Column textAlign='center'>
+
+            </Grid.Column>
           </Grid>
         </div>
-
     );
   }
 }

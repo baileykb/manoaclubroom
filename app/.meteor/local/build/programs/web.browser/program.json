@@ -812,12 +812,12 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=6dad90e4f64981f0b8f4eec060a9da1847d11245",
+      "url": "/app/app.js?hash=f67b73c10f6165c78563476755158d21de8b6006",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/6dad90e4f64981f0b8f4eec060a9da1847d11245.map",
-      "size": 55963,
-      "hash": "6dad90e4f64981f0b8f4eec060a9da1847d11245",
-      "sri": "OCj17mlGcTpl2W/V3Id+8M9cQrXmGSHcf3De0nqr2RDynjEN/idM1kkyJunpcARii9Uov0g9K5uLWtY5O+Rnxw=="
+      "sourceMapUrl": "/app/f67b73c10f6165c78563476755158d21de8b6006.map",
+      "size": 83842,
+      "hash": "f67b73c10f6165c78563476755158d21de8b6006",
+      "sri": "RJ5fxVToWlMtAf9JGY/vh2U76heFdIpeuAXVE7o4QC9Atv5VYS978Mb0RlrByibfb3X/nWepo67gGrUasGA9vQ=="
     },
     {
       "path": "packages/service-configuration.js",
@@ -834,12 +834,12 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=70edc1af431c24632467bdef63e4e2ce45ba6f1b",
+      "url": "/merged-stylesheets.css?hash=25b2a969289d1065a42539e80491a23f7e6cf3fb",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/70edc1af431c24632467bdef63e4e2ce45ba6f1b.map",
-      "size": 37930,
-      "hash": "70edc1af431c24632467bdef63e4e2ce45ba6f1b",
-      "sri": "pKJEumJu1D/jb08DHP9m2y6mQrnw/JpQbyYk5YqXh1pbfI1+ljCL1Nx3f4O0XmeKRWBn3Q2+pQjWsaebsMMeNA=="
+      "sourceMapUrl": "/25b2a969289d1065a42539e80491a23f7e6cf3fb.map",
+      "size": 37529,
+      "hash": "25b2a969289d1065a42539e80491a23f7e6cf3fb",
+      "sri": "EbmqkV9UP8pc4upl1vIB9nXaQOgX3ljAJ0ztw6+5ajl5+4zImyr1qx02l5YIW04CaDYbhSuPnxcY3IWftwkhsw=="
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -902,84 +902,24 @@
       "sri": "U6h1ANC33dZCHLl9U2CNgj7xW7vcUFBm8Zvf694N888pebbbNi//hDpX6Fp3W+RArlHLWH4M6EgkfuM4ivnYBw=="
     },
     {
-      "path": "app/images/ACM.png",
+      "path": "app/images/landing2.png",
       "where": "client",
       "type": "asset",
       "cacheable": false,
-      "url": "/images/ACM.png",
-      "size": 66401,
-      "hash": "44b1cad748f542c3e49f1b98389b3dae0b112898",
-      "sri": "0ygYdWfcaT95UB02+nQ2u5csqD5am3Y0TVCIgsy186AqFXvKtpZsFnbfrWUcsLYi+GDG1sTEkpBtk1tvM2WARw=="
+      "url": "/images/landing2.png",
+      "size": 1397754,
+      "hash": "d65969fd2a25e7869ae82573c21df83d2980f283",
+      "sri": "1c7z8h670mEF5gpWbQxDqW7NA6z5tlEpeIOrpgFsxYhPJCi/oBQ8Wdfwd/vOocelX5CBTAH+N95ynLy6h+DiPQ=="
     },
     {
-      "path": "app/images/judo.png",
+      "path": "app/images/meteor-logo.png",
       "where": "client",
       "type": "asset",
       "cacheable": false,
-      "url": "/images/judo.png",
-      "size": 320050,
-      "hash": "ef122419fe36a79ed984bd2b6415035114d5c575",
-      "sri": "JPeE1e43/7uaVEIHdR6EMzpM81b9pujEIxeN4v1QA/abX4mbnZsiKMIsdjog+zRfBcJ3sy09+WAUtCWzBex56A=="
-    },
-    {
-      "path": "app/images/landing1.jpg",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/landing1.jpg",
-      "size": 8008562,
-      "hash": "a816bd90ce11906f55a221f69867971345926be4",
-      "sri": "hozuZBVMKziEB6gg1X32UMXfygFCfDmpApXXecU9/R/eVWyEumhYtclvbW9jeNjGoGgAJ1573KAOHtgcNL/h5A=="
-    },
-    {
-      "path": "app/images/landing_original.jpg",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/landing_original.jpg",
-      "size": 4495467,
-      "hash": "1b13de30daf58757ddea6071d9ce1509a4994193",
-      "sri": "ef6muMwEvhfz8h1VMSLkH72cXOAoIO7RAXAr/vgk09bYw7cYt32zK4jjmcE/JZ3R9aGVcbadkEO3ya1cIxaZ3w=="
-    },
-    {
-      "path": "app/images/music.jpg",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/music.jpg",
-      "size": 2833538,
-      "hash": "e9392627fda93734ddf9e4b37dd8b659e15e4292",
-      "sri": "iK2TWUHnno1I8Nu4nasEl3XHCPmGSZdQh2ExfJsOz1OqMy2uxW+dgb/nO7JLFHvM5jrKf5dGExOUigNTAvgqKg=="
-    },
-    {
-      "path": "app/images/pre-med.jpg",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/pre-med.jpg",
-      "size": 158581,
-      "hash": "decd73f4c4ca85f1cbb718529cbc9a4350089cfa",
-      "sri": "dA/NZxEOrUvDZiyLXqwLYgb1lVeS6FAT7eY72Ay+myJfojs7W3gEXc46D+ARx0KIpfslS0/QTYyYPVYGmIgbYw=="
-    },
-    {
-      "path": "app/images/uhlogo.png",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/images/uhlogo.png",
-      "size": 425519,
-      "hash": "c7352b6cb9c48ba35d04c8a9475b34d11484bcde",
-      "sri": "Je3Zlw++kJI9bVwgtFE7BUXH3egPLfMm4lrJKtQmmlIYanp78NzbZbSLOhgRU/xQmkXoHScK4JPigsJY+VrovA=="
-    },
-    {
-      "path": "app/themes/default/assets/Email",
-      "where": "client",
-      "type": "asset",
-      "cacheable": false,
-      "url": "/themes/default/assets/Email",
-      "size": 0,
-      "hash": "c967cc51bc0ed87ce5a3186dc30d1fd7a4427d2a",
-      "sri": "z4PhNX7vuL3xVChQ1m2AB9Yg5AULVxXcg/SpIdNs6c5H0NE8XYXysP+DGNKHfuwvY7kxvUdBeoGlODJ6+SfaPg=="
+      "url": "/images/meteor-logo.png",
+      "size": 21451,
+      "hash": "8353fa469cbd43ee884c844b077efb82ab7c4503",
+      "sri": "kWLVDOY6iR+AJ6TLP8mKo3l/tGbPv5Ohzm/GgYMrS1Y67HbPGlGXRgbjxIvJST4dbPtjdkCFYE4vRyiEn232Rg=="
     },
     {
       "path": "app/themes/default/assets/fonts/brand-icons.eot",
@@ -1155,7 +1095,7 @@
       "path": "head.html",
       "where": "internal",
       "type": "head",
-      "hash": "7a30550bbb29ef9b6bc8ebe5d415c7076bbf3b35"
+      "hash": "5239753ee7985544034c99dbfc5c76f9899e853d"
     },
     {
       "path": "body.html",
