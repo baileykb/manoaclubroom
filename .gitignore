@@ -8,3 +8,4 @@ npm-debug.log
 app/client/style.css
 app/.meteor/.id
 teambonding.txt
+.meteor\local\
