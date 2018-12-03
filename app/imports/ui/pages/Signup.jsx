@@ -2,14 +2,14 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Form, Grid, Header, Message, Segment } from 'semantic-ui-react';
 import { Accounts } from 'meteor/accounts-base';
-import { Bert } from 'meteor/themeteorchef:bert';
-import { Meteor } from 'meteor/meteor';
+import AutoForm from 'uniforms-semantic/AutoForm';
 import { Profiles, ProfileSchema } from '/imports/api/profile/profile';
 import TextField from 'uniforms-semantic/TextField';
+import { Meteor } from 'meteor/meteor';
 import SubmitField from 'uniforms-semantic/SubmitField';
 import ErrorsField from 'uniforms-semantic/ErrorsField';
 import HiddenField from 'uniforms-semantic/HiddenField';
-import AutoForm from 'uniforms-semantic/AutoForm';
+import { Bert } from 'meteor/themeteorchef:bert';
 
 /**
  * Signup component is similar to signin component, but we attempt to create a new user instead.
@@ -33,7 +33,7 @@ export default class Signup extends React.Component {
   }
 
   /** Handle Signup submission using Meteor's account mechanism. */
-  handleSubmit() {
+  handleSubmit(data) {
     const { email, password } = this.state;
     Accounts.createUser({ email, username: email, password }, (err) => {
       if (err) {
@@ -42,6 +42,9 @@ export default class Signup extends React.Component {
         // browserHistory.push('/login');
       }
     });
+    const { name, major, interests } = data;
+    const owner = Meteor.user().username;
+    Profiles.insert({ name, interests, major, owner }, this.insertCallback);
   }
 
   insertCallback(error) {
@@ -53,12 +56,6 @@ export default class Signup extends React.Component {
     }
   }
 
-  submit(data) {
-    const { name, interests, major } = data;
-    const owner = Meteor.user().username;
-    Profiles.insert({ name, interests, major, owner }, this.insertCallback);
-  }
-
   /** Display the signup form. */
   render() {
     return (
@@ -68,7 +65,7 @@ export default class Signup extends React.Component {
               <Header as="h2" textAlign="center">
                 Register your account
               </Header>
-              <Form onSubmit={this.handleSubmit}>
+              <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ProfileSchema} onSubmit={this.handleSubmit}>
                 <Segment stacked>
                   <Form.Input
                       label="Email"
@@ -88,19 +85,14 @@ export default class Signup extends React.Component {
                       placeholder="Password"
                       onChange={this.handleChange}
                   />
-                  <Form.Button value='Submit' content="Submit"/>
+                  <TextField name='name'/>
+                  <TextField name='major'/>
+                  <TextField name='interests'/>
+                  <SubmitField value='Submit'/>
+                  <ErrorsField/>
+                  <HiddenField name='owner' value='fakeuser@foo.com'/>
                 </Segment>
-                <AutoForm ref={(ref) => { this.formRef = ref; }} schema={ProfileSchema} onSubmit={this.submit}>
-                  <Segment>
-                    <TextField name='name'/>
-                    <TextField name='interests'/>
-                    <TextField name='major'/>
-                    <SubmitField value='Submit'/>
-                    <ErrorsField/>
-                    <HiddenField name='owner' value='fakeuser@foo.com'/>
-                  </Segment>
-                </AutoForm>
-              </Form>
+              </AutoForm>
               <Message>
                 Already have an account? Login <Link to="/signin">here</Link>
               </Message>
