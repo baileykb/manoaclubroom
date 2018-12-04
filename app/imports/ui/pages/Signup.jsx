@@ -40,11 +40,11 @@ export default class Signup extends React.Component {
         this.setState({ error: err.reason });
       } else {
         // browserHistory.push('/login');
+        const { name, major, interests } = data;
+        const owner = Meteor.user().username;
+        Profiles.insert({ name, interests, major, owner }, this.insertCallback);
       }
     });
-    const { name, major, interests } = data;
-    const owner = Meteor.user().username;
-    Profiles.insert({ name, interests, major, owner }, this.insertCallback);
   }
 
   insertCallback(error) {
