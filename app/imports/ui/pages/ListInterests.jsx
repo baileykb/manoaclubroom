@@ -1,6 +1,6 @@
 import React from 'react';
 import { Meteor } from 'meteor/meteor';
-import { Container, Table, Header, Loader } from 'semantic-ui-react';
+import { Container, Table, Header, Loader, Button } from 'semantic-ui-react';
 import { Interests } from '/imports/api/interest/interest';
 import Interest from '/imports/ui/components/Interest';
 import { withTracker } from 'meteor/react-meteor-data';
@@ -19,13 +19,13 @@ class ListInterests extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">List Interests</Header>
+          <Header as="h2" textAlign="center">Interests</Header>
           <Table celled>
             <Table.Body>
               {this.props.interests.map((interest) => <Interest key={interest._id} interest={interest} />)}
             </Table.Body>
           </Table>
-          <Link to="/addInterest">Add</Link>
+          <Link to="/addInterest"><Button>Add</Button></Link>
         </Container>
     );
   }
