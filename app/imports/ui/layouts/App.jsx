@@ -20,6 +20,7 @@ import MakeProfile from '../pages/MakeProfile';
 import DisplayProfile from '../pages/DisplayProfile';
 import EditProfile from '../pages/EditProfile';
 import ListInterests from '../pages/ListInterests';
+import AddInterest from '../pages/AddInterest';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -40,6 +41,7 @@ class App extends React.Component {
               <ProtectedRoute path="/editProfile/:_id" component={EditProfile}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdminSuper}/>
               <AdminProtectedRoute path="/interests" component={ListInterests}/>
+              <AdminProtectedRoute path="/addInterest" component={AddInterest}/>
               <ClubAdminProtectedRoute path="/clubAdmin" component={ListClubsAdminNormal}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>

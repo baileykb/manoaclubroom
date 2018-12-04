@@ -5,6 +5,7 @@ import { Interests } from '/imports/api/interest/interest';
 import Interest from '/imports/ui/components/Interest';
 import { withTracker } from 'meteor/react-meteor-data';
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListInterests extends React.Component {
@@ -24,6 +25,7 @@ class ListInterests extends React.Component {
               {this.props.interests.map((interest) => <Interest key={interest._id} interest={interest} />)}
             </Table.Body>
           </Table>
+          <Link to="/addInterest">Add</Link>
         </Container>
     );
   }
