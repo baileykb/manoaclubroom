@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Image, Button } from 'semantic-ui-react';
+import { Card, Image, Label } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 
@@ -19,6 +19,9 @@ class Club extends React.Component {
             <Card.Description>
               {this.props.club.description}
             </Card.Description>
+          </Card.Content>
+          <Card.Content extra>
+            <Label as='a' tag>{this.props.club.interest}</Label>
           </Card.Content>
         </Card>
 

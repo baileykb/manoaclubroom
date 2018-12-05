@@ -29,8 +29,8 @@
   ],
 
   "defaultInterests": [
-    { "interest": "math" },
-    { "interest": "art" },
-    { "interest": "sports" }
+    { "interest": "Math" },
+    { "interest": "Art" },
+    { "interest": "Sports" }
   ]
 }
