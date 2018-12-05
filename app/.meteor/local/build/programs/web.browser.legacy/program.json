@@ -46,10 +46,10 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/packages/modules.js?hash=334358d9efb5ee4b027245385d8515b1d5decc35",
-      "size": 5403839,
-      "hash": "334358d9efb5ee4b027245385d8515b1d5decc35",
-      "sri": "P1YlDfKgLJ2zzp/ioI5u0f2Ng2qBrtakD4X+VX9ScBIeaY4ajI3l92WeewwLdOQGauIuUdOF7NOPmuF4nUZLhQ=="
+      "url": "/packages/modules.js?hash=0d89b09591832504dbb18917debf5994d48cbea3",
+      "size": 5403805,
+      "hash": "0d89b09591832504dbb18917debf5994d48cbea3",
+      "sri": "kYaCVpbvvblp1xJTPV3gH7UD/CO/RalPsW0Sm8i71JAUi3Jg/w85p0Hg3BFziu77WH212y/e3d2hUXm7AxPIeg=="
     },
     {
       "path": "packages/modern-browsers.js",
@@ -812,12 +812,12 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=11842ab7d94d21c23f50d5f64fef25b2a7b6ef51",
+      "url": "/app/app.js?hash=dfb202562e7d900d73872444a3f48872275b57da",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/11842ab7d94d21c23f50d5f64fef25b2a7b6ef51.map",
-      "size": 120623,
-      "hash": "11842ab7d94d21c23f50d5f64fef25b2a7b6ef51",
-      "sri": "BV/OInLs3IW5J8vFU5gDApISw4NZycWNxWQgD5Nb5nDNmbJh1hkM+XhvUEyLAOhShe0DyOrCbaPCEBVOvJ0n2A=="
+      "sourceMapUrl": "/app/dfb202562e7d900d73872444a3f48872275b57da.map",
+      "size": 120631,
+      "hash": "dfb202562e7d900d73872444a3f48872275b57da",
+      "sri": "XJ1LB92yeMv2mD6Q5Cbref4R9viz15wH4KXNXTb49w74y4YiSErxoanPAl/5r6Niob3iGQE8GDSDrbjJKEeq8w=="
     },
     {
       "path": "packages/service-configuration.js",
@@ -834,12 +834,12 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=25b2a969289d1065a42539e80491a23f7e6cf3fb",
+      "url": "/merged-stylesheets.css?hash=fd0ac3787f4d0b9f7f5868918d9e58de841149dc",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/25b2a969289d1065a42539e80491a23f7e6cf3fb.map",
-      "size": 37529,
-      "hash": "25b2a969289d1065a42539e80491a23f7e6cf3fb",
-      "sri": "EbmqkV9UP8pc4upl1vIB9nXaQOgX3ljAJ0ztw6+5ajl5+4zImyr1qx02l5YIW04CaDYbhSuPnxcY3IWftwkhsw=="
+      "sourceMapUrl": "/fd0ac3787f4d0b9f7f5868918d9e58de841149dc.map",
+      "size": 37534,
+      "hash": "fd0ac3787f4d0b9f7f5868918d9e58de841149dc",
+      "sri": "rTz0jp+QjlcUMbfLe053z6M33w/MeT8VSMufpDtZ6riakBoVDGEAqnnd24OwLg5R4RP1icucvItnAcqzoNQCqw=="
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -937,9 +937,9 @@
       "type": "asset",
       "cacheable": false,
       "url": "/themes/default/assets/fonts/brand-icons.svg",
-      "size": 507628,
-      "hash": "b558681642758374b0e7bdbda134a3fccaff273f",
-      "sri": "L0uMaBs2BGxzGc5pptn4cWktu0vGiloo/I3kjcX9Syxt8inLKFzPC6Hg3+5PpooarGCDdopoQg/rYeC7jyRwWA=="
+      "size": 508636,
+      "hash": "c42beebe60f4382770173ef78d0f122b81fd06f9",
+      "sri": "8OZjqxULAx1ei6n+Phkrr0d7kRl1Ul/5UskobcqVs3wdCMJwdfJtEHFXiYnwO3kzMLRAAUpR6ZCBQ8mk4b0L3g=="
     },
     {
       "path": "app/themes/default/assets/fonts/brand-icons.ttf",
@@ -997,9 +997,9 @@
       "type": "asset",
       "cacheable": false,
       "url": "/themes/default/assets/fonts/icons.svg",
-      "size": 390837,
-      "hash": "51cdde487fb204ab4071366d97eef53596d19156",
-      "sri": "792yZ3SGEbVBFODuAdD1B+uyjFQ5fANhGYBV407/pD60lj6VechJqdYy+FwhxgtFrVRzd3haa3+w6ZDcRrPNcw=="
+      "size": 392355,
+      "hash": "7c49b4b8c5a39f062a58fdfe989339901aa3241c",
+      "sri": "B0wP3XZ7mGOzZgWNKr1NWuT/gdsXikc63lc4JOp0zjfLvpDYLspLJSiZlgxabwU0/T8Oa/W3eqd7/MCl0sTpzg=="
     },
     {
       "path": "app/themes/default/assets/fonts/icons.ttf",
@@ -1047,9 +1047,9 @@
       "type": "asset",
       "cacheable": false,
       "url": "/themes/default/assets/fonts/outline-icons.svg",
-      "size": 107201,
-      "hash": "da6ed86e46db17723246953bc535b2deaa85f673",
-      "sri": "6g2z1O+GDRXkPC8jJ+2lUwY7LdXFcpO6yXMHqvDJWbL/g8ExksNWsH63szREzKHlbNO9CW8dcXIrMXM5lINfNA=="
+      "size": 107567,
+      "hash": "f677d9156333ae9a9c51fbdde1e2f351cb409439",
+      "sri": "H8G5HXypsCary3yV9vwMxYwwKW9lKKo0o+RClu3B7XMRdl0aTGd6aiYLQdwsFUEabovOpaWYcHi/2RADYS6vEw=="
     },
     {
       "path": "app/themes/default/assets/fonts/outline-icons.ttf",
