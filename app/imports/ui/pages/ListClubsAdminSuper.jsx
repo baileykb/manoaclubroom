@@ -21,7 +21,6 @@ class ListClubsAdminSuper extends React.Component {
           <Card.Group>
             {this.props.clubs.map((club, index) => <ClubAdminSuper key={index} club ={club} />)}
           </Card.Group>
-
         </Container>
     );
   }
@@ -36,7 +35,7 @@ ListClubsAdminSuper.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Clubs');
+  const subscription = Meteor.subscribe('ClubsSuperAdmin');
   return {
     clubs: Clubs.find({}).fetch(),
     ready: subscription.ready(),
