@@ -6,7 +6,7 @@ class Landing extends React.Component {
   render() {
     return (
         <div className='landing-background'>
-          <Grid stackable centered container columns={7} >
+          <Grid stackable centered container columns={6} >
 
             <Grid.Column textAlign='left'>
               <Icon color=' ' size='huge' name='search'/>
@@ -17,9 +17,6 @@ class Landing extends React.Component {
                 try searching for one that is within your interest.
               </Header>
 
-            </Grid.Column>
-
-            <Grid.Column textAlign='center'>
             </Grid.Column>
 
             <Grid.Column textAlign='center'>

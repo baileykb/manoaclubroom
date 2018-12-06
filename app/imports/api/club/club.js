@@ -11,7 +11,9 @@ const ClubSchema = new SimpleSchema({
   location: String,
   time: String,
   interest: String,
+  interest2: String,
   image: String,
+  website: String,
   description: String,
   owner: String,
 }, { tracker: Tracker });

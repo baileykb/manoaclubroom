@@ -8,6 +8,8 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListClubs from '../pages/ListClubs';
+import ListRequest from '../pages/ListRequest';
+import RequestClub from '../pages/RequestClub';
 import ListClubsAdminSuper from '../pages/ListClubsAdminSuper';
 import ListClubsAdminNormal from '../pages/ListClubsAdminNormal';
 import AddClub from '../pages/AddClub';
@@ -19,6 +21,8 @@ import Signout from '../pages/Signout';
 import MakeProfile from '../pages/MakeProfile';
 import DisplayProfile from '../pages/DisplayProfile';
 import EditProfile from '../pages/EditProfile';
+import ListInterests from '../pages/ListInterests';
+import AddInterest from '../pages/AddInterest';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -34,10 +38,14 @@ class App extends React.Component {
               <ProtectedRoute path="/makeProfile" component={MakeProfile}/>
               <ProtectedRoute path="/displayProfile" component={DisplayProfile}/>
               <ProtectedRoute path="/list" component={ListClubs}/>
+              <ProtectedRoute path="/request" component={RequestClub}/>
               <ProtectedRoute path="/add" component={AddClub}/>
               <ProtectedRoute path="/edit/:_id" component={EditClub}/>
               <ProtectedRoute path="/editProfile/:_id" component={EditProfile}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdminSuper}/>
+              <AdminProtectedRoute path="/interests" component={ListInterests}/>
+              <AdminProtectedRoute path="/addInterest" component={AddInterest}/>
+              <AdminProtectedRoute path="/listRequest" component={ListRequest}/>
               <ClubAdminProtectedRoute path="/clubAdmin" component={ListClubsAdminNormal}/>
               <ProtectedRoute path="/signout" component={Signout}/>
               <Route component={NotFound}/>

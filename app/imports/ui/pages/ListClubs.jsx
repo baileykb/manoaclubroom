@@ -14,6 +14,7 @@ class ListClubs extends React.Component {
     this.state = { name: '', interest: '' };
     this.handleChange = this.handleChange.bind(this);
     this.interestChange = this.interestChange.bind(this);
+    this.interestChange2 = this.interestChange2.bind(this);
   }
 
   handleChange(e) {
@@ -21,6 +22,10 @@ class ListClubs extends React.Component {
   }
 
   interestChange(e) {
+    this.setState({ interest: e.target.value });
+  }
+
+  interestChange2(e) {
     this.setState({ interest: e.target.value });
   }
 
@@ -40,8 +45,8 @@ class ListClubs extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Browse</Header>
-          <Grid>
-            <Grid.Column width={8}>
+          <Grid centered>
+            <Grid.Column width={7}>
               <Input fluid value={this.state.name} onChange={this.handleChange}
                      icon='search'
                      iconPosition='left'
@@ -54,14 +59,39 @@ class ListClubs extends React.Component {
               <datalist id='interest'>
                 <option value='Medical'/>
                 <option value='Sport'/>
+                <option value='Service'/>
                 <option value='Animal'/>
+                <option value='Computer'/>
+                <option value='Education'/>
+                <option value='Women'/>
+                <option value='Friendship'/>
+                <option value='Video Game'/>
+                <option value='Cyber Security'/>
+                <option value='Martial Arts'/>
+              </datalist>
+            </Grid.Column>
+            <Grid.Column width={4}>
+              <Input fluid value={this.state.interest2} onChange={this.interestChange2}
+                     list='interest2'
+                     placeholder='More Interest' type="text"/>
+              <datalist id='interest2'>
+                <option value='Medical'/>
+                <option value='Sport'/>
+                <option value='Service'/>
+                <option value='Animal'/>
+                <option value='Computer'/>
+                <option value='Education'/>
+                <option value='Women'/>
+                <option value='Friendship'/>
+                <option value='Video Game'/>
+                <option value='Cyber Security'/>
+                <option value='Martial Arts'/>
               </datalist>
             </Grid.Column>
           </Grid>
           <Card.Group>
             {interestFilter.map((club, index) => <Club key={index} club ={club} />)}
           </Card.Group>
-
         </Container>
     );
   }

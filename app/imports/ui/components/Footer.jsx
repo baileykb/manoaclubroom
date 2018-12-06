@@ -1,4 +1,5 @@
 import React from 'react';
+import { List, Image } from 'semantic-ui-react';
 
 /** The Footer appears at the bottom of every page. Rendered by the App Layout component. */
 class Footer extends React.Component {
@@ -8,10 +9,11 @@ class Footer extends React.Component {
         <footer>
           <div style={divStyle} className="ui center aligned container">
             <hr />
-            Created by EBJK team <br />
-              Department of Information and Computer Sciences <br />
-              University of Hawaii<br />
-              Honolulu, HI 96822
+            <List>
+              <List.Item href='https://github.com/manoaclubroom' > <Image size='tiny' src='/images/tree.jpg'/> </List.Item>
+                <List.Item href='https://github.com/manoaclubroom' > Created by EBJK team</List.Item>
+
+            </List>
           </div>
         </footer>
     );
@@ -19,4 +21,3 @@ class Footer extends React.Component {
 }
 
 export default Footer;
-

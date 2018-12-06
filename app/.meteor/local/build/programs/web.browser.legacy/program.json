@@ -812,12 +812,12 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=6f0b78d151066c33b437462342662ff5eefd4775",
+      "url": "/app/app.js?hash=3e0b65d5f9bfbfbd9c1352ebbc2dc700a9625cb2",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/6f0b78d151066c33b437462342662ff5eefd4775.map",
-      "size": 101320,
-      "hash": "6f0b78d151066c33b437462342662ff5eefd4775",
-      "sri": "ySrwK2JEmo43r3BMlvxXfGta/bN/+/7ouWeoR5gKgo99SU+E/opxmj8yE7h/yhm3F/LEFhDGWwBPFkplEkCcEw=="
+      "sourceMapUrl": "/app/3e0b65d5f9bfbfbd9c1352ebbc2dc700a9625cb2.map",
+      "size": 141199,
+      "hash": "3e0b65d5f9bfbfbd9c1352ebbc2dc700a9625cb2",
+      "sri": "rbG7JAr56UCqmuUmXtonaaskN91/WiyGij2J7swe9V9MvduoM8sEGHWul2DLnbeUp+2igxBhDioFeZy4hyPBLg=="
     },
     {
       "path": "packages/service-configuration.js",
@@ -834,12 +834,12 @@
       "where": "client",
       "type": "css",
       "cacheable": true,
-      "url": "/merged-stylesheets.css?hash=25b2a969289d1065a42539e80491a23f7e6cf3fb",
+      "url": "/merged-stylesheets.css?hash=284d170c1255040ac063491e8bd6664f7411e08a",
       "sourceMap": "merged-stylesheets.css.map",
-      "sourceMapUrl": "/25b2a969289d1065a42539e80491a23f7e6cf3fb.map",
-      "size": 37529,
-      "hash": "25b2a969289d1065a42539e80491a23f7e6cf3fb",
-      "sri": "EbmqkV9UP8pc4upl1vIB9nXaQOgX3ljAJ0ztw6+5ajl5+4zImyr1qx02l5YIW04CaDYbhSuPnxcY3IWftwkhsw=="
+      "sourceMapUrl": "/284d170c1255040ac063491e8bd6664f7411e08a.map",
+      "size": 37669,
+      "hash": "284d170c1255040ac063491e8bd6664f7411e08a",
+      "sri": "ASEJ9eP6dya0bzvw07PhganDVl/mtNDj/O09U0d1rNbjhHS1LceXuk48lpxKEmtc+sy2vwQsjiR2223SmLS/Gw=="
     },
     {
       "path": "packages/fortawesome_fontawesome/upstream/fonts/fontawesome-webfont.eot",
@@ -902,6 +902,46 @@
       "sri": "U6h1ANC33dZCHLl9U2CNgj7xW7vcUFBm8Zvf694N888pebbbNi//hDpX6Fp3W+RArlHLWH4M6EgkfuM4ivnYBw=="
     },
     {
+      "path": "app/images/christ_shit.png",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/christ_shit.png",
+      "size": 11065,
+      "hash": "c3f08bb31f866bd29478c31aebc294f6310499d2",
+      "sri": "ft8lpnS+G//cqUYRCAEcUJoXieR1R8PHFMpOzWq6ObX/YGHkYSlZIeZyREe+Ao+0wv/4JWUynPaoQ2YPj7I4Qg=="
+    },
+    {
+      "path": "app/images/deer.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/deer.jpg",
+      "size": 18959,
+      "hash": "0a937cab844e83cd4d1cb5163c97eb97f8a82e06",
+      "sri": "1XdFSkZSIzNQWK5ii6kkYemV+jU34Sbs9wJpdCdBVMwQKttt//BYQ+tZyLmu+a7j4qOhm2PCO43dT3T/cQ67GQ=="
+    },
+    {
+      "path": "app/images/gift.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/gift.jpg",
+      "size": 28858,
+      "hash": "2706b434bad6c40653b658632aeafdf3faf72513",
+      "sri": "8eG6XimrI6/ECnylAQU1AFnD2b7G7/O8Gu7lBqlh2NsKrJArHIMPAKHvV0QMCYynif3o4zyPLJTW2aKlYSYgkw=="
+    },
+    {
+      "path": "app/images/kids.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/kids.jpg",
+      "size": 29038,
+      "hash": "9cf83a31efd293b6d3881667432e16b0f6e5da53",
+      "sri": "sRoCvW5Lf6DqX/gqqICR7aVyvjAUVg7DIEn8n4KznSG4QmbC+BmVVnYnUVzzTcXsaZ7Msp62E7Hi4zV9RcXCOA=="
+    },
+    {
       "path": "app/images/landing2.png",
       "where": "client",
       "type": "asset",
@@ -920,6 +960,46 @@
       "size": 21451,
       "hash": "8353fa469cbd43ee884c844b077efb82ab7c4503",
       "sri": "kWLVDOY6iR+AJ6TLP8mKo3l/tGbPv5Ohzm/GgYMrS1Y67HbPGlGXRgbjxIvJST4dbPtjdkCFYE4vRyiEn232Rg=="
+    },
+    {
+      "path": "app/images/penguin.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/penguin.jpg",
+      "size": 29890,
+      "hash": "07f3e00f85579e844d295b61170a420a651fb33c",
+      "sri": "NDE5TBeuRIyczNOAbFTMysMzvqVJVeZ4EHvC+vtW5OIFlUq9+z772mLuQ5abGBEBMfk0v/GhXfO2ZkBWM021vw=="
+    },
+    {
+      "path": "app/images/santa.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/santa.jpg",
+      "size": 28770,
+      "hash": "e95eac430cbd03338846f449c60a548e349c7f3f",
+      "sri": "a0yQRqgYC3kDhOSeq0pDeDagH7FsENXXkbBZbsC3Q7tVltSXeu0DuKabfTLZDiKD0W0r2jEAsTkkDmQJFrQiXg=="
+    },
+    {
+      "path": "app/images/snowman.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/snowman.jpg",
+      "size": 24634,
+      "hash": "35ccafe0acfba5507af5d703ab977c79a5cb1a2d",
+      "sri": "GM7Gm7koTaqDvq2T6jb3yFZ96JbEA7ZxZ6MKX4IwBbvWj3s4fO/yH/A8/SNk7CKfeyKtgY2JTE9oekQ1v4TULw=="
+    },
+    {
+      "path": "app/images/tree.jpg",
+      "where": "client",
+      "type": "asset",
+      "cacheable": false,
+      "url": "/images/tree.jpg",
+      "size": 80674,
+      "hash": "cfaa7e5f1c1e8f6be9039794f47ce4b875122647",
+      "sri": "5+jTzzWoKiUI/ljuGiWA66b53/eXmP15BhSBL0liEgasVEw10n931akaza1DdwLMBlo7Aio5L40l+REhb6VYtQ=="
     },
     {
       "path": "app/themes/default/assets/fonts/brand-icons.eot",
