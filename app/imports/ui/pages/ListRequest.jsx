@@ -18,7 +18,7 @@ class ListRequest extends React.Component {
     const list = this.props.requests.sort((a, b) => a - b).reverse();
     return (
         <Container>
-          <Header as="h2" textAlign="center">Browse</Header>
+          <Header as="h2" textAlign="center">List Request</Header>
           <Card.Group>
             {list.map((request, index) => <Request key={index} request ={request} />)}
           </Card.Group>
