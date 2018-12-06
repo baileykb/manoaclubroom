@@ -32,8 +32,7 @@ class AddClub extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { name, location, time, interest, image, description } = data;
-    const owner = Meteor.user().username;
+    const { name, location, time, interest, image, description, owner } = data;
     Clubs.insert({ name, location, time, interest, image, description, owner }, this.insertCallback);
   }
 
@@ -50,10 +49,10 @@ class AddClub extends React.Component {
                 <TextField name='time'/>
                 <TextField name='interest'/>
                 <TextField name='image'/>
+                <TextField name='owner'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
-                <HiddenField name='owner' value='fakeuser@foo.com'/>
               </Segment>
             </AutoForm>
           </Grid.Column>
