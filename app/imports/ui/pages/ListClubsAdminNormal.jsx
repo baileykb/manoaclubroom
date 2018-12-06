@@ -17,7 +17,7 @@ class ListClubsAdminNormal extends React.Component {
   renderPage() {
     return (
         <Container>
-          <Header as="h2" textAlign="center">List Club</Header>
+          <Header as="h2" textAlign="center">Your Clubs</Header>
           <Card.Group>
             {this.props.clubs.map((club, index) => <ClubAdminNormal key={index} club ={club} />)}
           </Card.Group>
@@ -36,7 +36,7 @@ ListClubsAdminNormal.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Clubs');
+  const subscription = Meteor.subscribe('ClubsAdmin');
   return {
     clubs: Clubs.find({}).fetch(),
     ready: subscription.ready(),

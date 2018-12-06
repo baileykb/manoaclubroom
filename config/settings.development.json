@@ -14,9 +14,9 @@
   ],
 
   "defaultProfiles": [
-    { "name": "Jack Jackson", "interests": "Animals, Math, Reading", "major": "Psychology", "image": "http://www.parenttoolkit.com/images/dmImage/SourceImage/standard_1500x1125_graduation1.jpg","owner":"admin@foo.com" },
-    { "name": "Jane Doe", "interests": "Computer Science, Music, Basketball", "major": "Computer Science","image": "http://www.parenttoolkit.com/images/dmImage/SourceImage/standard_1500x1125_graduation1.jpg", "owner":"jane@foo.com" },
-    { "name": "John Smith", "interests": "Writing, Running, Community Service", "major": "English", "image": "http://www.parenttoolkit.com/images/dmImage/SourceImage/standard_1500x1125_graduation1.jpg","owner":"john@foo.com" }
+    { "name": "Jack Jackson", "interests": "Service, Math, Education", "major": "Psychology", "image": "http://www.parenttoolkit.com/images/dmImage/SourceImage/standard_1500x1125_graduation1.jpg","owner":"admin@foo.com" },
+    { "name": "Jane Doe", "interests": "Sport, Music, Computer", "major": "Computer Science","image": "http://www.parenttoolkit.com/images/dmImage/SourceImage/standard_1500x1125_graduation1.jpg", "owner":"jane@foo.com" },
+    { "name": "John Smith", "interests": "Medical, Running, Service", "major": "English", "image": "http://www.parenttoolkit.com/images/dmImage/SourceImage/standard_1500x1125_graduation1.jpg","owner":"john@foo.com" }
   ],
 
   "defaultClubs": [

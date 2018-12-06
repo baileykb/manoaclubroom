@@ -19,23 +19,16 @@ if (Clubs.find().count() === 0) {
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Clubs', function publish() {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Clubs.find({ owner: username });
+    return Clubs.find();
   }
   return this.ready();
 });
 
 /** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
-Meteor.publish('ClubsAdminSuper', function publish() {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Clubs.find();
-  }
-  return this.ready();
-});
-
-Meteor.publish('ClubsAdminNormal', function publish() {
+Meteor.publish('ClubsAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'clubAdmin')) {
-    return Clubs.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Clubs.find({ owner: username });
   }
   return this.ready();
 });
