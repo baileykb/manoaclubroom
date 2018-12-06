@@ -1,9 +1,9 @@
 {
   "defaultAccounts": [
     { "email": "admin@foo.com", "password": "changeme", "role": "admin" },
-    { "email": "clubadmin@foo.com", "password": "changeme", "role": "clubAdmin" },
-    { "email": "john@foo.com", "password": "changeme" },
-    { "email": "jane@foo.com", "password": "changeme" }
+    { "email": "clubadmin1@foo.com", "password": "changeme", "role": "clubAdmin" },
+    { "email": "clubadmin2@foo.com", "password": "changeme", "role": "clubAdmin" },
+    { "email": "john@foo.com", "password": "changeme" }
   ],
 
   "defaultData": [
@@ -15,17 +15,18 @@
 
   "defaultProfiles": [
     { "name": "Jack Jackson", "interests": "Animals, Dance, Reading", "major": "Psychology", "owner":"admin@foo.com" },
-    { "name": "Jane Doe", "interests": "Service, Music, Basketball", "major": "Computer Science", "owner":"jane@foo.com" },
-    { "name": "John Smith", "interests": "Writing, Running, Service", "major": "English", "owner":"john@foo.com" }
+    { "name": "Jane Doe", "interests": "Service, Music, Sports", "major": "Computer Science", "owner":"clubadmin1@foo.com" },
+    { "name": "Juniper Johnson", "interests": "Medical, Dance, Basketball", "major": "Computer Science", "owner":"clubadmin2@foo.com" },
+    { "name": "John Smith", "interests": "Academic, Running, Service", "major": "English", "owner":"john@foo.com" }
   ],
 
   "defaultClubs": [
-    { "name": "Best Buddies Hawaii", "location": "Student Campus Center", "time": "6PM-7PM", "interest": "Service", "image": "https://www.bestbuddies.org/wp-content/uploads/2017/01/best-buddies-logo2.png", "description": "Best Buddies International is a nonprofit 501(c)(3) organization dedicated to establishing a global volunteer movement that creates opportunities for one-to-one friendships", "owner":"clubadmin@foo.com"},
-    { "name": "Middle Eastern Dance Artists of Hawaii", "location": "Aloha Dancesport Center", "time": "5PM-6PM", "interest": "Dance", "image": "http://medah.org/blog1/wp-content/uploads/2015/07/cropped-wordpress_logo.jpg",  "description": "The Middle Eastern Dance Artists of Hawai’i (MEDAH) is a 501(c)(3) non-profit organization. Founded in 1989 by Dr. Peggy Murphy (Hazzard), MEDAH is the only non-profit group of its kind in Hawai’i devoted to creating and supporting the educational, cultural and entertainment aspects of Middle Eastern dance, music, related cultures and arts.", "owner":"admin@foo.com"},
-    { "name": "AECT- Hawaii", "location": "Hamiltion Lib", "time": "1PM-3PM", "interest": "Academic", "image": "https://coe.hawaii.edu/sites/default/files/styles/large/public/20151017_110954.jpg?itok=D1pKQjO1",  "description": "AECT-Hawaii is a chapter affiliate with the Association for Educational Communications and Technology (AECT). AECT-Hawaii is coordinated by the Department of Learning Design & Technology’s (LTEC) graduate students and is a registered independent organization with the University of Hawaii at Manoa.","owner":"admin@foo.com"},
-    { "name": "Pre-Vet", "location": "POST 111", "time": "6PM-7PM", "interest": "Animals", "image": "http://manoa.hawaii.edu/rio/prevet/wp-content/uploads/2015/05/fshyfrgstjyh.png", "description": "Club for people wanting to be a veterinarian.", "owner":"john@foo.com"},
-    { "name": "Pre-Med", "location": "Moore 312", "time": "5PM-6PM", "interest": "Medical", "image": "http://static1.squarespace.com/static/57cb3928d482e9784e3f3431/t/57cb3bf9cd0f686bb5d7d0c6/1536129181594/?format=1500w", "description": "For people who are interested in the medical field.","owner": "admin@foo.com"},
-    { "name": "Judo", "location": "Gym 1", "time": "5PM-6PM", "interest": "Sports", "image": "http://www2.hawaii.edu/~judo/JudoTeamAtTheUniversityOfHawaii.png", "description": "A club for people interested in or want to learn Judo.", "owner":"john@foo.com"}
+    { "name": "Best Buddies Hawaii", "location": "Student Campus Center", "time": "6PM-7PM", "interest": "Service", "image": "https://www.bestbuddies.org/wp-content/uploads/2017/01/best-buddies-logo2.png", "description": "Best Buddies International is a nonprofit 501(c)(3) organization dedicated to establishing a global volunteer movement that creates opportunities for one-to-one friendships", "owner":"clubadmin1@foo.com"},
+    { "name": "Middle Eastern Dance Artists of Hawaii", "location": "Aloha Dancesport Center", "time": "5PM-6PM", "interest": "Dance", "image": "http://medah.org/blog1/wp-content/uploads/2015/07/cropped-wordpress_logo.jpg",  "description": "The Middle Eastern Dance Artists of Hawai’i (MEDAH) is a 501(c)(3) non-profit organization. Founded in 1989 by Dr. Peggy Murphy (Hazzard), MEDAH is the only non-profit group of its kind in Hawai’i devoted to creating and supporting the educational, cultural and entertainment aspects of Middle Eastern dance, music, related cultures and arts.", "owner":"clubadmin1@foo.com"},
+    { "name": "AECT- Hawaii", "location": "Hamiltion Lib", "time": "1PM-3PM", "interest": "Academic", "image": "https://coe.hawaii.edu/sites/default/files/styles/large/public/20151017_110954.jpg?itok=D1pKQjO1",  "description": "AECT-Hawaii is a chapter affiliate with the Association for Educational Communications and Technology (AECT). AECT-Hawaii is coordinated by the Department of Learning Design & Technology’s (LTEC) graduate students and is a registered independent organization with the University of Hawaii at Manoa.","owner":"clubadmin1@foo.com"},
+    { "name": "Pre-Vet", "location": "POST 111", "time": "6PM-7PM", "interest": "Animals", "image": "http://manoa.hawaii.edu/rio/prevet/wp-content/uploads/2015/05/fshyfrgstjyh.png", "description": "Club for people wanting to be a veterinarian.", "owner":"clubadmin2@foo.com"},
+    { "name": "Pre-Med", "location": "Moore 312", "time": "5PM-6PM", "interest": "Medical", "image": "http://static1.squarespace.com/static/57cb3928d482e9784e3f3431/t/57cb3bf9cd0f686bb5d7d0c6/1536129181594/?format=1500w", "description": "For people who are interested in the medical field.","owner": "clubadmin2@foo.com"},
+    { "name": "Judo", "location": "Gym 1", "time": "5PM-6PM", "interest": "Sports", "image": "http://www2.hawaii.edu/~judo/JudoTeamAtTheUniversityOfHawaii.png", "description": "A club for people interested in or want to learn Judo.", "owner":"clubadmin2@foo.com"}
   ],
 
   "defaultInterests": [
