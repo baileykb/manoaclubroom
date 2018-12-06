@@ -21,6 +21,7 @@ import DisplayProfile from '../pages/DisplayProfile';
 import EditProfile from '../pages/EditProfile';
 import ListInterests from '../pages/ListInterests';
 import AddInterest from '../pages/AddInterest';
+import ListInterestClubs from '../pages/ListInterestClubs';
 
 /** Top-level layout component for this application. Called in imports/startup/client/startup.jsx. */
 class App extends React.Component {
@@ -36,6 +37,7 @@ class App extends React.Component {
               <ProtectedRoute path="/makeProfile" component={MakeProfile}/>
               <ProtectedRoute path="/displayProfile" component={DisplayProfile}/>
               <ProtectedRoute path="/list" component={ListClubs}/>
+              <ProtectedRoute path="/interestClubs" component={ListInterestClubs}/>
               <ProtectedRoute path="/add" component={AddClub}/>
               <ProtectedRoute path="/edit/:_id" component={EditClub}/>
               <ProtectedRoute path="/editProfile/:_id" component={EditProfile}/>

@@ -19,7 +19,7 @@ class ListStuff extends React.Component {
     return (
         <Container>
           <Header as="h2" textAlign="center">Profile</Header>
-          {this.props.profiles.map((profile) => <Profile key={profile._id} profile={profile} />)}
+          {this.props.profile.map((profile) => <Profile key={profile._id} profile={profile} />)}
         </Container>
     );
   }
@@ -27,7 +27,7 @@ class ListStuff extends React.Component {
 
 /** Require an array of Stuff documents in the props. */
 ListStuff.propTypes = {
-  profiles: PropTypes.array.isRequired,
+  profile: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
 
@@ -36,7 +36,7 @@ export default withTracker(() => {
   // Get access to Stuff documents.
   const subscription = Meteor.subscribe('Profiles');
   return {
-    profiles: Profiles.find({}).fetch(),
+    profile: Profiles.find({}).fetch(),
     ready: subscription.ready(),
   };
 })(ListStuff);

@@ -40,7 +40,7 @@ ListInterests.propTypes = {
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 export default withTracker(() => {
   // Get access to Stuff documents.
-  const subscription = Meteor.subscribe('Interests');
+  const subscription = Meteor.subscribe('InterestsAdmin');
   return {
     interests: Interests.find({}).fetch(),
     ready: subscription.ready(),
