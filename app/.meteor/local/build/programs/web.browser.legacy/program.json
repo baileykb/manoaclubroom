@@ -812,12 +812,12 @@
       "where": "client",
       "type": "js",
       "cacheable": true,
-      "url": "/app/app.js?hash=aa55c7d688283dc074d10d344ab61d8050bb0fe9",
+      "url": "/app/app.js?hash=71bc4de909d916fde5286135d31a4b529940d282",
       "sourceMap": "app/app.js.map",
-      "sourceMapUrl": "/app/aa55c7d688283dc074d10d344ab61d8050bb0fe9.map",
-      "size": 125399,
-      "hash": "aa55c7d688283dc074d10d344ab61d8050bb0fe9",
-      "sri": "2TKyliyt5jiuaHeBdos+V1RIPkmauxOuCWLKkI6hzBmfPBCRx07p7jP0VFIWVLOZRKB5gcy6xPAVUcIWESnj2w=="
+      "sourceMapUrl": "/app/71bc4de909d916fde5286135d31a4b529940d282.map",
+      "size": 142298,
+      "hash": "71bc4de909d916fde5286135d31a4b529940d282",
+      "sri": "v45+G2p2HeJx8GX1Df9lyBkM/AFFFGhz1ElEDUttJ8F3iV2XueYYXkEL8sMInggFEbrIqfHroeBHF3KoZznPOg=="
     },
     {
       "path": "packages/service-configuration.js",

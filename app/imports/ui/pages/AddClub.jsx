@@ -52,6 +52,7 @@ class AddClub extends React.Component {
                 <TextField name='owner'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
+                <HiddenField name='seen' value='false'/>
                 <ErrorsField/>
               </Segment>
             </AutoForm>

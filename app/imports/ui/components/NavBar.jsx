@@ -5,10 +5,20 @@ import { withTracker } from 'meteor/react-meteor-data';
 import { withRouter, NavLink } from 'react-router-dom';
 import { Menu, Dropdown, Header } from 'semantic-ui-react';
 import { Roles } from 'meteor/alanning:roles';
+import { Clubs } from '/imports/api/club/club';
+import { Profiles } from '/imports/api/profile/profile';
 
 /** The NavBar appears at the top of every page. Rendered by the App Layout component. */
 class NavBar extends React.Component {
   render() {
+    const interestClubs =
+        this.props.profile ? (
+            this.props.clubs.filter(
+                (club) => this.props.profile.interests.indexOf(club.interest) !== -1,
+            )) : (
+            []
+        );
+    let unseen = interestClubs.count((club) => club.seen = true)
     const menuStyle = { marginBottom: '10px', padding: '50px', background: 'white' };
     return (
         <Menu style={menuStyle} attached="top" borderless color='black'>
@@ -19,7 +29,7 @@ class NavBar extends React.Component {
               [
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>List of Clubs</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/interestClubs"
-                           key='interestClubs'>Clubs You May Like</Menu.Item>,
+                           key='interestClubs'>Suggested Clubs</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/add" key='add'>Add Clubs</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/displayProfile"
                            key='displayProfile'>Profile</Menu.Item>,
@@ -34,7 +44,7 @@ class NavBar extends React.Component {
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/interests"
                            key='interests'>Interests</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/listRequest"
-                           key='listRequest'>List Request</Menu.Item>,
+                           key='listRequest'>List Requests</Menu.Item>,
               ]
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
@@ -66,11 +76,15 @@ class NavBar extends React.Component {
 /** Declare the types of all properties. */
 NavBar.propTypes = {
   currentUser: PropTypes.string,
+  clubs: PropTypes.array,
+  profile: PropTypes.object,
 };
 
 /** withTracker connects Meteor data to React components. https://guide.meteor.com/react.html#using-withTracker */
 const NavBarContainer = withTracker(() => ({
   currentUser: Meteor.user() ? Meteor.user().username : '',
+  clubs: Clubs.find({}).fetch(),
+  profile: Profiles.findOne(),
 }))(NavBar);
 
 /** Enable ReactRouter for this component. https://reacttraining.com/react-router/web/api/withRouter */

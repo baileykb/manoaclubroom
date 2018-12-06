@@ -9,7 +9,6 @@ import Club from '/imports/ui/components/Club';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
 class ListInterestClubs extends React.Component {
-
   render() {
     return (this.props.ready1 && this.props.ready2) ? this.renderPage() : <Loader active>Getting data</Loader>;
   }
