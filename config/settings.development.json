@@ -27,7 +27,12 @@
     { "name": "Pre-Med", "location": "Biology 312", "time": "TUE 3PM-5PM", "interest": "Medical", "interest2": "Service","image": "http://funkyimg.com/i/2NVQ5.jpg", "description": "provide its members with events and activities relevant to the field of healthcare.", "website": "http://premed-at-uhm.squarespace.com", "owner": "admin@foo.com"},
     { "name": "American Society of Civil Engineers", "location": "POST 2nd floor", "time": "TUE 1PM-3PM", "interest": "Engineering", "interest2": "Education","image": "http://funkyimg.com/i/2NW7c.jpg", "description": "organization geared towards promoting the civil engineering profession and providing a better understanding of the field outside of the classroom.", "website": "http://asceuhm.weebly.com", "owner": "admin@foo.com"},
     { "name": "Grey Hat", "location": "ICSpace", "time": "SAT 10PM-11PM", "interest": "Computer", "interest2": "Cyber Security", "image": "http://funkyimg.com/i/2NVST.jpg", "description": "The ICS Grey Hats is a student-led, extracurricular organization focused on real-world training for cyber defense.", "website": "https://github.com/uhmgreyhats", "owner": "admin@foo.com"},
-    { "name": "Judo Team at UHM", "location": "Gym", "time": "Mon 5PM-6PM", "interest": "Sport", "interest2": "Martial Arts", "image": "http://www2.hawaii.edu/~judo/JudoTeamAtTheUniversityOfHawaii.png", "description": "To provide opportunity to practice Judo, a lifelong physical and mental education system.", "website": "https://www.facebook.com/Judo.at.the.UofHawaii", "owner":"john@foo.com"}
+    { "name": "Judo Team at UHM", "location": "Gym", "time": "Mon 5PM-6PM", "interest": "Sport", "interest2": "Martial Arts", "image": "http://funkyimg.com/i/2NWrR.jpg", "description": "To provide opportunity to practice Judo, a lifelong physical and mental education system.", "website": "https://www.facebook.com/Judo.at.the.UofHawaii", "owner":"john@foo.com"}
+  ],
+
+  "defaultRequest": [
+    { "name": "RIO clubs", "location": "Student Campus Center", "time": "Weekend 6PM-7PM", "interest": "Service", "interest2": "Education","image": "https://www.bestbuddies.org/wp-content/uploads/2017/01/best-buddies-logo2.png", "description": "Request",  "website": "https://www.bestbuddies.org/hawaii/","owner":"clubadmin@foo.com"},
+    { "name": "MID Dance", "location": "Aloha Dancesport Center", "time": "SAT 5PM-6PM", "interest": "Dance", "interest2": "Example", "image": "http://medah.org/blog1/wp-content/uploads/2015/07/cropped-wordpress_logo.jpg",  "website": "https://www.bestbuddies.org/hawaii/", "description": "The Middle Eastern Dance Artists of Hawai’i (MEDAH) is a 501(c)(3) non-profit organization.", "owner":"admin@foo.com"}
   ],
 
   "defaultInterests": [
@@ -36,9 +41,6 @@
     { "interest": "Education" },
     { "interest": "Women" },
     { "interest": "Computer" },
-    { "interest": "Sport" },
-    { "interest": "Women" }
-
-
+    { "interest": "Sport" }
   ]
 }

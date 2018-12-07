@@ -19,8 +19,7 @@ if (Clubs.find().count() === 0) {
 /** This subscription publishes only the documents associated with the logged in user */
 Meteor.publish('Clubs', function publish() {
   if (this.userId) {
-    const username = Meteor.users.findOne(this.userId).username;
-    return Clubs.find({ owner: username });
+    return Clubs.find();
   }
   return this.ready();
 });
@@ -35,7 +34,8 @@ Meteor.publish('ClubsAdminSuper', function publish() {
 
 Meteor.publish('ClubsAdminNormal', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'clubAdmin')) {
-    return Clubs.find();
+    const username = Meteor.users.findOne(this.userId).username;
+    return Clubs.find({ owner: username });
   }
   return this.ready();
 });

@@ -4,6 +4,7 @@ import { Tracker } from 'meteor/tracker';
 
 /** Create a Meteor collection. */
 const Clubs = new Mongo.Collection('Clubs');
+const Requests = new Mongo.Collection('Requests');
 
 /** Create a schema to constrain the structure of documents associated with this collection. */
 const ClubSchema = new SimpleSchema({
@@ -20,6 +21,7 @@ const ClubSchema = new SimpleSchema({
 
 /** Attach this schema to the collection. */
 Clubs.attachSchema(ClubSchema);
+Requests.attachSchema(ClubSchema);
 
 /** Make the collection and schema available to other code. */
-export { Clubs, ClubSchema };
+export { Requests, Clubs, ClubSchema };

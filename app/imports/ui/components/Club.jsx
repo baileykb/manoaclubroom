@@ -10,7 +10,7 @@ class Club extends React.Component {
         <Card centered >
           <Card.Content className="bg">
             <Grid container verticalAlign="middle" >
-            <Card.Header>
+            <Card.Header as='h3'>
               {this.props.club.name}
             </Card.Header>
             <Card.Meta>
@@ -26,8 +26,9 @@ class Club extends React.Component {
             <Card.Description>
               {this.props.club.description}
             </Card.Description>
+
+            <Image rounded size='medium' src={this.props.club.image} />
             </Grid>
-            <Image rounded fluid size='medium' src={this.props.club.image} />
           </Card.Content>
         </Card>
 

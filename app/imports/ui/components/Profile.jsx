@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Segment, List, Image } from 'semantic-ui-react';
+import { Container, Segment, List, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { Link, withRouter } from 'react-router-dom';
 
@@ -13,10 +13,12 @@ class Profile extends React.Component {
               <List.Item> Name: {this.props.profile.name}</List.Item>
               <List.Item> Interests: {this.props.profile.interests}</List.Item>
               <List.Item> Major: {this.props.profile.major}</List.Item>
-              <List.Item> Image: <Image src={this.props.profile.image} size='small' as='a' href={this.props.profile.image}
+              <List.Item> Image: <Image src={this.props.profile.image} circular size='small' as='a' href={this.props.profile.image}
                                         target='_blank'/></List.Item>
             </List>
-            <Link to={`/editProfile/${this.props.profile._id}`}>Edit</Link>
+            <Button basic color='yellow'>
+              <Link to={`/editProfile/${this.props.profile._id}`}>Edit</Link>
+            </Button>
           </Segment>
         </Container>
     );

@@ -11,8 +11,7 @@ class Footer extends React.Component {
             <hr />
             <List>
               <List.Item href='https://github.com/manoaclubroom' > <Image size='tiny' src='/images/tree.jpg'/> </List.Item>
-                <List.Item href='https://github.com/manoaclubroom' > Created by EBJK team</List.Item>
-
+                <List.Item href='https://github.com/manoaclubroom' color = 'black'> CLICK the tree to visit EBJK github page</List.Item>
             </List>
           </div>
         </footer>
