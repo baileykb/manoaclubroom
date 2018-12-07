@@ -3,6 +3,8 @@ import { Card, Image, Button } from 'semantic-ui-react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom';
 import { Clubs, Requests } from '/imports/api/club/club';
+import { Meteor } from 'meteor/meteor';
+import { Roles } from 'meteor/alanning:roles';
 
 /** Renders a single row in the List Stuff table. See pages/ListStuff.jsx. */
 class Request extends React.Component {
@@ -16,6 +18,10 @@ class Request extends React.Component {
   /** On submit, insert the data. */
   accept() {
     Clubs.insert(this.props.request, this.decline);
+    const owner = Meteor.users.findOne({ username: this.props.request.owner });
+    if (owner) {
+      Roles.addUsersToRoles(owner._id, 'clubAdmin');
+    }
   }
 
   decline() {

@@ -13,41 +13,41 @@ class NavBar extends React.Component {
     return (
         <Menu style={menuStyle} attached="top" borderless color='black'>
           <Menu.Item as={NavLink} activeClassName="" position='left' exact to="/">
-            <Image size='mini' fluid src='/images/santa.jpg'/>
+            <Image size='mini' src='/images/santa.jpg'/>
             <Header as='h1'>Manoa Club Room</Header>
           </Menu.Item>
           {this.props.currentUser ? (
               [
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/list" key='list'>
-                  <Image size='mini' fluid src='/images/gift.jpg'/>List of Clubs
+                  <Image size='mini' src='/images/gift.jpg'/>List of Clubs
                 </Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/listInterestClubs" key='listInterestClubs'>
-                  <Image size='mini' fluid src='/images/gift.jpg'/>Suggested Clubs
+                  <Image size='mini' src='/images/gift.jpg'/>Suggested Clubs
                 </Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/displayProfile"
                            key='displayProfile'>
-                  <Image size='mini' fluid src='/images/kids.jpg'/>
+                  <Image size='mini' src='/images/kids.jpg'/>
                   Profile</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/request"
-                           key='request'> <Image size='mini' fluid src='/images/penguin.jpg'/>Request Club</Menu.Item>,
+                           key='request'> <Image size='mini' src='/images/penguin.jpg'/>Request Club</Menu.Item>,
               ]
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'admin') ? (
               [
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/admin"
-                           key='admin'> <Image size='mini' fluid src='/images/snowman.jpg'/>
+                           key='admin'> <Image size='mini' src='/images/snowman.jpg'/>
                   Admin</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/interests"
-                           key='interests'> <Image size='mini' fluid src='/images/christ_shit.png'/>
+                           key='interests'> <Image size='mini' src='/images/christ_shit.png'/>
                   Interests</Menu.Item>,
                 <Menu.Item as={NavLink} activeClassName="active" exact to="/listRequest"
-                           key='listRequest'> <Image size='mini' fluid src='/images/deer.jpg'/>
+                           key='listRequest'> <Image size='mini' src='/images/deer.jpg'/>
                   Approve Request</Menu.Item>,
               ]
           ) : ''}
           {Roles.userIsInRole(Meteor.userId(), 'clubAdmin') ? (
               <Menu.Item as={NavLink} activeClassName="active" exact to="/clubAdmin"
-                         key='clubAdmin'> <Image size='mini' fluid src='/images/christ_shit.png'/>
+                         key='clubAdmin'> <Image size='mini' src='/images/christ_shit.png'/>
                 Club Admin</Menu.Item>
           ) : ''}
 

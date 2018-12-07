@@ -24,9 +24,11 @@ class ListInterestClubs extends React.Component {
             )) : (
             []
         );
+    const numClubs = interestClubs.length;
     return (
         <Container>
           <Header as="h2" textAlign="center">Interest Clubs</Header>
+          <Header as="h3" textAlign="center">You have {numClubs} club(s) that match your interests</Header>
           <Card.Group>
             {interestClubs.map((club, index) => <Club key={index} club={club}/>)}
           </Card.Group>

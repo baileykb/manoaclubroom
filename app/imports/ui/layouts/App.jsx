@@ -8,11 +8,10 @@ import NavBar from '../components/NavBar';
 import Footer from '../components/Footer';
 import Landing from '../pages/Landing';
 import ListClubs from '../pages/ListClubs';
-import ListRequest from '../pages/ListRequest';
+import ListRequest from '../pages/ListRequests';
 import RequestClub from '../pages/RequestClub';
 import ListClubsAdminSuper from '../pages/ListClubsAdminSuper';
 import ListClubsAdminNormal from '../pages/ListClubsAdminNormal';
-import AddClub from '../pages/AddClub';
 import EditClub from '../pages/EditClub';
 import NotFound from '../pages/NotFound';
 import Signin from '../pages/Signin';
@@ -41,7 +40,6 @@ class App extends React.Component {
               <ProtectedRoute path="/list" component={ListClubs}/>
               <ProtectedRoute path="/listInterestClubs" component={ListInterestClubs}/>
               <ProtectedRoute path="/request" component={RequestClub}/>
-              <ProtectedRoute path="/add" component={AddClub}/>
               <ProtectedRoute path="/edit/:_id" component={EditClub}/>
               <ProtectedRoute path="/editProfile/:_id" component={EditProfile}/>
               <AdminProtectedRoute path="/admin" component={ListClubsAdminSuper}/>

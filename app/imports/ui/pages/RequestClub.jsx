@@ -32,9 +32,10 @@ class RequestClub extends React.Component {
 
   /** On submit, insert the data. */
   submit(data) {
-    const { name, location, time, interest, image, description } = data;
+    const { name, location, time, interest, interest2, image, website, description } = data;
     const owner = Meteor.user().username;
-    Requests.insert({ name, location, time, interest, image, description, owner }, this.insertCallback);
+    Requests.insert({ name, location, time, interest, interest2, image, website, description, owner },
+        this.insertCallback);
   }
 
   /** Render the form. Use Uniforms: https://github.com/vazco/uniforms */
@@ -49,7 +50,9 @@ class RequestClub extends React.Component {
                 <TextField name='location'/>
                 <TextField name='time'/>
                 <TextField name='interest'/>
+                <TextField name='interest2'/>
                 <TextField name='image'/>
+                <TextField name='website'/>
                 <LongTextField name='description'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>

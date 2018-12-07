@@ -7,7 +7,7 @@ import PropTypes from 'prop-types';
 import Request from '/imports/ui/components/Request';
 
 /** Renders a table containing all of the Stuff documents. Use <StuffItem> to render each row. */
-class ListRequest extends React.Component {
+class ListRequests extends React.Component {
   /** If the subscription(s) have been received, render the page, otherwise show a loading icon. */
   render() {
     return (this.props.ready) ? this.renderPage() : <Loader active>Getting data</Loader>;
@@ -29,7 +29,7 @@ class ListRequest extends React.Component {
 }
 
 /** Require an array of Stuff documents in the props. */
-ListRequest.propTypes = {
+ListRequests.propTypes = {
   requests: PropTypes.array.isRequired,
   ready: PropTypes.bool.isRequired,
 };
@@ -42,4 +42,4 @@ export default withTracker(() => {
     requests: Requests.find({}).fetch(),
     ready: subscription.ready(),
   };
-})(ListRequest);
+})(ListRequests);
