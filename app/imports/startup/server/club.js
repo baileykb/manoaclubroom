@@ -24,15 +24,7 @@ Meteor.publish('Clubs', function publish() {
   return this.ready();
 });
 
-/** This subscription publishes all documents regardless of user, but only if the logged in user is the Admin. */
-Meteor.publish('ClubsAdminSuper', function publish() {
-  if (this.userId && Roles.userIsInRole(this.userId, 'admin')) {
-    return Clubs.find();
-  }
-  return this.ready();
-});
-
-Meteor.publish('ClubsAdminNormal', function publish() {
+Meteor.publish('ClubsAdmin', function publish() {
   if (this.userId && Roles.userIsInRole(this.userId, 'clubAdmin')) {
     const username = Meteor.users.findOne(this.userId).username;
     return Clubs.find({ owner: username });

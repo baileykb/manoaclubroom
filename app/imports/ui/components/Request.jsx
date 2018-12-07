@@ -15,8 +15,7 @@ class Request extends React.Component {
 
   /** On submit, insert the data. */
   accept() {
-    const { name, location, time, interest, image, description, owner } = this.props.request;
-    Clubs.insert({ name, location, time, interest, image, description, owner }, this.decline);
+    Clubs.insert(this.props.request, this.decline);
   }
 
   decline() {

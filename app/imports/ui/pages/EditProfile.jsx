@@ -16,8 +16,8 @@ class EditProfile extends React.Component {
 
   /** On successful submit, insert the data. */
   submit(data) {
-    const { name, _id } = data;
-    Profiles.update(_id, { $set: { name } }, (error) => (error ?
+    const { name, interests, major, image, _id } = data;
+    Profiles.update(_id, { $set: { name, interests, major, image } }, (error) => (error ?
         Bert.alert({ type: 'danger', message: `Update failed: ${error.message}` }) :
         Bert.alert({ type: 'success', message: 'Update succeeded' })));
   }
@@ -38,6 +38,7 @@ class EditProfile extends React.Component {
                 <TextField name='name'/>
                 <TextField name='interests'/>
                 <TextField name='major'/>
+                <TextField name='image'/>
                 <SubmitField value='Submit'/>
                 <ErrorsField/>
                 <HiddenField name='owner' />
